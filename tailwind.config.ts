@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        klyra: {
+          green: "hsl(var(--klyra-green))",
+          "green-light": "hsl(var(--klyra-green-light))",
+          "green-dark": "hsl(var(--klyra-green-dark))",
+          neutral: "hsl(var(--klyra-neutral))",
+          "neutral-light": "hsl(var(--klyra-neutral-light))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +64,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-accent": "var(--gradient-accent)",
+      },
+      boxShadow: {
+        "soft": "var(--shadow-soft)",
+        "strong": "var(--shadow-strong)",
+      },
+      transitionTimingFunction: {
+        "smooth": "var(--transition-smooth)",
       },
       borderRadius: {
         lg: "var(--radius)",
