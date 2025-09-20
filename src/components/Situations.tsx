@@ -1,5 +1,7 @@
-import { TrendingUp, Target, Rocket, Wrench, Handshake } from "lucide-react";
+import { TrendingUp, Target, Rocket, Wrench, Handshake, UserCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Situations = () => {
   const situations = [
@@ -27,6 +29,11 @@ const Situations = () => {
       icon: Handshake,
       title: "Bénéficier d'un soutien moral et opérationnel externe",
       description: "Être épaulé par un regard neutre et expérimenté, avec un accompagnement personnalisé."
+    },
+    {
+      icon: UserCheck,
+      title: "Renforcer le leadership et la posture du dirigeant",
+      description: "Développer sa vision, sa capacité à fédérer et sa résilience pour inspirer et mobiliser ses équipes."
     }
   ];
 
@@ -42,13 +49,13 @@ const Situations = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
           {situations.map((situation, index) => (
             <Card key={index} className="group hover:shadow-elegant transition-all duration-300 border-border/50 hover:border-klyra/30 rounded-2xl">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-klyra/10 p-3 rounded-xl group-hover:bg-klyra/20 transition-colors duration-300">
-                    <situation.icon className="w-6 h-6 text-klyra" />
+                  <div className="bg-[#2eb8a3]/10 p-3 rounded-xl group-hover:bg-[#2eb8a3]/20 transition-colors duration-300">
+                    <situation.icon className="w-6 h-6" style={{ color: '#0b5057' }} />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-klyra transition-colors duration-300">
@@ -62,6 +69,14 @@ const Situations = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <Button asChild variant="cta">
+            <Link to="/contact">
+              Échanger sur ma situation →
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
