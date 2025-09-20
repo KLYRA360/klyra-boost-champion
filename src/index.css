@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 171 76% 25%;
+    --primary: 188 77% 19%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 171 20% 95%;
@@ -37,12 +37,12 @@ All colors MUST be HSL.
 
     --border: 171 25% 90%;
     --input: 171 25% 90%;
-    --ring: 171 76% 25%;
+    --ring: 188 77% 19%;
 
     /* Custom design tokens for Klyra360 */
-    --klyra-green: 171 76% 25%;
-    --klyra-green-light: 171 60% 45%;
-    --klyra-green-dark: 171 80% 15%;
+    --klyra-green: 188 77% 19%;
+    --klyra-green-light: 188 60% 35%;
+    --klyra-green-dark: 188 80% 15%;
     --klyra-neutral: 171 10% 50%;
     --klyra-neutral-light: 171 5% 95%;
     
@@ -109,9 +109,9 @@ All colors MUST be HSL.
     --ring: 171 60% 45%;
 
     /* Dark mode custom tokens */
-    --klyra-green: 171 40% 85%;
-    --klyra-green-light: 171 50% 55%;
-    --klyra-green-dark: 171 80% 95%;
+    --klyra-green: 188 40% 85%;
+    --klyra-green-light: 188 50% 55%;
+    --klyra-green-dark: 188 80% 95%;
     --klyra-neutral: 171 15% 65%;
     --klyra-neutral-light: 217.2 32.6% 17.5%;
     
