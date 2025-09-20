@@ -1,41 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  Award, 
-  Users, 
-  Target, 
-  TrendingUp,
-  ArrowRight,
-  Quote
-} from "lucide-react";
-
+import { Award, Users, Target, TrendingUp, ArrowRight, Quote } from "lucide-react";
 const About = () => {
-  const achievements = [
-    {
-      icon: Users,
-      number: "50+",
-      label: "Dirigeants accompagnés"
-    },
-    {
-      icon: Award,
-      number: "15+",
-      label: "Années d'expérience"
-    },
-    {
-      icon: Target,
-      number: "95%",
-      label: "Taux de satisfaction"
-    },
-    {
-      icon: TrendingUp,
-      number: "100%",
-      label: "Résultats mesurables"
-    }
-  ];
-
-  return (
-    <section id="a-propos" className="py-20 bg-background">
+  const achievements = [{
+    icon: Users,
+    number: "50+",
+    label: "Dirigeants accompagnés"
+  }, {
+    icon: Award,
+    number: "15+",
+    label: "Années d'expérience"
+  }, {
+    icon: Target,
+    number: "95%",
+    label: "Taux de satisfaction"
+  }, {
+    icon: TrendingUp,
+    number: "100%",
+    label: "Résultats mesurables"
+  }];
+  return <section id="a-propos" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4">
@@ -98,9 +83,8 @@ const About = () => {
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-6">
               {achievements.map((achievement, index) => {
-                const Icon = achievement.icon;
-                return (
-                  <Card key={index} className="text-center p-6 hover:shadow-soft transition-all duration-300">
+              const Icon = achievement.icon;
+              return <Card key={index} className="text-center p-6 hover:shadow-soft transition-all duration-300">
                     <CardContent className="p-0 space-y-3">
                       <div className="p-3 bg-accent/10 rounded-lg inline-block">
                         <Icon className="w-6 h-6 text-accent" />
@@ -108,9 +92,8 @@ const About = () => {
                       <div className="text-3xl font-bold text-primary">{achievement.number}</div>
                       <div className="text-sm text-muted-foreground">{achievement.label}</div>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
 
             {/* Testimonial */}
@@ -132,34 +115,9 @@ const About = () => {
 
         {/* Company info */}
         <Card className="bg-klyra-neutral-light/30 border-none">
-          <CardContent className="p-8">
-            <div className="text-center space-y-4">
-              <h3 className="text-xl font-bold text-foreground">WYDEV - WYTEST - WYEXPERT</h3>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
-                KLYRA360 fait partie de l'écosystème WYDEV, une startup spécialisée dans l'innovation 
-                et l'accompagnement des entreprises. Cette synergie nous permet d'offrir un support 
-                complet et des solutions adaptées aux défis modernes des organisations.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-6">
-                <Badge variant="outline" className="px-4 py-2">
-                  Innovation
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  Accompagnement
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  Excellence
-                </Badge>
-                <Badge variant="outline" className="px-4 py-2">
-                  Résultats
-                </Badge>
-              </div>
-            </div>
-          </CardContent>
+          
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
