@@ -29,6 +29,9 @@ All colors MUST be HSL.
     --accent: 171 60% 45%;
     --accent-foreground: 0 0% 98%;
 
+    --cta: 33 100% 33%;
+    --cta-foreground: 0 0% 98%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
@@ -94,6 +97,9 @@ All colors MUST be HSL.
 
     --accent: 171 50% 35%;
     --accent-foreground: 210 40% 98%;
+
+    --cta: 33 80% 40%;
+    --cta-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;

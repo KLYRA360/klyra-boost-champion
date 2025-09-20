@@ -52,6 +52,7 @@ const Hero = () => {
                 Demander votre diagnostic gratuit
                 <ArrowRight className="ml-2" />
               </Button>
+              {/* Alternative CTA ocre : <Button variant="cta" size="lg" className="text-lg">Demander votre diagnostic gratuit<ArrowRight className="ml-2" /></Button> */}
               <Button variant="outline-klyra" size="lg" className="text-lg">
                 Découvrir la méthode
               </Button>

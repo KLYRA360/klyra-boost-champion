@@ -92,6 +92,7 @@ const Contact = () => {
                 Demander mon diagnostic gratuit
                 <ArrowRight className="ml-2" />
               </Button>
+              {/* Alternative CTA ocre : <Button variant="cta" size="lg" className="w-full">Demander mon diagnostic gratuit<ArrowRight className="ml-2" /></Button> */}
             </CardContent>
           </Card>
 

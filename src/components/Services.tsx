@@ -150,6 +150,7 @@ const Services = () => {
                 Diagnostic immédiat
                 <ArrowRight className="ml-2" />
               </Button>
+              {/* Alternative CTA ocre pour fin de page diagnostic : <Button variant="cta" size="lg">Diagnostic immédiat<ArrowRight className="ml-2" /></Button> */}
             </div>
           </CardContent>
         </Card>
