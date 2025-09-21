@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import klyraLogoDark from "@/assets/klyra-logo-dark.svg";
+import klyraLogo from "@/assets/klyra-logo.png";
 
 const Header = () => {
   return (
     <header className="w-full py-4 px-6 bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
-          <img src={klyraLogoDark} alt="KLYRA360 — logo" className="h-16 md:h-20 w-auto block shrink-0" loading="eager" />
+          <img src={klyraLogo} alt="KLYRA360 — logo" className="h-16 md:h-20 w-auto block shrink-0" loading="eager" />
           <div>
             <h1 className="text-xl font-bold text-primary">KLYRA360</h1>
             <p className="text-xs text-muted-foreground">CLARIFIER - STRUCTURER - IMPACTER</p>
