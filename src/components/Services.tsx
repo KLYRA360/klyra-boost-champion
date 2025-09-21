@@ -148,7 +148,7 @@ const Services = () => {
                   </p>
                 </div>
               </div>
-              <a href="#diagnostic">
+              <a href="/urgence">
                 <Button variant="hero" size="lg">
                   Diagnostic immédiat
                   <ArrowRight className="ml-2" />
