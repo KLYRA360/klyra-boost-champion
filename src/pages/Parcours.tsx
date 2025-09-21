@@ -20,7 +20,7 @@ const Parcours = () => {
     {
       year: "Début de carrière",
       title: "Ouvrier, magasinier, maçon",
-      description: "Parcours terrain dans le bâtiment, puis bureaux d'ingénierie commerciale chez Vinci Construction."
+      description: "Parcours terrain dans le bâtiment et dans de nombreuses petites structures. Formation sur le tas et auto-apprentissage pendant de nombreuses années - le dur, le terrain, les premiers pas."
     },
     {
       year: "22-34 ans", 
