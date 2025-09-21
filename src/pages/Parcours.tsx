@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Hammer, GraduationCap, Building2, Activity, Users, Target, Heart, Zap, Shield } from "lucide-react";
+import { Hammer, GraduationCap, Building2, Activity, Users, Target, Heart, Zap, Shield, CheckCircle, Layers, Dumbbell, Mountain } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import cyrilPortrait from "@/assets/cyril-portrait.jpg";
@@ -77,11 +77,34 @@ const Parcours = () => {
     }
   ];
 
-  const strengths = [
-    "Rigueur et maîtrise (Karaté 2e dan)",
-    "Performance et endurance (CrossFit)",
-    "Stratégie et adaptation (VTT)",
-    "Discipline et résultats concrets"
+  const entrepreneurialStrengths = [
+    {
+      icon: Target,
+      title: "Stratégie & adaptation (10+ ans de pilotage)",
+    },
+    {
+      icon: CheckCircle,
+      title: "Résultats concrets & discipline opérationnelle",
+    },
+    {
+      icon: Layers,
+      title: "Capacité à industrialiser et scaler des projets",
+    }
+  ];
+
+  const personalStrengths = [
+    {
+      icon: Activity,
+      title: "Rigueur & maîtrise (Karaté 2e dan)",
+    },
+    {
+      icon: Dumbbell,
+      title: "Endurance & performance (CrossFit)",
+    },
+    {
+      icon: Mountain,
+      title: "Résilience & énergie (VTT, outdoor)",
+    }
   ];
 
   return (
@@ -146,12 +169,14 @@ const Parcours = () => {
           </div>
         </section>
 
-        {/* Introduction */}
+        {/* My Story & Strengths */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+              {/* Left Column - Mon histoire */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-foreground mb-6">Mon histoire</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     Rien, dans mes débuts, ne laissait présager que je deviendrais chef d'entreprise. Mon enfance a été mouvementée, parfois compliquée, et mon parcours scolaire chaotique.
                   </p>
@@ -161,18 +186,46 @@ const Parcours = () => {
                   <p>
                     Parti de rien, j'ai cofondé Visiopolis, développée jusqu'à 1,8 M€ de CA avant sa cession en 2024. Aujourd'hui, j'accompagne dirigeants et équipes vers la performance.
                   </p>
+                  <div className="bg-accent/10 border-l-4 border-[#0b5057] pl-4 py-2 my-6">
+                    <p className="italic text-foreground font-medium">
+                      "Apprendre, construire, transmettre : mon fil rouge depuis 15 ans."
+                    </p>
+                  </div>
                   <p>
                     Ma conviction : "Je ne suis pas là pour dire ce que vous voulez entendre, mais pour identifier les leviers de performance… même si cela bouscule."
                   </p>
                 </div>
+              </div>
 
-                <div className="text-center">
-                  <h3 className="text-xl font-semibold text-foreground mb-6">Mes forces</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                    {strengths.map((strength, index) => (
-                      <div key={index} className="flex items-center justify-center space-x-3">
-                        <span className="w-2 h-2 bg-klyra rounded-full"></span>
-                        <span className="text-muted-foreground">{strength}</span>
+              {/* Right Column - Mes forces */}
+              <div className="space-y-8">
+                <h2 className="text-3xl font-bold text-foreground mb-6">Mes forces</h2>
+                
+                {/* Forces entrepreneuriales */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-foreground">Forces entrepreneuriales</h3>
+                  <div className="space-y-2">
+                    {entrepreneurialStrengths.map((strength, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
+                          <strength.icon className="w-5 h-5" style={{ color: '#0b5057' }} />
+                        </div>
+                        <span className="text-muted-foreground leading-relaxed">{strength.title}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Forces personnelles */}
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-foreground">Forces personnelles</h3>
+                  <div className="space-y-2">
+                    {personalStrengths.map((strength, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
+                          <strength.icon className="w-5 h-5" style={{ color: '#0b5057' }} />
+                        </div>
+                        <span className="text-muted-foreground leading-relaxed">{strength.title}</span>
                       </div>
                     ))}
                   </div>
