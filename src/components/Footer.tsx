@@ -64,7 +64,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-primary-foreground transition-colors">
+                <a href="/urgence" className="hover:text-primary-foreground transition-colors">
                   Support d'urgence
                 </a>
               </li>

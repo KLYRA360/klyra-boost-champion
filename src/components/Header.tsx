@@ -23,6 +23,11 @@ const Header = () => {
           <a href="#a-propos" className="text-foreground hover:text-primary transition-colors">
             À propos
           </a>
+          <a href="/urgence">
+            <Button variant="outline-klyra" size="sm">
+              Urgence
+            </Button>
+          </a>
           <a href="#diagnostic">
             <Button variant="cta" size="sm">
               Demander un diagnostic
