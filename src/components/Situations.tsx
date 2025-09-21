@@ -73,9 +73,9 @@ const Situations = () => {
         
         <div className="text-center">
           <Button asChild variant="cta">
-            <Link to="/contact">
+            <a href="#diagnostic">
               Échanger sur ma situation →
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
