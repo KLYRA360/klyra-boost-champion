@@ -6,17 +6,17 @@ import { ArrowRight, CheckCircle, Users, Target, TrendingUp } from "lucide-react
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-8 gap-y-6">
           {/* Left Column - Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-6">
+            <div className="space-y-3">
               <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-sm font-medium text-accent border border-accent/20">
                 <CheckCircle className="w-4 h-4 mr-2" />
                 Support professionnel certifié
               </div>
               
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight max-w-[16ch]">
                 <span className="text-foreground">Votre </span>
                 <span className="text-primary bg-gradient-hero bg-clip-text text-transparent">support</span>
                 <span className="text-foreground"> d'excellence pour</span>
@@ -24,14 +24,14 @@ const Hero = () => {
                 <span className="text-accent">réussir vos transitions</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-[60ch] mt-3">
                 J'accompagne les dirigeants, porteurs de projet et organisations dans leurs moments clés 
                 avec une méthodologie structurée et des résultats mesurables.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-6 mt-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">360°</div>
                 <div className="text-sm text-muted-foreground">Approche complète</div>
@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <Button variant="hero" size="lg" className="text-lg">
                 Demander votre diagnostic gratuit
                 <ArrowRight className="ml-2" />
@@ -82,12 +82,12 @@ const Hero = () => {
             </Card>
             
             {/* Floating card */}
-            <Card className="absolute -bottom-6 -left-6 p-6 bg-background shadow-strong border-l-4 border-l-accent">
+            <Card className="absolute -bottom-4 -left-4 p-4 bg-background shadow-strong border-l-4 border-l-accent">
               <div className="flex items-center space-x-3">
-                <TrendingUp className="w-8 h-8 text-accent" />
+                <TrendingUp className="w-6 h-6 text-accent" />
                 <div>
-                  <div className="font-semibold text-foreground">Méthode éprouvée</div>
-                  <div className="text-sm text-muted-foreground">Résultats mesurables</div>
+                  <div className="font-semibold text-foreground text-sm">Méthode éprouvée</div>
+                  <div className="text-xs text-muted-foreground">Résultats mesurables</div>
                 </div>
               </div>
             </Card>
