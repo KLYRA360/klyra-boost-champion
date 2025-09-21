@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Target, TrendingUp, ArrowRight, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
+import cyrilPortrait from "@/assets/cyril-portrait.jpg";
 const About = () => {
   const achievements = [{
     icon: Users,
@@ -37,7 +38,26 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left side - About content */}
+          {/* Left side - Photo and CTA */}
+          <div className="flex flex-col items-center lg:items-start space-y-6">
+            <div className="relative">
+              <img 
+                src={cyrilPortrait} 
+                alt="Cyril Lanzetto" 
+                loading="lazy"
+                className="w-36 h-36 md:w-56 md:h-56 lg:w-60 lg:h-60 rounded-full ring-4 ring-accent/30 shadow-lg object-cover"
+              />
+            </div>
+            
+            <Button asChild variant="outline-klyra" size="lg">
+              <Link to="/mon-parcours">
+                En savoir plus sur mon parcours
+                <ArrowRight className="ml-2" />
+              </Link>
+            </Button>
+          </div>
+
+          {/* Right side - About content */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-foreground">Cyril LANZETTO</h3>
@@ -73,16 +93,12 @@ const About = () => {
                 </li>
               </ul>
             </div>
-
-            <Button asChild variant="outline-klyra" size="lg">
-              <Link to="/mon-parcours">
-                En savoir plus sur mon parcours
-                <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
           </div>
+        </div>
 
-          {/* Right side - Achievements */}
+        {/* Achievements and Testimonial */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+          {/* Achievements */}
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-6">
               {achievements.map((achievement, index) => {
@@ -98,8 +114,10 @@ const About = () => {
                   </Card>;
             })}
             </div>
+          </div>
 
-            {/* Testimonial */}
+          {/* Testimonial */}
+          <div className="space-y-8">
             <Card className="bg-gradient-accent border-accent/20 p-6">
               <CardContent className="p-0 space-y-4">
                 <Quote className="w-8 h-8 text-accent-foreground/60" />
