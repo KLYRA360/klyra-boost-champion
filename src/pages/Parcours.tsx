@@ -89,20 +89,39 @@ const Parcours = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, rgba(11, 80, 87, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%)' }}>
+        <section className="py-10 md:py-8 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, rgba(11, 80, 87, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%)' }}>
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
               {/* Left - Content */}
-              <div className="text-center lg:text-left space-y-8">
-                <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl font-bold text-foreground animate-fade-up">
-                    Mon parcours
-                  </h1>
-                  <p className="text-xl md:text-2xl text-muted-foreground animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="text-center lg:text-left space-y-4 max-w-[640px]">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h1 className="text-4xl md:text-5xl font-bold text-foreground animate-fade-up">
+                      Mon parcours
+                    </h1>
+                    <div className="w-12 h-0.5 bg-[#0b5057] rounded-full mx-auto lg:mx-0"></div>
+                  </div>
+                  <p className="text-xl text-muted-foreground animate-fade-up max-w-prose" style={{ animationDelay: '0.1s' }}>
                     Un parcours atypique au service de la performance et de la transmission
                   </p>
+                  <p className="text-muted-foreground leading-relaxed animate-fade-up max-w-[60ch]" style={{ animationDelay: '0.2s' }}>
+                    Depuis plus de 15 ans, j'entreprends, construis des équipes et industrialise des opérations. J'ai connu l'hyper-croissance comme les passages difficiles : ce terrain nourrit mon approche. Avec KLYRA, je transforme une intention en plan d'action mesurable — vite, clair, opérant.
+                  </p>
                 </div>
-                <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                
+                <div className="space-y-4 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+                    <span className="px-3 py-1 text-sm border border-[#0b5057]/30 text-[#0b5057] rounded-full bg-transparent">
+                      Clarté
+                    </span>
+                    <span className="px-3 py-1 text-sm border border-[#0b5057]/30 text-[#0b5057] rounded-full bg-transparent">
+                      Structure
+                    </span>
+                    <span className="px-3 py-1 text-sm border border-[#0b5057]/30 text-[#0b5057] rounded-full bg-transparent">
+                      Impact
+                    </span>
+                  </div>
+                  
                   <Button asChild variant="cta" size="lg">
                     <a href="#etapes-cles">
                       Découvrir mes étapes clés
@@ -112,13 +131,13 @@ const Parcours = () => {
               </div>
 
               {/* Right - Photo */}
-              <div className="text-center lg:text-right animate-fade-up" style={{ animationDelay: '0.3s' }}>
+              <div className="text-center lg:text-right animate-fade-up lg:mt-6" style={{ animationDelay: '0.4s' }}>
                 <div className="inline-block relative">
-                  <div className="w-96 h-96 bg-accent/20 rounded-full flex items-center justify-center">
+                  <div className="w-80 h-80 border-2 border-accent/40 rounded-full flex items-center justify-center shadow-lg">
                     <img 
                       src={cyrilPortrait} 
                       alt="Cyril Lanzetto, fondateur de KLYRA360"
-                      className="w-80 h-80 rounded-full object-cover shadow-elegant"
+                      className="w-72 h-72 rounded-full object-cover"
                     />
                   </div>
                 </div>
