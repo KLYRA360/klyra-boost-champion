@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -16,21 +16,88 @@ import {
   Network,
   FileText,
   Clock,
-  ExternalLink
+  ExternalLink,
+  Phone,
+  Mail
 } from "lucide-react";
 
 // TODO: Replace with actual Stripe Payment Links
 const STRIPE_ROUGE = "https://stripe.link/ROUGE_PLACEHOLDER";
 const STRIPE_ORANGE = "https://stripe.link/ORANGE_PLACEHOLDER";
 
+// Business hours: Monday to Friday, 9:00-19:00 Europe/Paris
+const isWithinBusinessHours = (): boolean => {
+  const now = new Date();
+  const parisTime = new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris',
+    weekday: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).formatToParts(now);
+
+  const dayName = parisTime.find(part => part.type === 'weekday')?.value;
+  const hour = parseInt(parisTime.find(part => part.type === 'hour')?.value || '0');
+  
+  const isWeekday = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'].includes(dayName || '');
+  const isWorkingHour = hour >= 9 && hour < 19;
+  
+  return isWeekday && isWorkingHour;
+};
+
+const getNextOpeningMessage = (level: "rouge" | "orange"): string => {
+  if (level === "rouge") {
+    return "Rappel prioritaire le jour ouvré suivant entre 09:00 et 10:00.";
+  }
+  return "Rappel le jour ouvré suivant avant 13:00.";
+};
+
 const Urgence = () => {
   const [selectedLevel, setSelectedLevel] = useState<"rouge" | "orange">("rouge");
   const [modeRouge, setModeRouge] = useState<"appel" | "visio">("appel");
   const [modeOrange, setModeOrange] = useState<"appel" | "visio">("appel");
+  const [isBusinessHours, setIsBusinessHours] = useState<boolean>(true);
+
+  useEffect(() => {
+    const checkBusinessHours = () => {
+      setIsBusinessHours(isWithinBusinessHours());
+    };
+    
+    checkBusinessHours();
+    // Check every minute
+    const interval = setInterval(checkBusinessHours, 60000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const handlePayment = (level: "rouge" | "orange") => {
+    if (!isBusinessHours) return;
     const url = level === "rouge" ? STRIPE_ROUGE : STRIPE_ORANGE;
     window.open(url, "_blank");
+  };
+
+  const handleContactOutOfHours = () => {
+    const subject = encodeURIComponent("Demande d'urgence - Rappel à l'ouverture");
+    const body = encodeURIComponent(`Bonjour,
+
+Je souhaite être rappelé dès l'ouverture pour une situation d'urgence.
+
+Niveau souhaité : ${selectedLevel === "rouge" ? "Code Rouge (≤ 60 min)" : "Code Orange (≤ 4 h)"}
+Mode de contact : ${selectedLevel === "rouge" ? modeRouge : modeOrange}
+
+Contexte de l'urgence :
+[Décrivez brièvement votre situation]
+
+Coordonnées :
+Nom : 
+Téléphone : 
+Email : 
+
+Merci de me recontacter ${getNextOpeningMessage(selectedLevel).toLowerCase()}
+
+Cordialement`);
+    
+    window.open(`mailto:TODO_EMAIL_ADDRESS?subject=${subject}&body=${body}`, "_blank");
   };
 
   return (
@@ -38,6 +105,27 @@ const Urgence = () => {
       <Header />
       
       <main className="pt-8">
+        {/* Business Hours Banner */}
+        <section className="bg-accent/10 border-b">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center justify-center gap-2 text-center">
+              <Clock className="w-4 h-4 text-primary" />
+              <p className="text-sm font-medium">
+                <strong>Disponibilité :</strong> LUN→VEN, 09:00–19:00 (Europe/Paris). 
+                Les délais (≤ 60 min / ≤ 4 h) démarrent uniquement dans cette plage.
+              </p>
+            </div>
+            
+            {!isBusinessHours && (
+              <div className="mt-2 text-center">
+                <p className="text-sm text-muted-foreground bg-muted rounded-md px-3 py-2 inline-block">
+                  Actuellement hors plage d'ouverture. Nous vous recontactons à l'ouverture (dès 09:00).
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="container mx-auto px-6 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -89,14 +177,34 @@ const Urgence = () => {
                   </RadioGroup>
                 </div>
                 
-                <Button 
-                  onClick={() => handlePayment("rouge")}
-                  className="w-full"
-                  size="lg"
-                >
-                  Payer & démarrer
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
+                {!isBusinessHours && (
+                  <div className="mb-4 p-3 bg-muted rounded-lg text-center">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {getNextOpeningMessage("rouge")}
+                    </p>
+                  </div>
+                )}
+                
+                {isBusinessHours ? (
+                  <Button 
+                    onClick={() => handlePayment("rouge")}
+                    className="w-full"
+                    size="lg"
+                  >
+                    Payer & démarrer
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={handleContactOutOfHours}
+                    variant="secondary"
+                    className="w-full"
+                    size="lg"
+                  >
+                    Être rappelé à l'ouverture (dès 09:00)
+                    <Mail className="w-4 h-4 ml-2" />
+                  </Button>
+                )}
                 
                 <p className="text-xs text-muted-foreground text-center">
                   Après paiement, vous serez redirigé vers /urgence/merci
@@ -147,14 +255,34 @@ const Urgence = () => {
                   </RadioGroup>
                 </div>
                 
-                <Button 
-                  onClick={() => handlePayment("orange")}
-                  className="w-full"
-                  size="lg"
-                >
-                  Payer & démarrer
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
+                {!isBusinessHours && (
+                  <div className="mb-4 p-3 bg-muted rounded-lg text-center">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {getNextOpeningMessage("orange")}
+                    </p>
+                  </div>
+                )}
+                
+                {isBusinessHours ? (
+                  <Button 
+                    onClick={() => handlePayment("orange")}
+                    className="w-full"
+                    size="lg"
+                  >
+                    Payer & démarrer
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={handleContactOutOfHours}
+                    variant="secondary"
+                    className="w-full"
+                    size="lg"
+                  >
+                    Être rappelé à l'ouverture (dès 09:00)
+                    <Mail className="w-4 h-4 ml-2" />
+                  </Button>
+                )}
                 
                 <p className="text-xs text-muted-foreground text-center">
                   Après paiement, vous serez redirigé vers /urgence/merci
@@ -269,6 +397,12 @@ const Urgence = () => {
                 (pas de majoration automatique pour l'instant).
               </p>
             </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-sm text-muted-foreground">
+              <strong>No-show :</strong> séance due et non remboursable.
+            </p>
           </div>
         </section>
 

@@ -7,9 +7,40 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircle, Phone, Mail, Clock } from "lucide-react";
 
+// Business hours: Monday to Friday, 9:00-19:00 Europe/Paris
+const isWithinBusinessHours = (): boolean => {
+  const now = new Date();
+  const parisTime = new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris',
+    weekday: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).formatToParts(now);
+
+  const dayName = parisTime.find(part => part.type === 'weekday')?.value;
+  const hour = parseInt(parisTime.find(part => part.type === 'hour')?.value || '0');
+  
+  const isWeekday = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'].includes(dayName || '');
+  const isWorkingHour = hour >= 9 && hour < 19;
+  
+  return isWeekday && isWorkingHour;
+};
+
+const getOutOfHoursMessage = (type: "rouge" | "orange" | null): string => {
+  if (type === "rouge") {
+    return "Rappel prioritaire le jour ouvré suivant entre 09:00 et 10:00.";
+  }
+  if (type === "orange") {
+    return "Rappel le jour ouvré suivant avant 13:00.";
+  }
+  return "Nous vous recontacterons dès l'ouverture.";
+};
+
 const UrgenceMerci = () => {
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type") as "rouge" | "orange" | null;
+  const [isBusinessHours, setIsBusinessHours] = useState<boolean>(true);
   
   const [slaInfo, setSlaInfo] = useState<{
     title: string;
@@ -22,6 +53,18 @@ const UrgenceMerci = () => {
     badge: "Prioritaire",
     variant: "destructive"
   });
+
+  useEffect(() => {
+    const checkBusinessHours = () => {
+      setIsBusinessHours(isWithinBusinessHours());
+    };
+    
+    checkBusinessHours();
+    // Check every minute
+    const interval = setInterval(checkBusinessHours, 60000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (type === "orange") {
@@ -70,10 +113,23 @@ const UrgenceMerci = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Nous nous engageons à vous recontacter dans ce délai. 
-                  Vous recevrez un e-mail de confirmation avec tous les détails.
-                </p>
+                {isBusinessHours ? (
+                  <p className="text-muted-foreground">
+                    Nous nous engageons à vous recontacter dans ce délai. 
+                    Vous recevrez un e-mail de confirmation avec tous les détails.
+                  </p>
+                ) : (
+                  <div className="space-y-3">
+                    <p className="text-muted-foreground">
+                      Vous recevrez un e-mail de confirmation avec tous les détails.
+                    </p>
+                    <div className="bg-muted rounded-lg p-3">
+                      <p className="text-sm text-muted-foreground">
+                        <strong>Hors horaires d'ouverture :</strong> {getOutOfHoursMessage(type)}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </section>
