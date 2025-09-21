@@ -147,10 +147,12 @@ const Methodology = () => {
               <p className="text-accent-foreground/80 mb-6">
                 Commencez par un diagnostic gratuit pour identifier vos priorités et définir votre plan d'action.
               </p>
-              <Button variant="hero" size="lg">
-                Réserver mon diagnostic gratuit
-                <ArrowRight className="ml-2" />
-              </Button>
+              <a href="#diagnostic">
+                <Button variant="hero" size="lg">
+                  Réserver mon diagnostic gratuit
+                  <ArrowRight className="ml-2" />
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
