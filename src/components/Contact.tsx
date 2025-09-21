@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 import { 
   Mail, 
   Phone, 
@@ -14,6 +15,8 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 bg-klyra-neutral-light/30">
       <div className="container mx-auto px-6">
@@ -186,7 +189,7 @@ const Contact = () => {
                   Pour les situations urgentes, contactez-nous directement par téléphone 
                   pour un support immédiat.
                 </p>
-                <Button variant="outline-klyra" className="w-full">
+                <Button variant="outline-klyra" className="w-full" onClick={() => navigate('/urgence')}>
                   Appel d'urgence
                   <Phone className="ml-2 w-4 h-4" />
                 </Button>
