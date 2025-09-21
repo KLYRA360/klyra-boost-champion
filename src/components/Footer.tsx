@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Brand & Description */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img src={klyraLogo} alt="KLYRA360 — logo" className="h-8 md:h-9 w-auto" loading="eager" />
               <div>
@@ -101,7 +101,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contact</h4>
-            <div className="space-y-3 text-primary-foreground/80">
+            <div className="space-y-2 text-primary-foreground/80">
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <a href="mailto:contact@klyra360.fr" className="hover:text-primary-foreground transition-colors">
