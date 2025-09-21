@@ -91,9 +91,9 @@ const NousRejoindre = () => {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline"
+                  variant="outline-klyra"
                   onClick={() => document.getElementById('partenaires')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft border-white/20 text-white hover:bg-white/10"
+                  className="rounded-2xl shadow-soft"
                 >
                   <Building2 className="mr-2 w-5 h-5" />
                   Devenir Partenaire
@@ -554,9 +554,9 @@ const NousRejoindre = () => {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline"
+                  variant="outline-klyra"
                   onClick={() => document.getElementById('partenaires')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft border-white/20 text-white hover:bg-white/10"
+                  className="rounded-2xl shadow-soft"
                 >
                   <Building2 className="mr-2 w-5 h-5" />
                   Devenir Partenaire
