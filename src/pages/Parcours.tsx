@@ -25,7 +25,7 @@ const Parcours = () => {
     {
       year: "22-34 ans", 
       title: "Formation et spécialisation",
-      description: "Diplôme de technicien du bâtiment, puis Bac Scientifique à Montpellier et diplôme d'opticien à l'ISO Marseille."
+      description: "Retour sur les bancs de l'école à partir de 24 ans afin de faire évoluer ma position, premier diplôme de technicien en étude et économie de la construction dans le bâtiment en 2005, puis retour sur les bancs de la fac en 2016 pour un équivalent BAC scientifique et enfin obtention de mon BTS d'opticien lunetier en 2017."
     },
     {
       year: "2016-2024",
