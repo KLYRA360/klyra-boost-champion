@@ -71,6 +71,33 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* À propos */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-lg">À propos</h4>
+            <ul className="space-y-2 text-primary-foreground/80">
+              <li>
+                <a href="#methode" className="hover:text-primary-foreground transition-colors">
+                  Notre méthode
+                </a>
+              </li>
+              <li>
+                <a href="#a-propos" className="hover:text-primary-foreground transition-colors">
+                  L'équipe
+                </a>
+              </li>
+              <li>
+                <a href="/nous-rejoindre" className="hover:text-primary-foreground transition-colors">
+                  Nous rejoindre
+                </a>
+              </li>
+              <li>
+                <a href="/mon-parcours" className="hover:text-primary-foreground transition-colors">
+                  Mon parcours
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contact</h4>
