@@ -14,13 +14,13 @@ const Header = () => {
         </a>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#services" className="text-foreground hover:text-primary transition-colors">
+          <a href="/#services" className="text-foreground hover:text-primary transition-colors">
             Services
           </a>
-          <a href="#methode" className="text-foreground hover:text-primary transition-colors">
+          <a href="/#methode" className="text-foreground hover:text-primary transition-colors">
             Méthode
           </a>
-          <a href="#a-propos" className="text-foreground hover:text-primary transition-colors">
+          <a href="/#a-propos" className="text-foreground hover:text-primary transition-colors">
             À propos
           </a>
           <a href="/nous-rejoindre" className="text-foreground hover:text-primary transition-colors">
@@ -31,7 +31,7 @@ const Header = () => {
               Urgence
             </Button>
           </a>
-          <a href="#diagnostic">
+          <a href="/#diagnostic">
             <Button variant="cta" size="sm">
               Demander un diagnostic
             </Button>

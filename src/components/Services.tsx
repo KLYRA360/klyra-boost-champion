@@ -120,7 +120,7 @@ const Services = () => {
                       <span className="text-lg font-bold text-primary">{service.price}</span>
                     </div>
                     
-                    <a href="#diagnostic">
+                    <a href="/#diagnostic">
                       <Button variant="outline-klyra" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
                         Demander un devis
                         <ArrowRight className="w-4 h-4 ml-2" />
