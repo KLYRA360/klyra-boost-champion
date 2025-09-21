@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { 
   Mail, 
   Phone, 
@@ -16,6 +17,45 @@ import {
 
 const Contact = () => {
   const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    position: '',
+    message: ''
+  });
+
+  const handleInputChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
+  };
+
+  const handleSubmit = () => {
+    const subject = encodeURIComponent(`Demande de diagnostic gratuit - ${formData.firstName} ${formData.lastName}`);
+    const body = encodeURIComponent(`
+Bonjour,
+
+Je souhaite bénéficier d'un diagnostic gratuit.
+
+Informations de contact :
+- Prénom : ${formData.firstName}
+- Nom : ${formData.lastName}
+- Email : ${formData.email}
+- Téléphone : ${formData.phone}
+- Entreprise : ${formData.company}
+- Fonction : ${formData.position}
+
+Description du besoin :
+${formData.message}
+
+Cordialement,
+${formData.firstName} ${formData.lastName}
+    `);
+    
+    window.location.href = `mailto:contact@klyra360.fr?subject=${subject}&body=${body}`;
+  };
 
   return (
     <section className="py-20 bg-klyra-neutral-light/30">
@@ -43,45 +83,73 @@ const Contact = () => {
                 votre diagnostic personnalisé.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">Prénom *</label>
-                  <Input placeholder="Votre prénom" />
+              <CardContent className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">Prénom *</label>
+                    <Input 
+                      placeholder="Votre prénom" 
+                      value={formData.firstName}
+                      onChange={handleInputChange('firstName')}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">Nom *</label>
+                    <Input 
+                      placeholder="Votre nom" 
+                      value={formData.lastName}
+                      onChange={handleInputChange('lastName')}
+                    />
+                  </div>
                 </div>
+
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-foreground">Nom *</label>
-                  <Input placeholder="Votre nom" />
+                  <label className="text-sm font-medium text-foreground">Email professionnel *</label>
+                  <Input 
+                    type="email" 
+                    placeholder="votre.email@entreprise.com" 
+                    value={formData.email}
+                    onChange={handleInputChange('email')}
+                  />
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Email professionnel *</label>
-                <Input type="email" placeholder="votre.email@entreprise.com" />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground">Téléphone</label>
+                  <Input 
+                    type="tel" 
+                    placeholder="+33 6 12 34 56 78" 
+                    value={formData.phone}
+                    onChange={handleInputChange('phone')}
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Téléphone</label>
-                <Input type="tel" placeholder="+33 6 12 34 56 78" />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground">Entreprise / Organisation</label>
+                  <Input 
+                    placeholder="Nom de votre entreprise" 
+                    value={formData.company}
+                    onChange={handleInputChange('company')}
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Entreprise / Organisation</label>
-                <Input placeholder="Nom de votre entreprise" />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground">Votre fonction</label>
+                  <Input 
+                    placeholder="Dirigeant, Manager, Porteur de projet..." 
+                    value={formData.position}
+                    onChange={handleInputChange('position')}
+                  />
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Votre fonction</label>
-                <Input placeholder="Dirigeant, Manager, Porteur de projet..." />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Décrivez votre besoin de support *</label>
-                <Textarea 
-                  placeholder="Quel est votre principal défi actuel ? Quels résultats souhaitez-vous obtenir ?"
-                  rows={4}
-                />
-              </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-foreground">Décrivez votre besoin de support *</label>
+                  <Textarea 
+                    placeholder="Quel est votre principal défi actuel ? Quels résultats souhaitez-vous obtenir ?"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange('message')}
+                  />
+                </div>
 
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
@@ -91,10 +159,10 @@ const Contact = () => {
                 </p>
               </div>
 
-              <Button variant="hero" size="lg" className="w-full">
-                Demander mon diagnostic gratuit
-                <ArrowRight className="ml-2" />
-              </Button>
+                <Button variant="hero" size="lg" className="w-full" onClick={handleSubmit}>
+                  Demander mon diagnostic gratuit
+                  <ArrowRight className="ml-2" />
+                </Button>
               {/* Alternative CTA ocre : <Button variant="cta" size="lg" className="w-full">Demander mon diagnostic gratuit<ArrowRight className="ml-2" /></Button> */}
             </CardContent>
           </Card>
