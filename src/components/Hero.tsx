@@ -65,7 +65,7 @@ const Hero = () => {
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
               <div className="flex items-center">
                 <Users className="w-4 h-4 mr-2 text-accent" />
-                +50 dirigeants accompagnés
+                +20 dirigeants accompagnés
               </div>
               <div className="flex items-center">
                 <Target className="w-4 h-4 mr-2 text-accent" />
