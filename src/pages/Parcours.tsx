@@ -12,30 +12,30 @@ const Parcours = () => {
     document.title = "Mon parcours – KLYRA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "15 ans d'entrepreneuriat et d'accompagnement terrain. Découvrez le parcours de Cyril Lanzetto, fondateur de KLYRA.");
+      metaDescription.setAttribute('content', "Parcours atypique de Cyril Lanzetto : de petit délinquant à entrepreneur prospère. Découvrez 15 ans d'expérience en création et cession d'entreprises.");
     }
   }, []);
 
   const timeline = [
     {
-      year: "2009-2015",
-      title: "Création et développement d'entreprises",
-      description: "Fondation et développement de plusieurs structures entrepreneuriales dans différents secteurs d'activité."
+      year: "Début de carrière",
+      title: "Ouvrier, magasinier, maçon",
+      description: "Parcours terrain dans le bâtiment, puis bureaux d'ingénierie commerciale chez Vinci Construction."
     },
     {
-      year: "2016-2020", 
-      title: "Direction générale et transformation",
-      description: "Management d'équipes, restructuration d'organisations et pilotage de projets de transformation majeurs."
+      year: "22-34 ans", 
+      title: "Formation et spécialisation",
+      description: "Diplôme de technicien du bâtiment, puis Bac Scientifique à Montpellier et diplôme d'opticien à l'ISO Marseille."
     },
     {
-      year: "2021-2023",
-      title: "Conseil stratégique indépendant",
-      description: "Accompagnement de dirigeants dans leurs décisions stratégiques et leurs transitions d'entreprise."
+      year: "2016-2024",
+      title: "Visiopolis - Chaîne d'optique",
+      description: "Cofondation et développement jusqu'à 1,8 M€ de CA en 10 ans. Cession réussie en 2024."
     },
     {
-      year: "2024",
-      title: "Création de KLYRA",
-      description: "Lancement de la méthode d'accompagnement structurée pour sécuriser les transitions entrepreneuriales."
+      year: "2022-2025",
+      title: "CJD Montpellier et Klyra360",
+      description: "Membre actif CJD, animation commission Objectif+. Fondation de Klyra360 pour accompagner les transitions."
     }
   ];
 
@@ -43,30 +43,30 @@ const Parcours = () => {
     {
       icon: Target,
       title: "Clarté",
-      description: "Des objectifs nets, des étapes précises, un cap maintenu en toutes circonstances."
+      description: "La performance n'est rien sans la clarté. Des objectifs nets et un cap maintenu."
     },
     {
       icon: Zap,
       title: "Structure",
-      description: "Une approche méthodique et des outils éprouvés pour maximiser vos chances de réussite."
+      description: "Un cadre clair, un déroulé précis. Une approche méthodique orientée résultats."
     },
     {
       icon: Heart,
-      title: "Impact",
-      description: "Des résultats concrets et mesurables qui transforment durablement votre entreprise."
+      title: "Action",
+      description: "La clarté n'est rien sans l'action. Livrables concrets et plan d'action en main."
     },
     {
       icon: Shield,
-      title: "Honneur",
-      description: "Un engagement total, une confidentialité absolue et une loyauté sans faille."
+      title: "Passion",
+      description: "L'action n'est rien sans la passion. Un engagement total pour vos réussites."
     }
   ];
 
   const strengths = [
-    "Courage face aux défis complexes",
-    "Exigence dans l'exécution",
-    "Clarté dans la communication",
-    "Capacité d'exécution terrain"
+    "Rigueur et maîtrise (Karaté 2e dan)",
+    "Performance et endurance (CrossFit)",
+    "Stratégie et adaptation (VTT)",
+    "Discipline et résultats concrets"
   ];
 
   return (
@@ -80,7 +80,7 @@ const Parcours = () => {
               Mon parcours
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              15 ans d'entrepreneuriat, d'accompagnement et d'exécution terrain
+              Un parcours atypique au service de la performance et de la transmission
             </p>
           </div>
         </section>
@@ -102,17 +102,20 @@ const Parcours = () => {
 
               {/* Right - Content */}
               <div className="space-y-6">
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Entrepreneur depuis 2009, j'ai créé, développé et dirigé plusieurs entreprises dans des secteurs variés. Cette expérience m'a donné une compréhension concrète des défis que rencontrent les dirigeants.
-                  </p>
-                  <p>
-                    Après avoir accompagné de nombreux entrepreneurs dans leurs transitions les plus critiques, j'ai créé KLYRA pour structurer cette expertise et la rendre accessible.
-                  </p>
-                  <p>
-                    Ma conviction : chaque transition réussie repose sur une préparation méthodique, une exécution rigoureuse et un accompagnement adapté.
-                  </p>
-                </div>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Rien, dans mes débuts, ne laissait présager que je deviendrais chef d'entreprise. Mon enfance a été mouvementée, parfois compliquée, et mon parcours scolaire chaotique.
+                </p>
+                <p>
+                  De petit délinquant à entrepreneur passionné, j'ai appris, expérimenté, échoué et rebondi… jusqu'à créer plusieurs sociétés prospères.
+                </p>
+                <p>
+                  Parti de rien, j'ai cofondé Visiopolis, développée jusqu'à 1,8 M€ de CA avant sa cession en 2024. Aujourd'hui, j'accompagne dirigeants et équipes vers la performance.
+                </p>
+                <p>
+                  Ma conviction : "Je ne suis pas là pour dire ce que vous voulez entendre, mais pour identifier les leviers de performance… même si cela bouscule."
+                </p>
+              </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-4">Mes forces</h3>
