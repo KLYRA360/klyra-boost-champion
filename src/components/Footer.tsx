@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import klyraLogo from "@/assets/klyra-logo.png";
+import klyraLogoLight from "@/assets/klyra-logo-light.svg";
 import { 
   Mail, 
   Phone, 
@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
-              <img src={klyraLogo} alt="KLYRA360 — logo" className="h-8 md:h-9 w-auto" style={{filter: 'brightness(0) saturate(100%) invert(100%)'}} />
+              <img src={klyraLogoLight} alt="KLYRA360 — logo" className="h-8 md:h-9 w-auto" loading="eager" />
               <div>
                 <h3 className="text-xl font-bold">KLYRA360</h3>
                 <p className="text-sm text-primary-foreground/80">CLARIFIER - STRUCTURER - IMPACTER</p>
