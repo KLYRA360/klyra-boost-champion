@@ -45,13 +45,8 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Mobile CTAs and menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <a href="/urgence">
-              <Button variant="outline-klyra" size="sm">
-                Urgence
-              </Button>
-            </a>
+          {/* Mobile menu button only */}
+          <div className="md:hidden flex items-center">
             <Button 
               variant="ghost" 
               size="sm" 
@@ -61,6 +56,15 @@ const Header = () => {
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
+        </div>
+
+        {/* Mobile Urgence button - positioned above menu */}
+        <div className="md:hidden mt-2 flex justify-end">
+          <a href="/urgence">
+            <Button variant="outline-klyra" size="sm">
+              Urgence
+            </Button>
+          </a>
         </div>
 
         {/* Mobile menu */}
