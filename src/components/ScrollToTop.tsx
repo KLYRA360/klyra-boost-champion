@@ -6,13 +6,30 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (hash) {
-      // Wait for the component to render, then scroll to the anchor
-      setTimeout(() => {
-        const element = document.getElementById(hash.replace('#', ''));
+      // Retry logic to scroll to anchor element
+      const targetId = hash.replace('#', '');
+      let attempts = 0;
+      const maxAttempts = 20; // 20 attempts * 50ms = 1s max
+      
+      const scrollToElement = () => {
+        const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          return true;
         }
-      }, 100);
+        return false;
+      };
+
+      // Try immediately first
+      if (!scrollToElement()) {
+        // If not found, retry with intervals
+        const interval = setInterval(() => {
+          attempts++;
+          if (scrollToElement() || attempts >= maxAttempts) {
+            clearInterval(interval);
+          }
+        }, 50);
+      }
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });
     }
