@@ -89,35 +89,50 @@ const Parcours = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-subtle">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Mon parcours
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Un parcours atypique au service de la performance et de la transmission
-            </p>
+        <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, rgba(11, 80, 87, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%)' }}>
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              {/* Left - Content */}
+              <div className="text-center lg:text-left space-y-8">
+                <div className="space-y-6">
+                  <h1 className="text-4xl md:text-6xl font-bold text-foreground animate-fade-up">
+                    Mon parcours
+                  </h1>
+                  <p className="text-xl md:text-2xl text-muted-foreground animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                    Un parcours atypique au service de la performance et de la transmission
+                  </p>
+                </div>
+                <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                  <Button asChild variant="cta" size="lg">
+                    <a href="#etapes-cles">
+                      Découvrir mes étapes clés
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right - Photo */}
+              <div className="text-center lg:text-right animate-fade-up" style={{ animationDelay: '0.3s' }}>
+                <div className="inline-block relative">
+                  <div className="w-96 h-96 bg-accent/20 rounded-full flex items-center justify-center">
+                    <img 
+                      src={cyrilPortrait} 
+                      alt="Cyril Lanzetto, fondateur de KLYRA360"
+                      className="w-80 h-80 rounded-full object-cover shadow-elegant"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Introduction */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              {/* Left - Photo */}
-              <div className="text-center lg:text-left">
-                <div className="inline-block">
-                  <img 
-                    src={cyrilPortrait} 
-                    alt="Cyril Lanzetto"
-                    className="w-80 h-80 rounded-full object-cover shadow-elegant mx-auto lg:mx-0"
-                  />
-                </div>
-              </div>
-
-              {/* Right - Content */}
-              <div className="space-y-6">
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-8">
+                <div className="space-y-4 text-muted-foreground leading-relaxed text-center">
                   <p>
                     Rien, dans mes débuts, ne laissait présager que je deviendrais chef d'entreprise. Mon enfance a été mouvementée, parfois compliquée, et mon parcours scolaire chaotique.
                   </p>
@@ -132,16 +147,16 @@ const Parcours = () => {
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">Mes forces</h3>
-                  <ul className="space-y-2">
+                <div className="text-center">
+                  <h3 className="text-xl font-semibold text-foreground mb-6">Mes forces</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                     {strengths.map((strength, index) => (
-                      <li key={index} className="flex items-center space-x-3">
+                      <div key={index} className="flex items-center justify-center space-x-3">
                         <span className="w-2 h-2 bg-klyra rounded-full"></span>
                         <span className="text-muted-foreground">{strength}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -149,7 +164,7 @@ const Parcours = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-20 bg-muted/30">
+        <section id="etapes-cles" className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
