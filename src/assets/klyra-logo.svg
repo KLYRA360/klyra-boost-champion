@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="klyra-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b5057;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f7981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#klyra-gradient)" stroke="#0b5057" stroke-width="2"/>
+  
+  <!-- Letter K stylized -->
+  <g fill="white" stroke="white" stroke-width="1">
+    <!-- Vertical line of K -->
+    <rect x="25" y="25" width="4" height="50" rx="2"/>
+    
+    <!-- Upper diagonal of K -->
+    <polygon points="29,35 29,39 45,25 41,25"/>
+    
+    <!-- Lower diagonal of K -->
+    <polygon points="29,61 29,65 45,75 41,75"/>
+    
+    <!-- Center connection -->
+    <rect x="29" y="47" width="8" height="4" rx="2"/>
+  </g>
+  
+  <!-- Accent dot -->
+  <circle cx="65" cy="30" r="4" fill="#e8b849"/>
+</svg>
