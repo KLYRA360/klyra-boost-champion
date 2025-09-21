@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Award, Users, Target, TrendingUp, ArrowRight, Quote } from "lucide-react";
+import { Link } from "react-router-dom";
 const About = () => {
   const achievements = [{
     icon: Users,
@@ -73,9 +74,11 @@ const About = () => {
               </ul>
             </div>
 
-            <Button variant="outline-klyra" size="lg">
-              En savoir plus sur mon parcours
-              <ArrowRight className="ml-2" />
+            <Button asChild variant="outline-klyra" size="lg">
+              <Link to="/mon-parcours">
+                En savoir plus sur mon parcours
+                <ArrowRight className="ml-2" />
+              </Link>
             </Button>
           </div>
 
