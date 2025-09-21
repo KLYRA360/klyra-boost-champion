@@ -7,20 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import {
-  UserX,
-  CircleDollarSign,
-  AlertTriangle,
-  HeartPulse,
-  CheckCircle,
-  Network,
-  FileText,
-  Clock,
-  ExternalLink,
-  Phone,
-  Mail
-} from "lucide-react";
-
+import { UserX, CircleDollarSign, AlertTriangle, HeartPulse, CheckCircle, Network, FileText, Clock, ExternalLink, Phone, Mail } from "lucide-react";
 const STRIPE_ROUGE = "https://buy.stripe.com/4gM8wJbZB26o1hoe8a9MY00";
 const STRIPE_ORANGE = "https://buy.stripe.com/4gMeV7gfReTa6BI5BE9MY01";
 
@@ -34,52 +21,41 @@ const isWithinBusinessHours = (): boolean => {
     minute: '2-digit',
     hour12: false
   }).formatToParts(now);
-
   const dayName = parisTime.find(part => part.type === 'weekday')?.value;
   const hour = parseInt(parisTime.find(part => part.type === 'hour')?.value || '0');
-  
   const isWeekday = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'].includes(dayName || '');
   const isWorkingHour = hour >= 9 && hour < 19;
-  
   return isWeekday && isWorkingHour;
 };
-
 const getNextOpeningMessage = (level: "rouge" | "orange"): string => {
   if (level === "rouge") {
     return "Rappel prioritaire le jour ouvré suivant entre 09:00 et 10:00.";
   }
   return "Rappel le jour ouvré suivant avant 13:00.";
 };
-
 const Urgence = () => {
   const [selectedLevel, setSelectedLevel] = useState<"rouge" | "orange">("rouge");
   const [modeRouge, setModeRouge] = useState<"appel" | "visio">("appel");
   const [modeOrange, setModeOrange] = useState<"appel" | "visio">("appel");
   const [isBusinessHours, setIsBusinessHours] = useState<boolean>(true);
-
   useEffect(() => {
     const checkBusinessHours = () => {
       setIsBusinessHours(isWithinBusinessHours());
     };
-    
     checkBusinessHours();
     // Check every minute
     const interval = setInterval(checkBusinessHours, 60000);
-    
     return () => clearInterval(interval);
   }, []);
-
   const handlePayment = (level: "rouge" | "orange") => {
     if (!isBusinessHours) return;
-    
+
     // Save selected mode to localStorage
     const selectedMode = level === "rouge" ? modeRouge : modeOrange;
     localStorage.setItem("urgence_mode", selectedMode);
-    
     const url = level === "rouge" ? STRIPE_ROUGE : STRIPE_ORANGE;
     window.open(url, "_blank", "noopener");
   };
-
   const handleContactOutOfHours = () => {
     const subject = encodeURIComponent("Demande d'urgence - Rappel à l'ouverture");
     const body = encodeURIComponent(`Bonjour,
@@ -100,12 +76,9 @@ Email :
 Merci de me recontacter ${getNextOpeningMessage(selectedLevel).toLowerCase()}
 
 Cordialement`);
-    
     window.open(`mailto:TODO_EMAIL_ADDRESS?subject=${subject}&body=${body}`, "_blank");
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-8">
@@ -120,13 +93,11 @@ Cordialement`);
               </p>
             </div>
             
-            {!isBusinessHours && (
-              <div className="mt-2 text-center">
+            {!isBusinessHours && <div className="mt-2 text-center">
                 <p className="text-sm text-muted-foreground bg-muted rounded-md px-3 py-2 inline-block">
                   Actuellement hors plage d'ouverture. Nous vous recontactons à l'ouverture (dès 09:00).
                 </p>
-              </div>
-            )}
+              </div>}
           </div>
         </section>
 
@@ -146,11 +117,7 @@ Cordialement`);
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Code Rouge */}
-            <Card className={`rounded-2xl border-2 transition-all duration-300 ${
-              selectedLevel === "rouge" 
-                ? "border-primary shadow-lg" 
-                : "border-border hover:border-primary/50"
-            }`}>
+            <Card className={`rounded-2xl border-2 transition-all duration-300 ${selectedLevel === "rouge" ? "border-primary shadow-lg" : "border-border hover:border-primary/50"}`}>
               <CardHeader className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Badge variant="destructive" className="px-3 py-1">
@@ -165,11 +132,7 @@ Cordialement`);
               <CardContent className="space-y-4">
                 <div>
                   <Label className="text-sm font-medium mb-3 block">Mode de contact</Label>
-                  <RadioGroup 
-                    value={modeRouge} 
-                    onValueChange={(value: "appel" | "visio") => setModeRouge(value)}
-                    className="flex gap-6"
-                  >
+                  <RadioGroup value={modeRouge} onValueChange={(value: "appel" | "visio") => setModeRouge(value)} className="flex gap-6">
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="appel" id="rouge-appel" />
                       <Label htmlFor="rouge-appel">Appel</Label>
@@ -181,54 +144,32 @@ Cordialement`);
                   </RadioGroup>
                 </div>
                 
-                {!isBusinessHours && (
-                  <div className="mb-4 p-3 bg-muted rounded-lg text-center">
+                {!isBusinessHours && <div className="mb-4 p-3 bg-muted rounded-lg text-center">
                     <p className="text-sm text-muted-foreground mb-2">
                       {getNextOpeningMessage("rouge")}
                     </p>
-                  </div>
-                )}
+                  </div>}
                 
-                {isBusinessHours ? (
-                  <Button 
-                    onClick={() => handlePayment("rouge")}
-                    className="w-full"
-                    size="lg"
-                  >
+                {isBusinessHours ? <Button onClick={() => handlePayment("rouge")} className="w-full" size="lg">
                     Payer & démarrer
                     <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                ) : (
-                  <Button 
-                    onClick={handleContactOutOfHours}
-                    variant="secondary"
-                    className="w-full"
-                    size="lg"
-                  >
+                  </Button> : <Button onClick={handleContactOutOfHours} variant="secondary" className="w-full" size="lg">
                     Être rappelé à l'ouverture (dès 09:00)
                     <Mail className="w-4 h-4 ml-2" />
-                  </Button>
-                )}
+                  </Button>}
                 
                 <p className="text-xs text-muted-foreground text-center">
                   Après paiement, vous serez redirigé vers /urgence/merci
                 </p>
                 
-                <a 
-                  href="#inclus" 
-                  className="block text-center text-sm text-primary hover:underline"
-                >
+                <a href="#inclus" className="block text-center text-sm text-primary hover:underline">
                   Voir ce qui est inclus
                 </a>
               </CardContent>
             </Card>
 
             {/* Code Orange */}
-            <Card className={`rounded-2xl border-2 transition-all duration-300 ${
-              selectedLevel === "orange" 
-                ? "border-primary shadow-lg" 
-                : "border-border hover:border-primary/50"
-            }`}>
+            <Card className={`rounded-2xl border-2 transition-all duration-300 ${selectedLevel === "orange" ? "border-primary shadow-lg" : "border-border hover:border-primary/50"}`}>
               <CardHeader className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Badge variant="secondary" className="px-3 py-1">
@@ -238,16 +179,12 @@ Cordialement`);
                 <CardTitle className="text-2xl">Code Orange</CardTitle>
                 <CardDescription className="text-lg">≤ 4 h</CardDescription>
                 <div className="text-3xl font-bold text-primary mt-2">390 € HT</div>
-                <p className="text-sm text-muted-foreground">Appel/visio 60 min</p>
+                <p className="text-sm text-muted-foreground">Appel/visio 45-60 min</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <Label className="text-sm font-medium mb-3 block">Mode de contact</Label>
-                  <RadioGroup 
-                    value={modeOrange} 
-                    onValueChange={(value: "appel" | "visio") => setModeOrange(value)}
-                    className="flex gap-6"
-                  >
+                  <RadioGroup value={modeOrange} onValueChange={(value: "appel" | "visio") => setModeOrange(value)} className="flex gap-6">
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem value="appel" id="orange-appel" />
                       <Label htmlFor="orange-appel">Appel</Label>
@@ -259,43 +196,25 @@ Cordialement`);
                   </RadioGroup>
                 </div>
                 
-                {!isBusinessHours && (
-                  <div className="mb-4 p-3 bg-muted rounded-lg text-center">
+                {!isBusinessHours && <div className="mb-4 p-3 bg-muted rounded-lg text-center">
                     <p className="text-sm text-muted-foreground mb-2">
                       {getNextOpeningMessage("orange")}
                     </p>
-                  </div>
-                )}
+                  </div>}
                 
-                {isBusinessHours ? (
-                  <Button 
-                    onClick={() => handlePayment("orange")}
-                    className="w-full"
-                    size="lg"
-                  >
+                {isBusinessHours ? <Button onClick={() => handlePayment("orange")} className="w-full" size="lg">
                     Payer & démarrer
                     <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
-                ) : (
-                  <Button 
-                    onClick={handleContactOutOfHours}
-                    variant="secondary"
-                    className="w-full"
-                    size="lg"
-                  >
+                  </Button> : <Button onClick={handleContactOutOfHours} variant="secondary" className="w-full" size="lg">
                     Être rappelé à l'ouverture (dès 09:00)
                     <Mail className="w-4 h-4 ml-2" />
-                  </Button>
-                )}
+                  </Button>}
                 
                 <p className="text-xs text-muted-foreground text-center">
                   Après paiement, vous serez redirigé vers /urgence/merci
                 </p>
                 
-                <a 
-                  href="#inclus" 
-                  className="block text-center text-sm text-primary hover:underline"
-                >
+                <a href="#inclus" className="block text-center text-sm text-primary hover:underline">
                   Voir ce qui est inclus
                 </a>
               </CardContent>
@@ -443,8 +362,6 @@ Cordialement`);
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Urgence;
