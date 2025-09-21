@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Brand & Description */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <img src={klyraLogo} alt="KLYRA360 — logo" className="h-8 md:h-9 w-auto" loading="eager" />
               <div>
