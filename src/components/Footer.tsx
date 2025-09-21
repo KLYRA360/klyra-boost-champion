@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
-              <img src={klyraLogo} alt="KLYRA360 — logo" className="h-7 md:h-8 w-auto brightness-0 invert" />
+              <img src={klyraLogo} alt="KLYRA360 — logo" className="h-8 md:h-9 w-auto filter brightness-0 invert" />
               <div>
                 <h3 className="text-xl font-bold">KLYRA360</h3>
                 <p className="text-sm text-primary-foreground/80">CLARIFIER - STRUCTURER - IMPACTER</p>
