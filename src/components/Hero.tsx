@@ -56,9 +56,12 @@ const Hero = () => {
                 <ArrowRight className="ml-2" />
               </a>
               {/* Alternative CTA ocre : <Button variant="cta" size="lg" className="text-lg">Demander votre diagnostic gratuit<ArrowRight className="ml-2" /></Button> */}
-              <Button variant="outline-klyra" size="lg" className="text-lg">
+              <a 
+                href="#methode" 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 px-8 text-lg"
+              >
                 Découvrir la méthode
-              </Button>
+              </a>
             </div>
 
             {/* Trust indicators */}
