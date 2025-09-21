@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Heart, Target, Zap, Shield } from "lucide-react";
+import { Hammer, GraduationCap, Building2, Activity, Users, Target, Heart, Zap, Shield } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import cyrilPortrait from "@/assets/cyril-portrait.jpg";
@@ -18,24 +17,40 @@ const Parcours = () => {
 
   const timeline = [
     {
-      year: "Début de carrière",
-      title: "Ouvrier, magasinier, maçon",
-      description: "Parcours terrain dans le bâtiment et dans de nombreuses petites structures. Formation sur le tas et auto-apprentissage pendant de nombreuses années - le dur, le terrain, les premiers pas."
+      year: "2006-2012",
+      title: "Débuts terrain – bâtiment & PME",
+      description: "Parcours opérationnel (chantier, logistique, petites structures). Apprentissage du 'faire' et de l'exécution.",
+      icon: Hammer
     },
     {
-      year: "22-34 ans", 
-      title: "Formation et spécialisation",
-      description: "Retour sur les bancs de l'école à partir de 24 ans afin de faire évoluer ma position, premier diplôme de technicien en étude et économie de la construction dans le bâtiment en 2005, puis retour sur les bancs de la fac en 2016 pour un équivalent BAC scientifique et enfin obtention de mon BTS d'opticien lunetier en 2017."
+      year: "2005, 2016-2017", 
+      title: "Retour aux études & spécialisation",
+      description: "Tech. étude/éco de la construction (2005), équivalent BAC scientifique (2016), BTS Opticien-Lunetier (2017).",
+      icon: GraduationCap
     },
     {
       year: "2016-2024",
-      title: "Visiopolis - Chaîne d'optique",
-      description: "Cofondation et développement jusqu'à 1,8 M€ de CA en 10 ans. Cession réussie en 2024."
+      title: "Visiopolis – chaîne d'optique",
+      description: "Cofondateur. Croissance jusqu'à 1,8 M€ de CA en 10 ans. Cession en 2024.",
+      icon: Building2
     },
     {
-      year: "2022-2025",
-      title: "CJD Montpellier et Klyra360",
-      description: "Membre actif CJD, animation commission Objectif+. Fondation de Klyra360 pour accompagner les transitions."
+      year: "2022-…",
+      title: "WYDEV – WYTEST / WYEXPERT",
+      description: "Dépistage auditif & visuel + télé-expertise ORL/ophtalmo. Pilotes réseaux nationaux, industrialisation et partenariats.",
+      icon: Activity
+    },
+    {
+      year: "2022-…",
+      title: "CJD Montpellier – engagement & leadership",
+      description: "Membre actif, animation commission Objectif+. Posture de dirigeant, impact, éthique.",
+      icon: Users
+    },
+    {
+      year: "2024-…",
+      title: "KLYRA360 – accompagnement de dirigeants",
+      description: "Diagnostics 360°, stratégie d'exécution et coaching opérationnel. Clarté – Structure – Impact.",
+      icon: Target
     }
   ];
 
@@ -102,20 +117,20 @@ const Parcours = () => {
 
               {/* Right - Content */}
               <div className="space-y-6">
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Rien, dans mes débuts, ne laissait présager que je deviendrais chef d'entreprise. Mon enfance a été mouvementée, parfois compliquée, et mon parcours scolaire chaotique.
-                </p>
-                <p>
-                  De petit délinquant à entrepreneur passionné, j'ai appris, expérimenté, échoué et rebondi… jusqu'à créer plusieurs sociétés prospères.
-                </p>
-                <p>
-                  Parti de rien, j'ai cofondé Visiopolis, développée jusqu'à 1,8 M€ de CA avant sa cession en 2024. Aujourd'hui, j'accompagne dirigeants et équipes vers la performance.
-                </p>
-                <p>
-                  Ma conviction : "Je ne suis pas là pour dire ce que vous voulez entendre, mais pour identifier les leviers de performance… même si cela bouscule."
-                </p>
-              </div>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Rien, dans mes débuts, ne laissait présager que je deviendrais chef d'entreprise. Mon enfance a été mouvementée, parfois compliquée, et mon parcours scolaire chaotique.
+                  </p>
+                  <p>
+                    De petit délinquant à entrepreneur passionné, j'ai appris, expérimenté, échoué et rebondi… jusqu'à créer plusieurs sociétés prospères.
+                  </p>
+                  <p>
+                    Parti de rien, j'ai cofondé Visiopolis, développée jusqu'à 1,8 M€ de CA avant sa cession en 2024. Aujourd'hui, j'accompagne dirigeants et équipes vers la performance.
+                  </p>
+                  <p>
+                    Ma conviction : "Je ne suis pas là pour dire ce que vous voulez entendre, mais pour identifier les leviers de performance… même si cela bouscule."
+                  </p>
+                </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-4">Mes forces</h3>
@@ -143,28 +158,39 @@ const Parcours = () => {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="space-y-8">
-                {timeline.map((item, index) => (
-                  <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
-                    <CardContent className="p-8">
-                      <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6">
-                        <div className="flex-shrink-0">
-                          <span className="inline-block bg-klyra text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
-                            {item.year}
-                          </span>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-foreground mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {item.description}
-                          </p>
+              <div className="relative">
+                {/* Vertical line */}
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-accent/30"></div>
+                
+                <div className="space-y-8">
+                  {timeline.map((item, index) => (
+                    <div key={index} className="relative flex items-start space-x-6">
+                      {/* Icon circle */}
+                      <div className="relative z-10 flex-shrink-0">
+                        <div className="w-16 h-16 bg-accent/15 rounded-full flex items-center justify-center">
+                          <item.icon className="w-8 h-8" style={{ color: '#0b5057' }} />
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      
+                      {/* Content card */}
+                      <Card className="flex-1 group hover:shadow-elegant transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="space-y-3">
+                            <span className="inline-block bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                              {item.year}
+                            </span>
+                            <h3 className="text-xl font-semibold text-foreground">
+                              {item.title}
+                            </h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -186,8 +212,8 @@ const Parcours = () => {
               {values.map((value, index) => (
                 <Card key={index} className="group hover:shadow-elegant transition-all duration-300 text-center">
                   <CardContent className="p-8">
-                    <div className="bg-klyra/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-klyra/20 transition-colors duration-300">
-                      <value.icon className="w-8 h-8 text-klyra" />
+                    <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                      <value.icon className="w-8 h-8" style={{ color: '#0b5057' }} />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-4">
                       {value.title}
@@ -211,10 +237,10 @@ const Parcours = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Discutons de votre situation et voyons comment je peux vous accompagner
             </p>
-            <Button asChild variant="default" size="lg">
-              <Link to="/contact">
+            <Button asChild variant="hero" size="lg">
+              <a href="/#diagnostic">
                 Échanger 30 min
-              </Link>
+              </a>
             </Button>
           </div>
         </section>
