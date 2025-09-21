@@ -111,7 +111,7 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-accent" />
                   <div>
                     <p className="font-medium">Téléphone</p>
-                    <p className="text-muted-foreground">+33 (0)6 XX XX XX XX</p>
+                    <p className="text-muted-foreground">+33 (0)7 82 35 02 54</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
