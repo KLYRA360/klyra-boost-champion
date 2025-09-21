@@ -5,8 +5,8 @@ import { ArrowRight, CheckCircle, Users, Target, TrendingUp } from "lucide-react
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
-      <div className="container mx-auto px-6 py-12 md:py-16 lg:py-20">
+    <section className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
+      <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-8 gap-y-6">
           {/* Left Column - Content */}
           <div className="space-y-6">
@@ -24,7 +24,7 @@ const Hero = () => {
                 <span className="text-accent">réussir vos transitions</span>
               </h1>
               
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-[60ch] mt-3">
+              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-[60ch] mt-2">
                 J'accompagne les dirigeants, porteurs de projet et organisations dans leurs moments clés 
                 avec une méthodologie structurée et des résultats mesurables.
               </p>
@@ -47,11 +47,14 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <Button variant="hero" size="lg" className="text-lg">
+            <div className="flex flex-col sm:flex-row gap-3 mt-2">
+              <a 
+                href="/#diagnostic" 
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 text-lg"
+              >
                 Demander votre diagnostic gratuit
                 <ArrowRight className="ml-2" />
-              </Button>
+              </a>
               {/* Alternative CTA ocre : <Button variant="cta" size="lg" className="text-lg">Demander votre diagnostic gratuit<ArrowRight className="ml-2" /></Button> */}
               <Button variant="outline-klyra" size="lg" className="text-lg">
                 Découvrir la méthode
@@ -77,12 +80,12 @@ const Hero = () => {
               <img 
                 src={heroImage} 
                 alt="Support professionnel pour dirigeants - Accompagnement d'entreprise KLYRA360"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[520px] lg:h-[560px] object-cover"
               />
             </Card>
             
             {/* Floating card */}
-            <Card className="absolute -bottom-4 -left-4 p-4 bg-background shadow-strong border-l-4 border-l-accent">
+            <Card className="absolute -bottom-4 -left-4 p-5 bg-background shadow-strong border-l-4 border-l-accent">
               <div className="flex items-center space-x-3">
                 <TrendingUp className="w-6 h-6 text-accent" />
                 <div>
