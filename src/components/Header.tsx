@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import klyraLogo from "@/assets/klyra-logo.png";
+import klyraLogo from "@/assets/klyra-logo-dark.png";
 
 const Header = () => {
   return (
