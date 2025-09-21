@@ -41,6 +41,7 @@ const UrgenceMerci = () => {
   const [searchParams] = useSearchParams();
   const type = searchParams.get("type") as "rouge" | "orange" | null;
   const [isBusinessHours, setIsBusinessHours] = useState<boolean>(true);
+  const [urgenceMode, setUrgenceMode] = useState<"appel" | "visio">("appel");
   
   const [slaInfo, setSlaInfo] = useState<{
     title: string;
@@ -58,6 +59,12 @@ const UrgenceMerci = () => {
     const checkBusinessHours = () => {
       setIsBusinessHours(isWithinBusinessHours());
     };
+    
+    // Read mode from localStorage
+    const savedMode = localStorage.getItem("urgence_mode") as "appel" | "visio" | null;
+    if (savedMode) {
+      setUrgenceMode(savedMode);
+    }
     
     checkBusinessHours();
     // Check every minute
@@ -114,10 +121,16 @@ const UrgenceMerci = () => {
               </CardHeader>
               <CardContent>
                 {isBusinessHours ? (
-                  <p className="text-muted-foreground">
-                    Nous nous engageons à vous recontacter dans ce délai. 
-                    Vous recevrez un e-mail de confirmation avec tous les détails.
-                  </p>
+                  <div className="space-y-3">
+                    <p className="text-muted-foreground">
+                      {urgenceMode === "appel" 
+                        ? "Nous vous appelons dans le délai garanti." 
+                        : "Lien Meet/Teams envoyé."}
+                    </p>
+                    <p className="text-muted-foreground">
+                      Vous recevrez un e-mail de confirmation avec tous les détails.
+                    </p>
+                  </div>
                 ) : (
                   <div className="space-y-3">
                     <p className="text-muted-foreground">
@@ -137,13 +150,23 @@ const UrgenceMerci = () => {
           {/* Actions */}
           <section className="max-w-lg mx-auto space-y-6">
             <div className="flex flex-col gap-4">
-              <Button size="lg" variant="outline" className="w-full" asChild>
-                <a href="tel:TODO_PHONE_NUMBER">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {/* TODO: Replace with actual phone number */}
-                  Appeler maintenant
-                </a>
-              </Button>
+              {urgenceMode === "appel" ? (
+                <Button size="lg" variant="outline" className="w-full" asChild>
+                  <a href="tel:TODO_PHONE_NUMBER">
+                    <Phone className="w-4 h-4 mr-2" />
+                    {/* TODO: Replace with actual phone number */}
+                    Être appelé maintenant
+                  </a>
+                </Button>
+              ) : (
+                <Button size="lg" variant="outline" className="w-full" asChild>
+                  <a href="mailto:TODO_EMAIL_ADDRESS?subject=Demande lien visio - Commande confirmée&body=Bonjour,%0D%0A%0D%0AJe viens de confirmer ma commande de support d'urgence en mode visio.%0D%0A%0D%0AMerci de m'envoyer le lien Meet/Teams.%0D%0A%0D%0ACordialement">
+                    <Mail className="w-4 h-4 mr-2" />
+                    {/* TODO: Replace with actual email address */}
+                    Recevoir un lien visio
+                  </a>
+                </Button>
+              )}
               
               <Button size="lg" variant="outline" className="w-full" asChild>
                 <a href="mailto:TODO_EMAIL_ADDRESS?subject=Contexte urgence - Commande confirmée&body=Bonjour,%0D%0A%0D%0AJe viens de confirmer ma commande de support d'urgence.%0D%0A%0D%0AContexte de ma situation :%0D%0A[Décrivez votre situation ici]%0D%0A%0D%0ACordialement">

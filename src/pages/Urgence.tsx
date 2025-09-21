@@ -21,9 +21,8 @@ import {
   Mail
 } from "lucide-react";
 
-// TODO: Replace with actual Stripe Payment Links
-const STRIPE_ROUGE = "https://stripe.link/ROUGE_PLACEHOLDER";
-const STRIPE_ORANGE = "https://stripe.link/ORANGE_PLACEHOLDER";
+const STRIPE_ROUGE = "https://buy.stripe.com/4gM8wJbZB26o1hoe8a9MY00";
+const STRIPE_ORANGE = "https://buy.stripe.com/4gMeV7gfReTa6BI5BE9MY01";
 
 // Business hours: Monday to Friday, 9:00-19:00 Europe/Paris
 const isWithinBusinessHours = (): boolean => {
@@ -72,8 +71,13 @@ const Urgence = () => {
 
   const handlePayment = (level: "rouge" | "orange") => {
     if (!isBusinessHours) return;
+    
+    // Save selected mode to localStorage
+    const selectedMode = level === "rouge" ? modeRouge : modeOrange;
+    localStorage.setItem("urgence_mode", selectedMode);
+    
     const url = level === "rouge" ? STRIPE_ROUGE : STRIPE_ORANGE;
-    window.open(url, "_blank");
+    window.open(url, "_blank", "noopener");
   };
 
   const handleContactOutOfHours = () => {
