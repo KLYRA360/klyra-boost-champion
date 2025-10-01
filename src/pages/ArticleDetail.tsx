@@ -223,7 +223,7 @@ const ArticleDetail = () => {
               rel="noopener noreferrer"
             >
               <Button 
-                className="w-full md:w-auto bg-gold hover:bg-gold/90 text-white font-semibold px-8 py-6 text-lg rounded-full"
+                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg rounded-full"
               >
                 S'abonner
               </Button>
