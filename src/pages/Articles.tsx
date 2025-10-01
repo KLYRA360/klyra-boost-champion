@@ -9,8 +9,8 @@ import articleMindfulness from "@/assets/article-mindfulness.jpg";
 const articles = [
   {
     id: "maman-jai-peur-de-lavion",
-    title: "Maman, j'ai peur de l'avion",
-    excerpt: "Comment accompagner les peurs et les angoisses de vos enfants face aux voyages en avion ? Découvrez des techniques efficaces pour les rassurer.",
+    title: "✈️ Maman, j'ai peur de l'avion",
+    excerpt: "Et si la peur était un faux signal ? Réflexion sur nos peurs héritées, nos comportements à risque et comment transformer l'incertitude en moteur d'action.",
     image: articleAvion,
   },
   {
