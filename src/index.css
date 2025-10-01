@@ -31,6 +31,9 @@ All colors MUST be HSL.
 
     --cta: 33 100% 33%;
     --cta-foreground: 0 0% 98%;
+    
+    --gold: 33 100% 33%;
+    --gold-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

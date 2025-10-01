@@ -30,6 +30,9 @@ const Header = () => {
             <a href="/#a-propos" className="text-foreground hover:text-primary transition-colors">
               À propos
             </a>
+            <a href="/articles" className="text-foreground hover:text-primary transition-colors">
+              Articles
+            </a>
             <a href="/nous-rejoindre" className="text-foreground hover:text-primary transition-colors">
               Nous rejoindre
             </a>
@@ -91,6 +94,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 À propos
+              </a>
+              <a 
+                href="/articles" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Articles
               </a>
               <a 
                 href="/nous-rejoindre" 
