@@ -119,7 +119,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Linkedin className="w-4 h-4 flex-shrink-0" />
                 <a 
-                  href="https://linkedin.com/in/cyril-lanzetto" 
+                  href="https://www.linkedin.com/in/cyril-lanzetto-445663b2/" 
                   className="hover:text-primary-foreground transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
