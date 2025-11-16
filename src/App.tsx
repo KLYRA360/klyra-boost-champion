@@ -12,6 +12,7 @@ import NousRejoindre from "./pages/NousRejoindre";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import MentoringDirigeant from "./pages/MentoringDirigeant";
+import DiagnosticStrategique360 from "./pages/DiagnosticStrategique360";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
           <Route path="/mentoring-dirigeant-montpellier" element={<MentoringDirigeant />} />
+          <Route path="/diagnostic-strategique-360" element={<DiagnosticStrategique360 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
