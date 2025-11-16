@@ -205,7 +205,7 @@ const NousRejoindre = () => {
                       <ul className="space-y-3">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-klyra-green mt-0.5 flex-shrink-0" />
-                          <span>Expérience en coaching ou conseil (3+ ans)</span>
+                          <span>Expérience en mentoring ou conseil (3+ ans)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-klyra-green mt-0.5 flex-shrink-0" />

@@ -49,7 +49,7 @@ const Parcours = () => {
     {
       year: "2024-…",
       title: "KLYRA360 – accompagnement de dirigeants",
-      description: "Diagnostics 360°, stratégie d'exécution et coaching opérationnel. Clarté – Structure – Impact.",
+      description: "Diagnostics 360°, stratégie d'exécution et mentoring opérationnel. Clarté – Structure – Impact.",
       icon: Target
     }
   ];
