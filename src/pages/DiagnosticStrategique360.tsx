@@ -15,15 +15,6 @@ const DiagnosticStrategique360 = () => {
     }
   }, []);
 
-  const scrollToDiagnostic = () => {
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -38,12 +29,16 @@ const DiagnosticStrategique360 = () => {
               Un diagnostic global qui éclaire ce que vous vivez, ce que votre entreprise traverse, et ce qui doit évoluer maintenant.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="lg" onClick={scrollToDiagnostic}>
-                Planifier un diagnostic
-              </Button>
-              <Button variant="outline" size="lg" onClick={scrollToDiagnostic}>
-                Être contacté
-              </Button>
+              <a href="/#diagnostic">
+                <Button variant="cta" size="lg">
+                  Planifier un diagnostic
+                </Button>
+              </a>
+              <a href="/#diagnostic">
+                <Button variant="outline" size="lg">
+                  Être contacté
+                </Button>
+              </a>
             </div>
           </div>
         </section>

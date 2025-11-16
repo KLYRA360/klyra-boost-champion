@@ -5,6 +5,7 @@ import { Brain, Compass, Users, Target, Search, Lightbulb, FileText, RefreshCw, 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+
 const MentoringDirigeant = () => {
   useEffect(() => {
     document.title = "Mentoring Dirigeant Montpellier – Clarté, Soutien & Stratégie | KLYRA360";
@@ -13,14 +14,6 @@ const MentoringDirigeant = () => {
       metaDescription.setAttribute("content", "Accompagnement et mentoring dirigeant à Montpellier : clarté, soutien moral et décisions stratégiques. Entretien découverte gratuit.");
     }
   }, []);
-  const scrollToDiagnostic = () => {
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
   return <div className="min-h-screen bg-background">
       <Header />
       <main>
@@ -33,9 +26,11 @@ const MentoringDirigeant = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Un espace neutre et structurant pour dirigeants, entrepreneurs et managers qui veulent retrouver du souffle, clarifier leur vision et prendre de meilleures décisions.
             </p>
-            <Button variant="cta" size="lg" onClick={scrollToDiagnostic}>
-              Réserver un appel découverte
-            </Button>
+            <a href="/#diagnostic">
+              <Button variant="cta" size="lg">
+                Réserver un appel découverte
+              </Button>
+            </a>
           </div>
         </section>
 
