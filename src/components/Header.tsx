@@ -38,8 +38,11 @@ const Header = () => {
                 <a href="/diagnostic-strategique-360" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors">
                   Diagnostic Stratégique 360°
                 </a>
-                <a href="/transformation-interne-organisation" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors rounded-b-lg">
+                <a href="/transformation-interne-organisation" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors">
                   Transformation Interne & Organisation
+                </a>
+                <a href="/soutien-mental-dirigeant" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors rounded-b-lg">
+                  Soutien Mental Dirigeant
                 </a>
               </div>
             </div>
@@ -117,6 +120,13 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Transformation Interne & Organisation
+                  </a>
+                  <a 
+                    href="/soutien-mental-dirigeant" 
+                    className="text-foreground hover:text-primary transition-colors py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Soutien Mental Dirigeant
                   </a>
                 </div>
               </div>
