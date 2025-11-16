@@ -6,21 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  Target, 
-  CheckCircle, 
-  Layers, 
-  BookOpenCheck, 
-  Briefcase, 
-  Handshake,
-  Users,
-  Puzzle,
-  ShieldCheck,
-  Timer,
-  UserPlus,
-  Building2
-} from "lucide-react";
-
+import { Target, CheckCircle, Layers, BookOpenCheck, Briefcase, Handshake, Users, Puzzle, ShieldCheck, Timer, UserPlus, Building2 } from "lucide-react";
 const NousRejoindre = () => {
   const [coachForm, setCoachForm] = useState({
     nom: "",
@@ -31,7 +17,6 @@ const NousRejoindre = () => {
     experience: "",
     message: ""
   });
-
   const [partnerForm, setPartnerForm] = useState({
     nom: "",
     email: "",
@@ -57,9 +42,7 @@ const NousRejoindre = () => {
     const body = `Nom: ${partnerForm.nom}\nEmail: ${partnerForm.email}\nTéléphone: ${partnerForm.telephone}\nVille: ${partnerForm.ville}\nLinkedIn: ${partnerForm.linkedin}\nDomaine d'expertise: ${partnerForm.expertise}\n\nMessage:\n${partnerForm.message}`;
     window.location.href = `mailto:contact@klyra360.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
-
-  return (
-    <>
+  return <>
       {/* SEO */}
       <title>Nous rejoindre – KLYRA</title>
       <meta name="description" content="Rejoignez KLYRA comme coach certifié ou partenaire. Formation à la Méthode KLYRA, collectif exigeant, accompagnement de dirigeants." />
@@ -80,21 +63,14 @@ const NousRejoindre = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  onClick={() => document.getElementById('coachs')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft"
-                >
-                  <UserPlus className="mr-2 w-5 h-5" />
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('coachs')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="rounded-2xl shadow-soft">Devenir Mentor<UserPlus className="mr-2 w-5 h-5" />
                   Devenir Coach
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  onClick={() => document.getElementById('partenaires')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft"
-                >
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('partenaires')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="rounded-2xl shadow-soft">
                   <Building2 className="mr-2 w-5 h-5" />
                   Devenir Partenaire
                 </Button>
@@ -271,62 +247,51 @@ const NousRejoindre = () => {
                   <form onSubmit={handleCoachSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Nom complet *"
-                          value={coachForm.nom}
-                          onChange={(e) => setCoachForm({...coachForm, nom: e.target.value})}
-                          required
-                        />
+                        <Input placeholder="Nom complet *" value={coachForm.nom} onChange={e => setCoachForm({
+                        ...coachForm,
+                        nom: e.target.value
+                      })} required />
                       </div>
                       <div>
-                        <Input
-                          type="email"
-                          placeholder="Email *"
-                          value={coachForm.email}
-                          onChange={(e) => setCoachForm({...coachForm, email: e.target.value})}
-                          required
-                        />
+                        <Input type="email" placeholder="Email *" value={coachForm.email} onChange={e => setCoachForm({
+                        ...coachForm,
+                        email: e.target.value
+                      })} required />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Téléphone"
-                          value={coachForm.telephone}
-                          onChange={(e) => setCoachForm({...coachForm, telephone: e.target.value})}
-                        />
+                        <Input placeholder="Téléphone" value={coachForm.telephone} onChange={e => setCoachForm({
+                        ...coachForm,
+                        telephone: e.target.value
+                      })} />
                       </div>
                       <div>
-                        <Input
-                          placeholder="Ville"
-                          value={coachForm.ville}
-                          onChange={(e) => setCoachForm({...coachForm, ville: e.target.value})}
-                        />
+                        <Input placeholder="Ville" value={coachForm.ville} onChange={e => setCoachForm({
+                        ...coachForm,
+                        ville: e.target.value
+                      })} />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Profil LinkedIn"
-                          value={coachForm.linkedin}
-                          onChange={(e) => setCoachForm({...coachForm, linkedin: e.target.value})}
-                        />
+                        <Input placeholder="Profil LinkedIn" value={coachForm.linkedin} onChange={e => setCoachForm({
+                        ...coachForm,
+                        linkedin: e.target.value
+                      })} />
                       </div>
                       <div>
-                        <Input
-                          placeholder="Années d'expérience"
-                          value={coachForm.experience}
-                          onChange={(e) => setCoachForm({...coachForm, experience: e.target.value})}
-                        />
+                        <Input placeholder="Années d'expérience" value={coachForm.experience} onChange={e => setCoachForm({
+                        ...coachForm,
+                        experience: e.target.value
+                      })} />
                       </div>
                     </div>
                     <div>
-                      <Textarea
-                        placeholder="Présentez-vous et expliquez votre motivation"
-                        value={coachForm.message}
-                        onChange={(e) => setCoachForm({...coachForm, message: e.target.value})}
-                        rows={4}
-                      />
+                      <Textarea placeholder="Présentez-vous et expliquez votre motivation" value={coachForm.message} onChange={e => setCoachForm({
+                      ...coachForm,
+                      message: e.target.value
+                    })} rows={4} />
                     </div>
                     <Button type="submit" className="w-full" size="lg">
                       Envoyer ma candidature
@@ -418,62 +383,51 @@ const NousRejoindre = () => {
                   <form onSubmit={handlePartnerSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Nom complet *"
-                          value={partnerForm.nom}
-                          onChange={(e) => setPartnerForm({...partnerForm, nom: e.target.value})}
-                          required
-                        />
+                        <Input placeholder="Nom complet *" value={partnerForm.nom} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        nom: e.target.value
+                      })} required />
                       </div>
                       <div>
-                        <Input
-                          type="email"
-                          placeholder="Email *"
-                          value={partnerForm.email}
-                          onChange={(e) => setPartnerForm({...partnerForm, email: e.target.value})}
-                          required
-                        />
+                        <Input type="email" placeholder="Email *" value={partnerForm.email} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        email: e.target.value
+                      })} required />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Téléphone"
-                          value={partnerForm.telephone}
-                          onChange={(e) => setPartnerForm({...partnerForm, telephone: e.target.value})}
-                        />
+                        <Input placeholder="Téléphone" value={partnerForm.telephone} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        telephone: e.target.value
+                      })} />
                       </div>
                       <div>
-                        <Input
-                          placeholder="Ville"
-                          value={partnerForm.ville}
-                          onChange={(e) => setPartnerForm({...partnerForm, ville: e.target.value})}
-                        />
+                        <Input placeholder="Ville" value={partnerForm.ville} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        ville: e.target.value
+                      })} />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input
-                          placeholder="Profil LinkedIn"
-                          value={partnerForm.linkedin}
-                          onChange={(e) => setPartnerForm({...partnerForm, linkedin: e.target.value})}
-                        />
+                        <Input placeholder="Profil LinkedIn" value={partnerForm.linkedin} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        linkedin: e.target.value
+                      })} />
                       </div>
                       <div>
-                        <Input
-                          placeholder="Domaine d'expertise"
-                          value={partnerForm.expertise}
-                          onChange={(e) => setPartnerForm({...partnerForm, expertise: e.target.value})}
-                        />
+                        <Input placeholder="Domaine d'expertise" value={partnerForm.expertise} onChange={e => setPartnerForm({
+                        ...partnerForm,
+                        expertise: e.target.value
+                      })} />
                       </div>
                     </div>
                     <div>
-                      <Textarea
-                        placeholder="Présentez votre activité et les synergies envisagées"
-                        value={partnerForm.message}
-                        onChange={(e) => setPartnerForm({...partnerForm, message: e.target.value})}
-                        rows={4}
-                      />
+                      <Textarea placeholder="Présentez votre activité et les synergies envisagées" value={partnerForm.message} onChange={e => setPartnerForm({
+                      ...partnerForm,
+                      message: e.target.value
+                    })} rows={4} />
                     </div>
                     <Button type="submit" className="w-full" size="lg">
                       Proposer un partenariat
@@ -543,21 +497,15 @@ const NousRejoindre = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  onClick={() => document.getElementById('coachs')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft"
-                >
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('coachs')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="rounded-2xl shadow-soft">
                   <UserPlus className="mr-2 w-5 h-5" />
                   Devenir Coach
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  onClick={() => document.getElementById('partenaires')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-2xl shadow-soft"
-                >
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('partenaires')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="rounded-2xl shadow-soft">
                   <Building2 className="mr-2 w-5 h-5" />
                   Devenir Partenaire
                 </Button>
@@ -568,8 +516,6 @@ const NousRejoindre = () => {
 
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default NousRejoindre;
