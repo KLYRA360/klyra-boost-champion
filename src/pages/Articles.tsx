@@ -14,8 +14,8 @@ const articles = [
     image: articleAvion,
   },
   {
-    id: "coaching-executif",
-    title: "Le coaching exécutif en entreprise",
+    id: "mentoring-executif",
+    title: "Le mentoring exécutif en entreprise",
     excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
     image: articleCoaching,
   },

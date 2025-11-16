@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#services" className="hover:text-primary-foreground transition-colors">
-                  Coaching individuel
+                  Mentoring individuel
                 </a>
               </li>
               <li>

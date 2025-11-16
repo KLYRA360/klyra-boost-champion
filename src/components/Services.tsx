@@ -44,7 +44,7 @@ const Services = () => {
     },
     {
       icon: User,
-      title: "Coaching Individuel",
+      title: "Mentoring Individuel",
       description: "Support personnel pour atteindre vos objectifs et développer votre leadership",
       features: [
         "Sessions individuelles régulières",
