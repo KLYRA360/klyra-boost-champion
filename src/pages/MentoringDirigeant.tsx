@@ -5,7 +5,6 @@ import { Brain, Compass, Users, Target, Search, Lightbulb, FileText, RefreshCw, 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
-
 const MentoringDirigeant = () => {
   useEffect(() => {
     document.title = "Mentoring Dirigeant Montpellier – Clarté, Soutien & Stratégie | KLYRA360";
@@ -14,16 +13,15 @@ const MentoringDirigeant = () => {
       metaDescription.setAttribute("content", "Accompagnement et mentoring dirigeant à Montpellier : clarté, soutien moral et décisions stratégiques. Entretien découverte gratuit.");
     }
   }, []);
-
   const scrollToDiagnostic = () => {
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* SECTION 1 — HERO */}
@@ -59,7 +57,7 @@ const MentoringDirigeant = () => {
         <section className="py-16 md:py-20 px-6 bg-klyra-neutral-light/30">
           <div className="container mx-auto max-w-4xl text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <MapPin className="w-8 h-8 text-accent" />
+              <MapPin className="w-8 h-8 text-accent py-0" />
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Basé à <span className="text-primary">Montpellier</span> – actif en Occitanie, Nîmes, Marseille et Toulouse
               </h2>
@@ -349,8 +347,6 @@ const MentoringDirigeant = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default MentoringDirigeant;
