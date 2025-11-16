@@ -21,15 +21,25 @@ const Header = () => {
           
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="/#services" className="text-foreground hover:text-primary transition-colors">
-              Services
+            <a href="/mon-parcours" className="text-foreground hover:text-primary transition-colors">
+              Mon Parcours
             </a>
-            <a href="/#methode" className="text-foreground hover:text-primary transition-colors">
-              Méthode
-            </a>
-            <a href="/#a-propos" className="text-foreground hover:text-primary transition-colors">
-              À propos
-            </a>
+            <div className="relative group">
+              <button className="text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                Accompagnement Dirigeants
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <a href="/mentoring-dirigeant-montpellier" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors rounded-t-lg">
+                  Mentoring Dirigeant Montpellier
+                </a>
+                <a href="/diagnostic-strategique" className="block px-4 py-3 text-muted-foreground hover:bg-muted transition-colors rounded-b-lg">
+                  Diagnostic Stratégique 360°
+                </a>
+              </div>
+            </div>
             <a href="/articles" className="text-foreground hover:text-primary transition-colors">
               Articles
             </a>
@@ -43,7 +53,7 @@ const Header = () => {
             </a>
             <a href="/#diagnostic">
               <Button variant="cta" size="sm">
-                Demander un diagnostic
+                Contact
               </Button>
             </a>
           </nav>
@@ -75,26 +85,31 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 pt-4">
               <a 
-                href="/#services" 
+                href="/mon-parcours" 
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                Mon Parcours
               </a>
-              <a 
-                href="/#methode" 
-                className="text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Méthode
-              </a>
-              <a 
-                href="/#a-propos" 
-                className="text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                À propos
-              </a>
+              <div className="py-2">
+                <p className="text-sm font-semibold text-muted-foreground mb-2">Accompagnement Dirigeants</p>
+                <div className="flex flex-col space-y-2 pl-4">
+                  <a 
+                    href="/mentoring-dirigeant-montpellier" 
+                    className="text-foreground hover:text-primary transition-colors py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Mentoring Dirigeant Montpellier
+                  </a>
+                  <a 
+                    href="/diagnostic-strategique" 
+                    className="text-muted-foreground hover:text-primary transition-colors py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Diagnostic Stratégique 360°
+                  </a>
+                </div>
+              </div>
               <a 
                 href="/articles" 
                 className="text-foreground hover:text-primary transition-colors py-2"
@@ -111,7 +126,7 @@ const Header = () => {
               </a>
               <a href="/#diagnostic" onClick={() => setIsMenuOpen(false)}>
                 <Button variant="cta" size="sm" className="w-full">
-                  Demander un diagnostic
+                  Contact
                 </Button>
               </a>
             </nav>
