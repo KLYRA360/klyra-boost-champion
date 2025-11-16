@@ -9,28 +9,32 @@ import articleChangement from "@/assets/article-changement.jpg";
 
 const articles = [
   {
-    id: "maman-jai-peur-de-lavion",
-    title: "✈️ Maman, j'ai peur de l'avion",
-    excerpt: "Et si la peur était un faux signal ? Réflexion sur nos peurs héritées, nos comportements à risque et comment transformer l'incertitude en moteur d'action.",
-    image: articleAvion,
-  },
-  {
     id: "le-changement-comprendre-et-integrer",
     title: "Le changement : comprendre, choisir et intégrer une transformation durable",
     excerpt: "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement.",
     image: articleChangement,
+    date: "16 novembre 2025",
+  },
+  {
+    id: "maman-jai-peur-de-lavion",
+    title: "✈️ Maman, j'ai peur de l'avion",
+    excerpt: "Et si la peur était un faux signal ? Réflexion sur nos peurs héritées, nos comportements à risque et comment transformer l'incertitude en moteur d'action.",
+    image: articleAvion,
+    date: "10 novembre 2025",
   },
   {
     id: "mentoring-executif",
     title: "Le mentoring exécutif en entreprise",
     excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
     image: articleCoaching,
+    date: "À venir",
   },
   {
     id: "mindfulness-travail",
     title: "La mindfulness au travail",
     excerpt: "Intégrer la pleine conscience dans votre quotidien professionnel pour améliorer concentration, bien-être et performance.",
     image: articleMindfulness,
+    date: "À venir",
   },
 ];
 
@@ -61,6 +65,9 @@ const Articles = () => {
                   />
                 </div>
                 <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm text-muted-foreground">{article.date}</span>
+                  </div>
                   <CardTitle className="text-xl text-primary">
                     {article.title}
                   </CardTitle>
