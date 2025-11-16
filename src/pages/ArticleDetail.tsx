@@ -8,6 +8,7 @@ import { ArrowLeft, Share2 } from "lucide-react";
 import articleAvion from "@/assets/article-avion.jpg";
 import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
+import articleChangement from "@/assets/article-changement.jpg";
 
 const relatedArticles = [
   {
@@ -28,14 +29,18 @@ const ArticleDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  // Pour l'instant, on gère uniquement l'article "maman-jai-peur-de-lavion"
-  if (slug !== "maman-jai-peur-de-lavion") {
+  // Vérifier si l'article existe
+  if (slug !== "maman-jai-peur-de-lavion" && slug !== "le-changement-comprendre-et-integrer") {
     navigate("/articles");
     return null;
   }
 
+  const isChangementArticle = slug === "le-changement-comprendre-et-integrer";
+
   const articleUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const articleTitle = "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
+  const articleTitle = isChangementArticle 
+    ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+    : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
   
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(`${articleTitle} ${articleUrl}`);
@@ -49,11 +54,21 @@ const ArticleDetail = () => {
 
   // SEO meta tags
   useEffect(() => {
-    document.title = "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
+    const title = isChangementArticle
+      ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
+      : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
+    
+    const description = isChangementArticle
+      ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+      : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
+    
+    const image = isChangementArticle ? articleChangement : articleAvion;
+    
+    document.title = title;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.");
+      metaDescription.setAttribute('content', description);
     }
 
     // Open Graph tags
@@ -71,7 +86,7 @@ const ArticleDetail = () => {
       ogDescription.setAttribute('property', 'og:description');
       document.head.appendChild(ogDescription);
     }
-    ogDescription.setAttribute('content', "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ?");
+    ogDescription.setAttribute('content', description);
 
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (!ogImage) {
@@ -79,8 +94,8 @@ const ArticleDetail = () => {
       ogImage.setAttribute('property', 'og:image');
       document.head.appendChild(ogImage);
     }
-    ogImage.setAttribute('content', articleAvion);
-  }, []);
+    ogImage.setAttribute('content', image);
+  }, [isChangementArticle, articleTitle]);
 
   return (
     <div className="min-h-screen bg-[#fdf9f4]">
@@ -89,14 +104,17 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={articleAvion}
-          alt="Avion dans le ciel - métaphore de la peur et du courage"
+          src={isChangementArticle ? articleChangement : articleAvion}
+          alt={isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              ✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?
+              {isChangementArticle 
+                ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+                : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?"
+              }
             </h1>
           </div>
         </div>
@@ -109,17 +127,219 @@ const ArticleDetail = () => {
           <span className="mx-2">›</span>
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
-          <span className="text-foreground">Maman, j'ai peur de l'avion</span>
+          <span className="text-foreground">
+            {isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+          </span>
         </nav>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-16 border-l-4 border-gold pl-6 italic font-light">
-            Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient "c'est le moyen de transport le plus sûr du monde", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?
+            {isChangementArticle 
+              ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+              : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
+            }
           </p>
 
           {/* Body content */}
           <article className="prose prose-lg max-w-none text-foreground">
+            {isChangementArticle ? (
+              <>
+                {/* Article sur le changement */}
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  1. Pourquoi nous changeons : entre nature et intention
+                </h2>
+                
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  L'impermanence : ce qui change malgré nous
+                </h3>
+                
+                <p className="mb-6 leading-relaxed text-lg">
+                  La vie nous transforme continuellement : nos responsabilités, nos relations, nos priorités, notre perception du monde. Même notre cerveau change physiquement grâce à la plasticité neuronale.
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Mais ce n'est pas ce changement-là que nous allons étudier ici.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Le changement choisi : un acte stratégique
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Il existe une transformation beaucoup plus rare et puissante : <strong>le changement choisi</strong>. Celui qui naît d'une intention claire.
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Tony Robbins le résume en une phrase : <em>« Clarity is power. »</em>
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Sans clarté, on avance au hasard. Avec clarté, on avance avec direction.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  2. Le changement choisi : un processus en conscience
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La plupart des gens croient que le changement durable repose sur la volonté. C'est faux.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La volonté est un élan. Le changement est une trajectoire.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Trois forces permettent un changement durable :
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  1. La clarté (l'intention)
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Savoir ce qu'on ne veut plus. Savoir ce qu'on veut à la place. L'écrire donne une direction.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  2. L'identité
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Comme l'explique James Clear (Atomic Habits), ce n'est pas ce que l'on fait qui change durablement notre vie, mais qui l'on croit être.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  On ne devient pas "quelqu'un qui fait du sport". On devient "quelqu'un qui prend soin de sa santé".
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  3. Les micro-actions
+                </h3>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Ce sont les petites actions répétées — 5 à 10 minutes — qui contournent la résistance naturelle du cerveau. Le changement profond n'est jamais un événement. C'est un rythme.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  3. Le processus du changement (méthode KLYRA)
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Voici un cadre simple, concret et accessible pour ancrer une transformation durable.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  1) Identifier
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce que l'on ne veut plus. Ce que l'on veut à la place. Écrire clarifie.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  2) Observer
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Identifier ses schémas, ses émotions, ses déclencheurs. La conscience précède la maîtrise.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  3) Agir — en micro-actions
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  De petites actions répétées créent un élan durable.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  4) Traverser l'inconfort
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le cerveau déteste la nouveauté. La résistance n'est pas un échec — c'est une étape.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  5) Intégrer
+                </h3>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Valider les petites victoires, les célébrer. Un changement est intégré lorsqu'il cesse d'être un effort.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  4. Deux exemples personnels pour illustrer le propos
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Transformation personnelle
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ces dernières années, j'ai entamé un travail profond : physique, émotionnel, stratégique. Perte de poids, recentrage, structuration. Des évolutions obtenues par micro-actions, intention et discipline.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Préparer et réussir une cession d'entreprise
+                </h3>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Préparer une entreprise à être vendue n'a rien d'improvisé. Cela demande de la clarté, une vision, une structure et une discipline long terme. C'est un bon exemple de changement choisi : aligner direction, méthode et constance.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  5. Pourquoi changer est difficile (et pourquoi ce n'est pas de votre faute)
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Tony Robbins parle des forces invisibles derrière nos choix : éviter la douleur, rechercher le confort, préserver l'identité, économiser l'énergie.
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Nous sommes conçus pour résister au changement. Mais être programmés n'est pas être condamnés. Comprendre ces mécanismes, c'est déjà les dépasser.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  6. Le changement pour un dirigeant : une compétence vitale
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Un dirigeant qui se transforme en conscience : anticipe, inspire, clarifie, stabilise, ouvre de nouvelles trajectoires.
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Le changement n'est pas un luxe. C'est une compétence stratégique moderne.
+                </p>
+
+                <blockquote className="my-16 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    « Clarity is power. »
+                  </p>
+                  <p className="text-lg text-muted-foreground mt-4">— Tony Robbins</p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Conclusion
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Changer, ce n'est pas devenir quelqu'un d'autre. C'est devenir quelqu'un de plus intentionnel.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le changement profond commence par : « Je ne veux plus être cette version de moi. » Puis se poursuit par : « Voilà celle que je choisis de devenir. »
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Le reste : une méthode, un rythme, un accompagnement.
+                </p>
+              </>
+            ) : (
+              <>
+                {/* Article sur la peur de l'avion */}
             <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
               La peur comme héritage
             </h2>
@@ -192,6 +412,8 @@ const ArticleDetail = () => {
             <p className="mb-12 leading-relaxed text-lg">
               👉 Chez KLYRA, nous aidons les dirigeants à transformer leurs incertitudes en plans d'action simples et concrets.
             </p>
+              </>
+            )}
 
             {/* CTA block */}
             <div className="mt-16 mb-16 p-8 md:p-10 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border-2 border-primary/20">

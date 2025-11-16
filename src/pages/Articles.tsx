@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import articleAvion from "@/assets/article-avion.jpg";
 import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
+import articleChangement from "@/assets/article-changement.jpg";
 
 const articles = [
   {
@@ -12,6 +13,12 @@ const articles = [
     title: "✈️ Maman, j'ai peur de l'avion",
     excerpt: "Et si la peur était un faux signal ? Réflexion sur nos peurs héritées, nos comportements à risque et comment transformer l'incertitude en moteur d'action.",
     image: articleAvion,
+  },
+  {
+    id: "le-changement-comprendre-et-integrer",
+    title: "Le changement : comprendre, choisir et intégrer une transformation durable",
+    excerpt: "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement.",
+    image: articleChangement,
   },
   {
     id: "mentoring-executif",
