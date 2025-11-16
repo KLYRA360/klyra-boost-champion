@@ -16,12 +16,14 @@ const relatedArticles = [
     title: "Le mentoring exécutif en entreprise",
     excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
     image: articleCoaching,
+    date: "À venir",
   },
   {
     id: "mindfulness-travail",
     title: "La mindfulness au travail",
     excerpt: "Intégrer la pleine conscience dans votre quotidien professionnel pour améliorer concentration, bien-être et performance.",
     image: articleMindfulness,
+    date: "À venir",
   },
 ];
 
@@ -131,6 +133,13 @@ const ArticleDetail = () => {
             {isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
+
+        {/* Article date */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <p className="text-sm text-muted-foreground">
+            {isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+          </p>
+        </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
@@ -497,6 +506,9 @@ const ArticleDetail = () => {
                     />
                   </div>
                   <CardHeader>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-sm text-muted-foreground">{article.date}</span>
+                    </div>
                     <CardTitle className="text-xl text-primary">
                       {article.title}
                     </CardTitle>
