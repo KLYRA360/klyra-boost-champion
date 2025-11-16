@@ -143,7 +143,7 @@ const ArticleDetail = () => {
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
-          <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-16 border-l-4 border-gold pl-6 italic font-light">
+          <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
             {isChangementArticle 
               ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
               : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
@@ -155,195 +155,143 @@ const ArticleDetail = () => {
             {isChangementArticle ? (
               <>
                 {/* Article sur le changement */}
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
                   1. Pourquoi nous changeons : entre nature et intention
                 </h2>
                 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   L'impermanence : ce qui change malgré nous
                 </h3>
                 
-                <p className="mb-6 leading-relaxed text-lg">
-                  La vie nous transforme continuellement : nos responsabilités, nos relations, nos priorités, notre perception du monde. Même notre cerveau change physiquement grâce à la plasticité neuronale.
+                <p className="mb-4 leading-relaxed text-lg">
+                  La vie transforme continuellement les individus comme les organisations : responsabilités, relations, priorités, marchés, perception du monde. Même notre cerveau change physiquement grâce à la plasticité neuronale. Mais ce n'est pas ce changement-là que nous allons étudier ici.
                 </p>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Mais ce n'est pas ce changement-là que nous allons étudier ici.
-                </p>
-
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   Le changement choisi : un acte stratégique
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Il existe une transformation beaucoup plus rare et puissante : <strong>le changement choisi</strong>. Celui qui naît d'une intention claire.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Il existe une transformation beaucoup plus rare et puissante pour les entrepreneurs et leurs entreprises : <strong>le changement choisi</strong>. Celui qui naît d'une intention claire. Tony Robbins le résume : <em>« Clarity is power. »</em> Sans clarté, on avance au hasard. Avec clarté, on avance avec direction — que ce soit pour soi ou pour son organisation.
                 </p>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Tony Robbins le résume en une phrase : <em>« Clarity is power. »</em>
-                </p>
-
-                <p className="mb-12 leading-relaxed text-lg">
-                  Sans clarté, on avance au hasard. Avec clarté, on avance avec direction.
-                </p>
-
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
                   2. Le changement choisi : un processus en conscience
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  La plupart des gens croient que le changement durable repose sur la volonté. C'est faux.
+                <p className="mb-4 leading-relaxed text-lg">
+                  La plupart des dirigeants croient que le changement durable repose sur la volonté. C'est faux. La volonté est un élan. Le changement est une trajectoire.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  La volonté est un élan. Le changement est une trajectoire.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Trois forces permettent un changement durable, tant au niveau personnel qu'organisationnel :
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Trois forces permettent un changement durable :
-                </p>
-
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   1. La clarté (l'intention)
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Savoir ce qu'on ne veut plus. Savoir ce qu'on veut à la place. L'écrire donne une direction.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Savoir ce qu'on ne veut plus pour soi et pour l'entreprise. Savoir ce qu'on veut à la place. L'écrire donne une direction partagée.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   2. L'identité
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Comme l'explique James Clear (Atomic Habits), ce n'est pas ce que l'on fait qui change durablement notre vie, mais qui l'on croit être.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Comme l'explique James Clear (Atomic Habits), ce n'est pas ce que l'on fait qui change durablement, mais qui l'on croit être. Un entrepreneur ne devient pas "quelqu'un qui innove". Il devient "quelqu'un dont l'identité est l'innovation". Une entreprise ne "fait" de la qualité, elle "est" une organisation qualité.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  On ne devient pas "quelqu'un qui fait du sport". On devient "quelqu'un qui prend soin de sa santé".
-                </p>
-
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   3. Les micro-actions
                 </h3>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Ce sont les petites actions répétées — 5 à 10 minutes — qui contournent la résistance naturelle du cerveau. Le changement profond n'est jamais un événement. C'est un rythme.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Ce sont les petites actions répétées — individuelles et collectives — qui contournent la résistance naturelle. Le changement profond n'est jamais un événement. C'est un rythme organisationnel.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
                   3. Le processus du changement (méthode KLYRA)
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Voici un cadre simple, concret et accessible pour ancrer une transformation durable.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Voici un cadre simple et concret pour ancrer une transformation durable, applicable aux individus comme aux organisations :
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  1) Identifier
-                </h3>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  Ce que l'on ne veut plus. Ce que l'on veut à la place. Écrire clarifie.
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>1) Identifier</strong> — Ce que l'on ne veut plus. Ce que l'on veut à la place. Écrire clarifie l'intention stratégique.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  2) Observer
-                </h3>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  Identifier ses schémas, ses émotions, ses déclencheurs. La conscience précède la maîtrise.
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>2) Observer</strong> — Identifier ses schémas personnels et organisationnels, émotions, déclencheurs. La conscience précède la maîtrise.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  3) Agir — en micro-actions
-                </h3>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  De petites actions répétées créent un élan durable.
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>3) Agir</strong> — En micro-actions répétées qui créent un élan durable.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  4) Traverser l'inconfort
-                </h3>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  Le cerveau déteste la nouveauté. La résistance n'est pas un échec — c'est une étape.
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>4) Traverser l'inconfort</strong> — Le cerveau et les équipes détestent la nouveauté. La résistance n'est pas un échec, c'est une étape naturelle.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  5) Intégrer
-                </h3>
-
-                <p className="mb-12 leading-relaxed text-lg">
-                  Valider les petites victoires, les célébrer. Un changement est intégré lorsqu'il cesse d'être un effort.
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>5) Intégrer</strong> — Valider les victoires, les célébrer. Un changement est intégré lorsqu'il cesse d'être un effort et devient une nouvelle norme culturelle.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  4. Deux exemples personnels pour illustrer le propos
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
+                  4. Exemples concrets de transformation
                 </h2>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  Transformation personnelle
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
+                  Transformation personnelle du dirigeant
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Ces dernières années, j'ai entamé un travail profond : physique, émotionnel, stratégique. Perte de poids, recentrage, structuration. Des évolutions obtenues par micro-actions, intention et discipline.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Ces dernières années, j'ai entamé un travail profond : physique, émotionnel, stratégique. Perte de poids, recentrage, structuration. Des évolutions obtenues par micro-actions, intention et discipline — les mêmes principes que j'applique dans l'accompagnement d'entreprises.
                 </p>
 
-                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                <h3 className="text-2xl font-bold text-primary mt-6 mb-3">
                   Préparer et réussir une cession d'entreprise
                 </h3>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Préparer une entreprise à être vendue n'a rien d'improvisé. Cela demande de la clarté, une vision, une structure et une discipline long terme. C'est un bon exemple de changement choisi : aligner direction, méthode et constance.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Préparer une entreprise à être vendue n'a rien d'improvisé. Cela demande de la clarté stratégique, une vision partagée, une structure solide et une discipline long terme. C'est un excellent exemple de changement choisi : aligner direction personnelle, méthode rigoureuse et constance organisationnelle.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  5. Pourquoi changer est difficile (et pourquoi ce n'est pas de votre faute)
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
+                  5. Pourquoi changer est difficile
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Tony Robbins parle des forces invisibles derrière nos choix : éviter la douleur, rechercher le confort, préserver l'identité, économiser l'énergie.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Tony Robbins identifie les forces invisibles derrière nos choix : éviter la douleur, rechercher le confort, préserver l'identité, économiser l'énergie. Ces mécanismes s'appliquent autant aux individus qu'aux cultures d'entreprise. Nous sommes conçus pour résister au changement. Mais être programmés n'est pas être condamnés. Comprendre ces mécanismes, c'est déjà les dépasser.
                 </p>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Nous sommes conçus pour résister au changement. Mais être programmés n'est pas être condamnés. Comprendre ces mécanismes, c'est déjà les dépasser.
-                </p>
-
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  6. Le changement pour un dirigeant : une compétence vitale
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
+                  6. Le changement : une compétence stratégique
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Un dirigeant qui se transforme en conscience : anticipe, inspire, clarifie, stabilise, ouvre de nouvelles trajectoires.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Un dirigeant et une entreprise qui se transforment en conscience : anticipent, inspirent, clarifient, stabilisent, ouvrent de nouvelles trajectoires de croissance. Le changement n'est pas un luxe personnel ou organisationnel. C'est une compétence stratégique moderne indispensable.
                 </p>
 
-                <p className="mb-12 leading-relaxed text-lg">
-                  Le changement n'est pas un luxe. C'est une compétence stratégique moderne.
-                </p>
-
-                <blockquote className="my-16 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
                   <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
                     « Clarity is power. »
                   </p>
                   <p className="text-lg text-muted-foreground mt-4">— Tony Robbins</p>
                 </blockquote>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">
                   Conclusion
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Changer, ce n'est pas devenir quelqu'un d'autre. C'est devenir quelqu'un de plus intentionnel.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Changer, ce n'est pas devenir quelqu'un d'autre ou transformer radicalement son entreprise. C'est devenir une version plus intentionnelle de soi-même et de son organisation.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Le changement profond commence par : « Je ne veux plus être cette version de moi. » Puis se poursuit par : « Voilà celle que je choisis de devenir. »
-                </p>
-
-                <p className="mb-12 leading-relaxed text-lg">
-                  Le reste : une méthode, un rythme, un accompagnement.
+                <p className="mb-4 leading-relaxed text-lg">
+                  Le changement profond commence par : « Je ne veux plus être cette version de moi / de mon entreprise. » Puis se poursuit par : « Voilà celle que je choisis de devenir. » Le reste : une méthode éprouvée, un rythme adapté, un accompagnement structuré.
                 </p>
               </>
             ) : (
