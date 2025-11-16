@@ -8,7 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Target, CheckCircle, Layers, BookOpenCheck, Briefcase, Handshake, Users, Puzzle, ShieldCheck, Timer, UserPlus, Building2 } from "lucide-react";
 const NousRejoindre = () => {
-  const [coachForm, setCoachForm] = useState({
+  const [mentorForm, setMentorForm] = useState({
     nom: "",
     email: "",
     telephone: "",
@@ -28,10 +28,10 @@ const NousRejoindre = () => {
   });
 
   // TODO: Replace with Brevo/Typeform integration
-  const handleCoachSubmit = (e: React.FormEvent) => {
+  const handleMentorSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = "Candidature coach KLYRA";
-    const body = `Nom: ${coachForm.nom}\nEmail: ${coachForm.email}\nTéléphone: ${coachForm.telephone}\nVille: ${coachForm.ville}\nLinkedIn: ${coachForm.linkedin}\nAnnées d'expérience: ${coachForm.experience}\n\nMessage:\n${coachForm.message}`;
+    const subject = "Candidature mentor KLYRA";
+    const body = `Nom: ${mentorForm.nom}\nEmail: ${mentorForm.email}\nTéléphone: ${mentorForm.telephone}\nVille: ${mentorForm.ville}\nLinkedIn: ${mentorForm.linkedin}\nAnnées d'expérience: ${mentorForm.experience}\n\nMessage:\n${mentorForm.message}`;
     window.location.href = `mailto:contact@klyra360.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
@@ -54,7 +54,7 @@ const NousRejoindre = () => {
           {/* Hero Section */}
           <section className="py-20 bg-gradient-hero text-primary-foreground">
             <div className="container mx-auto px-6 text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 Rejoindre KLYRA — le collectif de la Méthode
               </h1>
               <p className="text-xl md:text-2xl mb-10 max-w-4xl mx-auto opacity-90">
@@ -63,7 +63,7 @@ const NousRejoindre = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" onClick={() => document.getElementById('coachs')?.scrollIntoView({
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('mentors')?.scrollIntoView({
                 behavior: 'smooth'
               })} className="rounded-2xl shadow-soft">
                   <UserPlus className="mr-2 w-5 h-5" />
@@ -79,13 +79,13 @@ const NousRejoindre = () => {
             </div>
           </section>
 
-          {/* Section Coachs */}
-          <section id="coachs" className="py-20 bg-background">
+          {/* Section Mentors */}
+          <section id="mentors" className="py-20 bg-background">
             <div className="container mx-auto px-6">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Devenez Coach KLYRA</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Devenez Mentor KLYRA</h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Rejoignez notre réseau de coachs certifiés et accompagnez les dirigeants avec notre méthode éprouvée.
+                  Rejoignez notre réseau de mentors certifiés et accompagnez les dirigeants avec notre méthode éprouvée.
                 </p>
               </div>
 
@@ -112,7 +112,7 @@ const NousRejoindre = () => {
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-klyra-green mt-0.5 flex-shrink-0" />
-                          <span>Réseau qualifié de coachs et de prospects</span>
+                          <span>Réseau qualifié de mentors et de prospects</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="w-4 h-4 text-klyra-green mt-0.5 flex-shrink-0" />
@@ -236,61 +236,61 @@ const NousRejoindre = () => {
                 </div>
               </div>
 
-              {/* Formulaire Coach */}
+              {/* Formulaire Mentor */}
               <Card className="max-w-2xl mx-auto">
                 <CardHeader className="text-center">
-                  <CardTitle>Candidater comme coach</CardTitle>
+                  <CardTitle>Candidater comme mentor</CardTitle>
                   <p className="text-muted-foreground">
-                    Rejoignez notre réseau de coachs certifiés KLYRA
+                    Rejoignez notre réseau de mentors certifiés KLYRA
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleCoachSubmit} className="space-y-4">
+                  <form onSubmit={handleMentorSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input placeholder="Nom complet *" value={coachForm.nom} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input placeholder="Nom complet *" value={mentorForm.nom} onChange={e => setMentorForm({
+                        ...mentorForm,
                         nom: e.target.value
                       })} required />
                       </div>
                       <div>
-                        <Input type="email" placeholder="Email *" value={coachForm.email} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input type="email" placeholder="Email *" value={mentorForm.email} onChange={e => setMentorForm({
+                        ...mentorForm,
                         email: e.target.value
                       })} required />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input placeholder="Téléphone" value={coachForm.telephone} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input placeholder="Téléphone" value={mentorForm.telephone} onChange={e => setMentorForm({
+                        ...mentorForm,
                         telephone: e.target.value
                       })} />
                       </div>
                       <div>
-                        <Input placeholder="Ville" value={coachForm.ville} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input placeholder="Ville" value={mentorForm.ville} onChange={e => setMentorForm({
+                        ...mentorForm,
                         ville: e.target.value
                       })} />
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Input placeholder="Profil LinkedIn" value={coachForm.linkedin} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input placeholder="Profil LinkedIn" value={mentorForm.linkedin} onChange={e => setMentorForm({
+                        ...mentorForm,
                         linkedin: e.target.value
                       })} />
                       </div>
                       <div>
-                        <Input placeholder="Années d'expérience" value={coachForm.experience} onChange={e => setCoachForm({
-                        ...coachForm,
+                        <Input placeholder="Années d'expérience" value={mentorForm.experience} onChange={e => setMentorForm({
+                        ...mentorForm,
                         experience: e.target.value
                       })} />
                       </div>
                     </div>
                     <div>
-                      <Textarea placeholder="Présentez-vous et expliquez votre motivation" value={coachForm.message} onChange={e => setCoachForm({
-                      ...coachForm,
+                      <Textarea placeholder="Présentez-vous et expliquez votre motivation" value={mentorForm.message} onChange={e => setMentorForm({
+                      ...mentorForm,
                       message: e.target.value
                     })} rows={4} />
                     </div>
@@ -326,7 +326,7 @@ const NousRejoindre = () => {
                       <li>• Consultants spécialisés</li>
                       <li>• Experts techniques</li>
                       <li>• Formateurs professionnels</li>
-                      <li>• Coachs indépendants</li>
+                      <li>• Mentors indépendants</li>
                       <li>• Agences de conseil</li>
                       <li>• Prestataires IT</li>
                     </ul>
@@ -450,10 +450,10 @@ const NousRejoindre = () => {
                 <Accordion type="single" collapsible>
                   <AccordionItem value="item-1">
                     <AccordionTrigger>
-                      Quelle est la différence entre coach et partenaire KLYRA ?
+                      Quelle est la différence entre mentor et partenaire KLYRA ?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Les coachs KLYRA sont certifiés à notre méthode et interviennent directement auprès des clients 
+                      Les mentors KLYRA sont certifiés à notre méthode et interviennent directement auprès des clients 
                       en suivant notre approche structurée. Les partenaires sont des experts complémentaires 
                       (techniques, sectoriels, fonctionnels) qui enrichissent nos missions sans nécessairement 
                       être certifiés KLYRA.
@@ -462,7 +462,7 @@ const NousRejoindre = () => {
                   
                   <AccordionItem value="item-2">
                     <AccordionTrigger>
-                      Combien coûte la formation de coach KLYRA ?
+                      Combien coûte la formation de mentor KLYRA ?
                     </AccordionTrigger>
                     <AccordionContent>
                       La formation est entièrement financée par KLYRA pour les profils sélectionnés. 
@@ -498,11 +498,11 @@ const NousRejoindre = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" onClick={() => document.getElementById('coachs')?.scrollIntoView({
+                <Button size="lg" variant="secondary" onClick={() => document.getElementById('mentors')?.scrollIntoView({
                 behavior: 'smooth'
               })} className="rounded-2xl shadow-soft">
                   <UserPlus className="mr-2 w-5 h-5" />
-                  Devenir Coach
+                  Devenir Mentor
                 </Button>
                 <Button size="lg" variant="secondary" onClick={() => document.getElementById('partenaires')?.scrollIntoView({
                 behavior: 'smooth'
