@@ -27,10 +27,10 @@ const MentoringDirigeant = () => {
       <Header />
       <main>
         {/* SECTION 1 — HERO */}
-        <section className="relative py-20 md:py-32 px-6 bg-gradient-to-br from-klyra-blue/5 via-background to-klyra-accent/5">
+        <section className="relative py-20 md:py-32 px-6 bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Mentoring Dirigeant à Montpellier : clarté, soutien et décisions concrètes
+              Mentoring Dirigeant à Montpellier : <span className="text-primary">clarté, soutien</span> et <span className="text-accent">décisions concrètes</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Un espace neutre et structurant pour dirigeants, entrepreneurs et managers qui veulent retrouver du souffle, clarifier leur vision et prendre de meilleures décisions.
@@ -44,8 +44,8 @@ const MentoringDirigeant = () => {
         {/* SECTION 2 — Pourquoi ce mentoring */}
         <section className="py-16 md:py-20 px-6 bg-background">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              Pourquoi un dirigeant a besoin de mentoring (et pas d'un "coach" de plus)
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+              Pourquoi un dirigeant a besoin de <span className="text-primary">mentoring</span> (et pas d'un "coach" de plus)
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="text-center leading-relaxed">
@@ -56,12 +56,12 @@ const MentoringDirigeant = () => {
         </section>
 
         {/* SECTION 3 — Zone géographique */}
-        <section className="py-16 md:py-20 px-6 bg-muted/30">
+        <section className="py-16 md:py-20 px-6 bg-klyra-neutral-light/30">
           <div className="container mx-auto max-w-4xl text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <MapPin className="w-8 h-8 text-klyra-blue" />
+              <MapPin className="w-8 h-8 text-accent" />
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Basé à Montpellier – actif en Occitanie, Nîmes, Marseille et Toulouse
+                Basé à <span className="text-primary">Montpellier</span> – actif en Occitanie, Nîmes, Marseille et Toulouse
               </h2>
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -77,8 +77,10 @@ const MentoringDirigeant = () => {
               Les signaux qui montrent qu'il est temps d'agir
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-6 border-klyra-blue/20 hover:border-klyra-blue/40 transition-colors">
-                <Brain className="w-10 h-10 text-klyra-blue mb-4" />
+              <Card className="p-6 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Brain className="w-7 h-7 text-accent" />
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Fatigue mentale et perte de clarté
                 </h3>
@@ -87,8 +89,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-6 border-klyra-blue/20 hover:border-klyra-blue/40 transition-colors">
-                <Compass className="w-10 h-10 text-klyra-blue mb-4" />
+              <Card className="p-6 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Compass className="w-7 h-7 text-accent" />
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Stagnation ou perte de cap
                 </h3>
@@ -97,8 +101,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-6 border-klyra-blue/20 hover:border-klyra-blue/40 transition-colors">
-                <Users className="w-10 h-10 text-klyra-blue mb-4" />
+              <Card className="p-6 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Users className="w-7 h-7 text-accent" />
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Sentiment d'isolement
                 </h3>
@@ -107,8 +113,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-6 border-klyra-blue/20 hover:border-klyra-blue/40 transition-colors">
-                <Target className="w-10 h-10 text-klyra-blue mb-4" />
+              <Card className="p-6 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Target className="w-7 h-7 text-accent" />
+                </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Décision difficile à prendre
                 </h3>
@@ -121,17 +129,19 @@ const MentoringDirigeant = () => {
         </section>
 
         {/* SECTION 5 — La méthode KLYRA */}
-        <section className="py-16 md:py-20 px-6 bg-gradient-to-br from-klyra-accent/10 via-background to-klyra-blue/5">
+        <section className="py-16 md:py-20 px-6 bg-klyra-neutral-light/30">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-              Le cadre KLYRA : structure, lucidité et décisions
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+              Le cadre <span className="text-primary">KLYRA</span> : structure, lucidité et décisions
             </h2>
             <p className="text-lg text-muted-foreground mb-12 text-center max-w-3xl mx-auto">
               Une approche structurée en 4 étapes pour retrouver clarté, alignement et efficacité dans votre leadership.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-8 border-klyra-accent/30">
-                <Search className="w-12 h-12 text-klyra-accent mb-4" />
+              <Card className="p-8 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Search className="w-10 h-10 text-accent" />
+                </div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">
                   Diagnostic 360° personnel & entreprise
                 </h3>
@@ -140,8 +150,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-8 border-klyra-accent/30">
-                <Lightbulb className="w-12 h-12 text-klyra-accent mb-4" />
+              <Card className="p-8 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <Lightbulb className="w-10 h-10 text-accent" />
+                </div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">
                   Mise en lumière des angles morts
                 </h3>
@@ -150,8 +162,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-8 border-klyra-accent/30">
-                <FileText className="w-12 h-12 text-klyra-accent mb-4" />
+              <Card className="p-8 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <FileText className="w-10 h-10 text-accent" />
+                </div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">
                   Plan d'action concret
                 </h3>
@@ -160,8 +174,10 @@ const MentoringDirigeant = () => {
                 </p>
               </Card>
 
-              <Card className="p-8 border-klyra-accent/30">
-                <RefreshCw className="w-12 h-12 text-klyra-accent mb-4" />
+              <Card className="p-8 hover:shadow-strong transition-all duration-300">
+                <div className="p-3 bg-accent/10 rounded-lg inline-flex mb-4">
+                  <RefreshCw className="w-10 h-10 text-accent" />
+                </div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">
                   Suivi & ajustements
                 </h3>
@@ -176,12 +192,12 @@ const MentoringDirigeant = () => {
         {/* SECTION 6 — Résultats */}
         <section className="py-16 md:py-20 px-6 bg-background">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Ce que vous allez gagner
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+              Ce que vous allez <span className="text-primary">gagner</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Réduction de la charge mentale</h3>
                   <p className="text-muted-foreground">Retrouvez de l'espace mental et de la sérénité dans votre quotidien.</p>
@@ -189,7 +205,7 @@ const MentoringDirigeant = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Clarté stratégique</h3>
                   <p className="text-muted-foreground">Vision nette de vos priorités et de votre direction à moyen terme.</p>
@@ -197,7 +213,7 @@ const MentoringDirigeant = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Décisions plus éclairées</h3>
                   <p className="text-muted-foreground">Capacité à trancher avec confiance et recul sur les enjeux importants.</p>
@@ -205,7 +221,7 @@ const MentoringDirigeant = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Leadership renforcé</h3>
                   <p className="text-muted-foreground">Meilleure posture, plus de légitimité et d'impact dans vos interactions.</p>
@@ -213,7 +229,7 @@ const MentoringDirigeant = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Alignement personnel et professionnel</h3>
                   <p className="text-muted-foreground">Cohérence retrouvée entre vos valeurs, vos ambitions et vos actions.</p>
@@ -221,7 +237,7 @@ const MentoringDirigeant = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-klyra-blue shrink-0 mt-1" />
+                <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Gestion des situations critiques</h3>
                   <p className="text-muted-foreground">Capacité à gérer les crises et les transitions avec plus de maîtrise.</p>
@@ -232,10 +248,10 @@ const MentoringDirigeant = () => {
         </section>
 
         {/* SECTION 7 — Fonctionnement */}
-        <section className="py-16 md:py-20 px-6 bg-muted/30">
+        <section className="py-16 md:py-20 px-6 bg-klyra-neutral-light/30">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Format & organisation
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+              <span className="text-primary">Format</span> & organisation
             </h2>
             <div className="space-y-8">
               <Card className="p-6">
@@ -270,10 +286,10 @@ const MentoringDirigeant = () => {
         </section>
 
         {/* SECTION 8 — CTA final */}
-        <section id="contact-section" className="py-16 md:py-20 px-6 bg-gradient-to-br from-klyra-blue/10 via-background to-klyra-accent/10">
+        <section id="contact-section" className="py-16 md:py-20 px-6 bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
           <div className="container mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Passer à l'étape suivante
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Passer à <span className="text-primary">l'étape suivante</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Réservez un premier échange de 30 minutes pour faire le point sur votre situation, vos enjeux et voir comment le mentoring peut vous aider concrètement.
@@ -289,12 +305,12 @@ const MentoringDirigeant = () => {
         {/* SECTION 9 — FAQ */}
         <section className="py-16 md:py-20 px-6 bg-background">
           <div className="container mx-auto max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Questions fréquentes
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+              <span className="text-primary">Questions</span> fréquentes
             </h2>
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-klyra-blue">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary">
                   Quelle est la différence entre mentoring et coaching ?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pt-2">
@@ -303,7 +319,7 @@ const MentoringDirigeant = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2" className="border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-klyra-blue">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary">
                   Combien de temps dure un accompagnement en mentoring ?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pt-2">
@@ -312,7 +328,7 @@ const MentoringDirigeant = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3" className="border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-klyra-blue">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary">
                   Est-ce que le mentoring fonctionne aussi en distanciel ?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pt-2">
@@ -321,7 +337,7 @@ const MentoringDirigeant = () => {
               </AccordionItem>
 
               <AccordionItem value="item-4" className="border border-border rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-klyra-blue">
+                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary">
                   Qui peut bénéficier d'un mentoring dirigeant ?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pt-2">
