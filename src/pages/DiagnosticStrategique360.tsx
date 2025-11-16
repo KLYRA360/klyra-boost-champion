@@ -5,7 +5,6 @@ import { Eye, TrendingUp, Users, Target, Compass, Lightbulb, FileText, CheckCirc
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
-
 const DiagnosticStrategique360 = () => {
   useEffect(() => {
     document.title = "Diagnostic Stratégique 360° – Clarté & Plan d'Action | KLYRA360";
@@ -14,13 +13,11 @@ const DiagnosticStrategique360 = () => {
       metaDescription.setAttribute("content", "Diagnostic Stratégique 360° pour dirigeants et entreprises : clarté, angles morts, priorités et plan d'action concret. Disponible à Montpellier et en visio.");
     }
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       <main>
         {/* SECTION 1 — HERO */}
-        <section className="relative py-20 md:py-32 px-6 bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20">
+        <section className="relative py-20 md:py-32 px-6 bg-gradient-to-br from-klyra-neutral-light via-background to-secondary/20 my-px">
           <div className="container mx-auto max-w-4xl text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Diagnostic Stratégique 360° – <span className="text-primary">Clarté</span>, <span className="text-accent">Priorités</span> & Mise en Mouvement
@@ -44,7 +41,7 @@ const DiagnosticStrategique360 = () => {
         </section>
 
         {/* SECTION 2 — Pourquoi un Diagnostic 360° */}
-        <section className="py-16 md:py-20 px-6 bg-background">
+        <section className="py-16 px-6 bg-background md:py-px">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               Comprendre avant d'agir : la base d'une <span className="text-primary">transformation réussie</span>
@@ -378,8 +375,6 @@ const DiagnosticStrategique360 = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default DiagnosticStrategique360;
