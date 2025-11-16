@@ -56,8 +56,8 @@ const MentoringDirigeant = () => {
         {/* SECTION 3 — Zone géographique */}
         <section className="py-16 md:py-20 px-6 bg-klyra-neutral-light/30">
           <div className="container mx-auto max-w-4xl text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <MapPin className="w-8 h-8 text-accent py-0" />
+            <div className="flex items-start justify-center gap-3 mb-4">
+              <MapPin className="w-8 h-8 text-accent mt-1" />
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                 Basé à <span className="text-primary">Montpellier</span> – actif en Occitanie, Nîmes, Marseille et Toulouse
               </h2>
