@@ -35,7 +35,7 @@ const Header = () => {
                 <a href="/mentoring-dirigeant-montpellier" className="block px-4 py-3 text-foreground hover:bg-muted transition-colors rounded-t-lg">
                   Mentoring Dirigeant Montpellier
                 </a>
-                <a href="/diagnostic-strategique" className="block px-4 py-3 text-muted-foreground hover:bg-muted transition-colors rounded-b-lg">
+                <a href="/diagnostic-strategique-360" className="block px-4 py-3 text-muted-foreground hover:bg-muted transition-colors rounded-b-lg">
                   Diagnostic Stratégique 360°
                 </a>
               </div>
@@ -102,7 +102,7 @@ const Header = () => {
                     Mentoring Dirigeant Montpellier
                   </a>
                   <a 
-                    href="/diagnostic-strategique" 
+                    href="/diagnostic-strategique-360" 
                     className="text-muted-foreground hover:text-primary transition-colors py-1"
                     onClick={() => setIsMenuOpen(false)}
                   >
