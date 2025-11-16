@@ -65,8 +65,9 @@ const NousRejoindre = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" onClick={() => document.getElementById('coachs')?.scrollIntoView({
                 behavior: 'smooth'
-              })} className="rounded-2xl shadow-soft">Devenir Mentor<UserPlus className="mr-2 w-5 h-5" />
-                  Devenir Coach
+              })} className="rounded-2xl shadow-soft">
+                  <UserPlus className="mr-2 w-5 h-5" />
+                  Devenir Mentor
                 </Button>
                 <Button size="lg" variant="secondary" onClick={() => document.getElementById('partenaires')?.scrollIntoView({
                 behavior: 'smooth'
