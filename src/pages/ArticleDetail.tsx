@@ -182,72 +182,79 @@ const ArticleDetail = () => {
                 </blockquote>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  On déteste l'effort non pas parce qu'il est douloureux, mais parce qu'on nous a appris qu'il ne devrait pas exister. C'est l'un des grands malentendus modernes.
+                  On déteste l'effort non pas parce qu'il est douloureux, mais parce qu'on nous a appris qu'il ne devrait pas exister. C'est l'un des grands malentendus modernes. Une illusion collective, entretenue par des promesses de raccourcis et de solutions miracles.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Pourtant, demandez à n'importe quel dirigeant, entrepreneur ou athlète ce qui a vraiment forgé sa réussite : ce n'est jamais la facilité. C'est la capacité à traverser l'inconfort, à persévérer quand tout invitait à abandonner, à transformer la résistance en carburant.
                 </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
                   I. L'épidémie du "sans effort" : quand la facilité devient une prison mentale
                 </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Le mirage des résultats instantanés
+                </h3>
                 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Notre époque valorise la rapidité, l'efficacité immédiate, et le résultat visible avant même le processus.
+                  Notre époque valorise la rapidité, l'efficacité immédiate, et le résultat visible avant même le processus. Les réseaux sociaux amplifient cette distorsion : on y voit des succès fulgurants, des transformations spectaculaires, des fortunes bâties "en quelques mois". Ce qu'on ne voit pas, ce sont les années de travail obscur, les échecs répétés, les nuits blanches, les doutes traversés.
                 </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cette narration biaisée crée une attente irréaliste : si le succès ne vient pas vite, c'est qu'on n'est pas fait pour ça. Si l'effort est nécessaire, c'est qu'on manque de talent. Cette croyance est toxique. Elle nous prive de la patience nécessaire à toute construction durable.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  La dissonance cognitive moderne
+                </h3>
 
                 <p className="mb-4 leading-relaxed text-lg">
-                  Résultat :
+                  Le résultat de cette culture du "sans effort" est une dissonance cognitive profonde :
                 </p>
 
                 <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>On se compare à des modèles accélérés, retouchés, amplifiés</li>
-                  <li>On travaille mais on ne voit pas de résultat rapide</li>
-                  <li>On pense qu'on est "moins bon", "moins capable", "pas fait pour ça"</li>
+                  <li>On se compare à des modèles accélérés, retouchés, amplifiés — sans voir le travail invisible</li>
+                  <li>On travaille mais on ne voit pas de résultat rapide — et on s'impatiente</li>
+                  <li>On pense qu'on est "moins bon", "moins capable", "pas fait pour ça" — alors qu'on est simplement dans le processus normal</li>
                 </ul>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  <strong>Ce n'est pas un problème de compétence.</strong><br />
-                  C'est une dissonance cognitive entre :
+                  <strong>Ce n'est pas un problème de compétence.</strong> C'est un décalage entre deux réalités : un monde réel dans lequel l'effort est nécessaire, et un monde imaginaire (celui des écrans) où tout semble instantané. Cette dissonance génère une perte de motivation chronique, de la honte ("si c'était facile pour les autres, pourquoi pas pour moi ?"), et un affaiblissement progressif de notre résilience.
                 </p>
 
-                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>un monde réel dans lequel l'effort est nécessaire</li>
-                  <li>un monde imaginaire où tout semble instantané</li>
-                </ul>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  Cette dissonance crée :
-                </p>
-
-                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>une perte de motivation</li>
-                  <li>de la honte ("si c'était facile pour les autres, pourquoi pas pour moi ?")</li>
-                  <li>un affaiblissement de la résilience</li>
-                </ul>
-
-                <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
-                  Le vrai problème n'est pas la difficulté. C'est que nous avons désappris le plaisir de l'effort.
-                </p>
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Le vrai problème n'est pas la difficulté. C'est que nous avons désappris le plaisir de l'effort.
+                  </p>
+                </blockquote>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
                   II. L'effort juste : ni souffrance, ni facilité — le chemin vers le Flow
                 </h2>
 
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Redéfinir l'effort
+                </h3>
+
                 <p className="mb-6 leading-relaxed text-lg">
-                  L'effort n'est pas censé être une torture. Il n'est pas non plus censé être absent.
+                  L'effort n'est pas censé être une torture. Il n'est pas non plus censé être absent. Le problème, c'est que nous avons deux représentations extrêmes de l'effort : soit il est synonyme de souffrance (le "no pain, no gain" toxique), soit il doit être évité à tout prix (le fantasme du "hack" ultime).
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Le bon effort — <strong>l'effort calibré</strong> — génère :
+                  La vérité se trouve entre les deux. Il existe un effort "juste" — calibré, intentionnel, proportionné à nos capacités du moment. Cet effort-là n'épuise pas : il nourrit. Il ne brise pas : il construit.
                 </p>
 
-                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>du sens</li>
-                  <li>de la fierté</li>
-                  <li>du plaisir</li>
-                  <li>un sentiment de progression profond</li>
-                </ul>
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  La science du Flow
+                </h3>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Les psychologues l'appellent le <strong>Flow</strong> : cet état dans lequel on est absorbé par la tâche, où le temps disparaît, où l'on se sent vivant et concentré.
+                  Le bon effort — <strong>l'effort calibré</strong> — génère du sens, de la fierté, du plaisir, et un sentiment de progression profond. Les psychologues l'appellent le <strong>Flow</strong> : cet état dans lequel on est absorbé par la tâche, où le temps disparaît, où l'on se sent vivant et concentré.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mihaly Csikszentmihalyi, le chercheur qui a popularisé ce concept, a montré que le Flow survient dans une zone précise : quand le défi est légèrement supérieur à nos compétences actuelles. Trop facile, et on s'ennuie. Trop difficile, et on se décourage. L'effort juste se situe exactement dans cette zone d'expansion : assez dur pour nous faire grandir, pas assez pour nous briser.
                 </p>
 
                 <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
@@ -256,6 +263,14 @@ const ArticleDetail = () => {
                   </p>
                 </blockquote>
 
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  La fierté comme récompense intrinsèque
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Quand on accomplit quelque chose de difficile, la satisfaction qui en découle n'a rien à voir avec une gratification externe. C'est une fierté profonde, ancrée dans l'expérience vécue. On sait ce qu'on a traversé. On sait ce que ça a coûté. Et cette connaissance intime donne à la réussite une saveur incomparable.
+                </p>
+
                 <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
                   <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
                     « La fierté n'est pas le résultat. C'est le souvenir de la route parcourue. »
@@ -263,69 +278,131 @@ const ArticleDetail = () => {
                 </blockquote>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  III. Trois pratiques simples pour réapprendre à aimer l'effort
+                  III. Trois pratiques concrètes pour réapprendre à aimer l'effort
                 </h2>
 
+                <p className="mb-6 leading-relaxed text-lg">
+                  Réapprendre à aimer l'effort n'est pas une question de volonté pure. C'est une question de méthode, de cadre, et de petites victoires accumulées. Voici trois pratiques concrètes, testées et validées, pour reconstruire une relation saine avec l'effort.
+                </p>
+
                 <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  1) Le mini-effort quotidien
+                  1) Le mini-effort quotidien : la stratégie de l'accumulation
                 </h3>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Ne cherchez pas la transformation instantanée. Cherchez la répétition.
+                  Ne cherchez pas la transformation instantanée. Cherchez la répétition. Le cerveau humain est conçu pour résister aux grands changements — c'est un mécanisme de survie. Mais il accepte facilement les petits ajustements, surtout quand ils sont répétés.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  James Clear, dans "Atomic Habits", appelle cela la règle des 1% : s'améliorer de 1% chaque jour peut sembler insignifiant, mais sur un an, cela représente une amélioration de 37 fois. Le secret n'est pas l'intensité, c'est la constance.
+                </p>
+
+                <p className="mb-4 leading-relaxed text-lg">
+                  Exemples de mini-efforts quotidiens :
                 </p>
 
                 <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>10 pages d'un livre exigeant</li>
-                  <li>10 minutes d'écriture</li>
-                  <li>5 minutes de rangement</li>
-                  <li>1 tâche difficile que vous évitiez</li>
+                  <li>10 pages d'un livre exigeant — pas tout le livre, juste 10 pages</li>
+                  <li>10 minutes d'écriture — sans attendre l'inspiration</li>
+                  <li>5 minutes de rangement — un tiroir, un dossier</li>
+                  <li>1 tâche difficile que vous évitiez — la plus petite possible</li>
+                  <li>1 conversation inconfortable — que vous repoussez depuis trop longtemps</li>
                 </ul>
 
                 <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
-                  L'effort est un muscle. On l'entraîne.
+                  L'effort est un muscle. On l'entraîne. Et comme tout muscle, il se renforce avec la pratique régulière, pas avec les exploits occasionnels.
                 </p>
 
                 <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  2) Redéfinir la réussite
+                  2) Redéfinir la réussite : du résultat au processus
                 </h3>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Arrêtez de vous juger au résultat. Jugez-vous à la qualité de l'effort.
+                  Nous avons été conditionnés à mesurer notre valeur au résultat : le chiffre d'affaires, le nombre de followers, la promotion obtenue. Mais ce focus sur l'outcome crée une dépendance à des facteurs souvent hors de notre contrôle.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La solution ? Déplacer l'attention du résultat vers le processus. Arrêtez de vous juger au résultat. Jugez-vous à la qualité de l'effort fourni. C'est ce qu'on appelle le "process goal" par opposition au "outcome goal".
+                </p>
+
+                <p className="mb-4 leading-relaxed text-lg">
+                  Concrètement, cela signifie reformuler vos victoires :
                 </p>
 
                 <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>"J'ai travaillé 1h sans distraction."</li>
-                  <li>"J'ai osé commencer ce projet."</li>
-                  <li>"J'ai avancé malgré la résistance intérieure."</li>
+                  <li>"J'ai travaillé 1h sans distraction." — Victoire, quel que soit le résultat produit</li>
+                  <li>"J'ai osé commencer ce projet." — Victoire, même si ce n'est pas parfait</li>
+                  <li>"J'ai avancé malgré la résistance intérieure." — Victoire, surtout si c'était dur</li>
+                  <li>"J'ai fait ce que j'avais dit que je ferais." — Victoire, car c'est là que se construit l'intégrité personnelle</li>
                 </ul>
 
                 <p className="mb-12 leading-relaxed text-lg">
-                  La progression devient visible, mesurable, enthousiasmante.
+                  La progression devient visible, mesurable, enthousiasmante. Et surtout : elle ne dépend que de vous.
                 </p>
 
                 <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
-                  3) Retrouver le plaisir de la maîtrise
+                  3) Retrouver le plaisir de la maîtrise : l'antidote au "sans effort"
                 </h3>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Plus une chose est difficile, plus la maîtrise est satisfaisante :
+                  Il y a un plaisir particulier, presque addictif, à maîtriser quelque chose de difficile. Les musiciens le connaissent quand ils jouent enfin ce morceau impossible. Les sportifs le ressentent quand leur geste devient fluide après des mois de répétition. Les entrepreneurs le vivent quand leur vision prend enfin forme.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce plaisir de la maîtrise est l'un des plus grands moteurs humains. Il est profond, durable, et impossible à acheter ou à "hacker". Plus une chose est difficile, plus la maîtrise est satisfaisante :
                 </p>
 
                 <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
-                  <li>un instrument</li>
-                  <li>un sport</li>
-                  <li>une compétence professionnelle</li>
-                  <li>une création personnelle</li>
-                  <li>une entreprise</li>
+                  <li>Un instrument de musique — des années pour quelques minutes de grâce</li>
+                  <li>Un sport — des milliers d'heures pour un geste parfait</li>
+                  <li>Une compétence professionnelle — des projets difficiles pour une expertise rare</li>
+                  <li>Une création personnelle — des itérations sans fin pour quelque chose d'unique</li>
+                  <li>Une entreprise — des années d'incertitude pour une organisation qui fonctionne</li>
                 </ul>
 
-                <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
-                  Le plaisir de la difficulté maîtrisée est l'un des plus grands moteurs humains. Ceux qui vendent le "sans effort" ne peuvent pas vous le donner.
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ceux qui vendent le "sans effort" ne peuvent pas vous donner ce plaisir. Car ce plaisir naît précisément de l'effort investi. C'est un paradoxe que notre époque refuse d'entendre : <strong>la difficulté n'est pas l'obstacle au bonheur, elle en est souvent la condition.</strong>
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  IV. L'effort comme philosophie de vie
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Ce que l'effort révèle de nous
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'effort n'est pas seulement un moyen d'obtenir des résultats. C'est un révélateur de caractère. Face à la difficulté, nous découvrons qui nous sommes vraiment : notre capacité à persévérer, notre rapport à l'échec, notre tolérance à l'inconfort.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les dirigeants et entrepreneurs qui réussissent sur le long terme partagent cette caractéristique : ils ont appris à voir l'effort non comme une punition, mais comme un privilège. Chaque défi est une opportunité de croissance. Chaque obstacle est un professeur.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Transmettre le goût de l'effort
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Si vous êtes parent, manager ou mentor, vous avez une responsabilité particulière : celle de transmettre une relation saine à l'effort. Pas la culture du sacrifice aveugle. Pas non plus la facilité systématique. Mais cette voie médiane : l'effort juste, calibré, porteur de sens.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Montrez par l'exemple. Parlez de vos propres efforts, de vos échecs traversés, de vos victoires durement acquises. Valorisez le processus autant que le résultat. Célébrez la persévérance, pas seulement le talent.
                 </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
                   Conclusion — Un défi pour aujourd'hui
                 </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La culture du "sans effort" nous a volé quelque chose de précieux : la capacité à trouver du sens et du plaisir dans la difficulté. Mais ce qui a été désappris peut être réappris.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cela commence par une prise de conscience : l'effort n'est pas votre ennemi. Il est votre allié le plus fidèle dans la construction d'une vie qui a du sens. Les raccourcis mènent à des impasses. Les chemins difficiles mènent aux sommets.
+                </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
                   Demandez-vous :
@@ -338,8 +415,12 @@ const ArticleDetail = () => {
                   </p>
                 </blockquote>
 
-                <p className="mb-6 leading-relaxed text-lg font-semibold">
-                  Le changement commence par une seule chose : un effort juste, choisi, conscient.
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le changement commence par une seule chose : un effort juste, choisi, conscient. Et cet effort, répété jour après jour, construit une vie dont vous serez fier.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  Car au final, ce n'est pas ce que nous obtenons qui nous définit. C'est ce que nous avons été prêts à traverser pour l'obtenir.
                 </p>
               </>
             ) : isChangementArticle ? (
