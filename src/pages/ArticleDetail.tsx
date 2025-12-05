@@ -9,8 +9,16 @@ import articleAvion from "@/assets/article-avion.jpg";
 import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
+import articleEffort from "@/assets/article-effort.jpg";
 
 const relatedArticles = [
+  {
+    id: "pourquoi-la-haine-de-l-effort-nous-rend-malheureux",
+    title: "Pourquoi la haine de l'effort nous rend malheureux",
+    excerpt: "Notre époque valorise la rapidité et le résultat instantané. Pourtant, c'est dans l'effort calibré que se trouve le vrai plaisir.",
+    image: articleEffort,
+    date: "5 décembre 2025",
+  },
   {
     id: "mentoring-executif",
     title: "Le mentoring exécutif en entreprise",
@@ -32,17 +40,21 @@ const ArticleDetail = () => {
   const navigate = useNavigate();
 
   // Vérifier si l'article existe
-  if (slug !== "maman-jai-peur-de-lavion" && slug !== "le-changement-comprendre-et-integrer") {
+  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux"];
+  if (!validSlugs.includes(slug || "")) {
     navigate("/articles");
     return null;
   }
 
   const isChangementArticle = slug === "le-changement-comprendre-et-integrer";
+  const isEffortArticle = slug === "pourquoi-la-haine-de-l-effort-nous-rend-malheureux";
 
   const articleUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const articleTitle = isChangementArticle 
-    ? "Le changement : comprendre, choisir et intégrer une transformation durable"
-    : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
+  const articleTitle = isEffortArticle
+    ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
+    : isChangementArticle 
+      ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+      : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
   
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(`${articleTitle} ${articleUrl}`);
@@ -56,15 +68,19 @@ const ArticleDetail = () => {
 
   // SEO meta tags
   useEffect(() => {
-    const title = isChangementArticle
-      ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
-      : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
+    const title = isEffortArticle
+      ? "Pourquoi la haine de l'effort nous rend malheureux | KLYRA360"
+      : isChangementArticle
+        ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
+        : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
     
-    const description = isChangementArticle
-      ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
-      : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
+    const description = isEffortArticle
+      ? "Découvrez pourquoi la quête du 'sans effort' nous rend malheureux et comment retrouver le plaisir de l'effort calibré pour une vie plus épanouissante."
+      : isChangementArticle
+        ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+        : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
     
-    const image = isChangementArticle ? articleChangement : articleAvion;
+    const image = isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
     
     document.title = title;
     
@@ -97,7 +113,7 @@ const ArticleDetail = () => {
       document.head.appendChild(ogImage);
     }
     ogImage.setAttribute('content', image);
-  }, [isChangementArticle, articleTitle]);
+  }, [isChangementArticle, isEffortArticle, articleTitle]);
 
   return (
     <div className="min-h-screen bg-[#fdf9f4]">
@@ -106,16 +122,18 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={isChangementArticle ? articleChangement : articleAvion}
-          alt={isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
+          src={isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
+          alt={isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              {isChangementArticle 
-                ? "Le changement : comprendre, choisir et intégrer une transformation durable"
-                : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?"
+              {isEffortArticle
+                ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
+                : isChangementArticle 
+                  ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+                  : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?"
               }
             </h1>
           </div>
@@ -130,29 +148,201 @@ const ArticleDetail = () => {
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
           <span className="text-foreground">
-            {isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+            {isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
 
         {/* Article date */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-sm text-muted-foreground">
-            {isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+            {isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
-            {isChangementArticle 
-              ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
-              : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
+            {isEffortArticle
+              ? "Ouvrez n'importe quel réseau social : « Devenez riche pendant votre sommeil. » « Perdez 10 kilos sans bouger. » « Apprenez une compétence en 24h. » Ce discours n'est pas seulement un marché. C'est un mensonge psychologique. Il détruit notre rapport au réel… et surtout, notre rapport à l'effort, pourtant indispensable à la construction de soi."
+              : isChangementArticle 
+                ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+                : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
             }
           </p>
 
           {/* Body content */}
           <article className="prose prose-lg max-w-none text-foreground">
-            {isChangementArticle ? (
+            {isEffortArticle ? (
+              <>
+                {/* Article sur l'effort */}
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    « Si tout était facile, la réussite aurait-elle la même saveur ? »
+                  </p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  On déteste l'effort non pas parce qu'il est douloureux, mais parce qu'on nous a appris qu'il ne devrait pas exister. C'est l'un des grands malentendus modernes.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  I. L'épidémie du "sans effort" : quand la facilité devient une prison mentale
+                </h2>
+                
+                <p className="mb-6 leading-relaxed text-lg">
+                  Notre époque valorise la rapidité, l'efficacité immédiate, et le résultat visible avant même le processus.
+                </p>
+
+                <p className="mb-4 leading-relaxed text-lg">
+                  Résultat :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>On se compare à des modèles accélérés, retouchés, amplifiés</li>
+                  <li>On travaille mais on ne voit pas de résultat rapide</li>
+                  <li>On pense qu'on est "moins bon", "moins capable", "pas fait pour ça"</li>
+                </ul>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  <strong>Ce n'est pas un problème de compétence.</strong><br />
+                  C'est une dissonance cognitive entre :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>un monde réel dans lequel l'effort est nécessaire</li>
+                  <li>un monde imaginaire où tout semble instantané</li>
+                </ul>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cette dissonance crée :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>une perte de motivation</li>
+                  <li>de la honte ("si c'était facile pour les autres, pourquoi pas pour moi ?")</li>
+                  <li>un affaiblissement de la résilience</li>
+                </ul>
+
+                <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
+                  Le vrai problème n'est pas la difficulté. C'est que nous avons désappris le plaisir de l'effort.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  II. L'effort juste : ni souffrance, ni facilité — le chemin vers le Flow
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'effort n'est pas censé être une torture. Il n'est pas non plus censé être absent.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le bon effort — <strong>l'effort calibré</strong> — génère :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>du sens</li>
+                  <li>de la fierté</li>
+                  <li>du plaisir</li>
+                  <li>un sentiment de progression profond</li>
+                </ul>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les psychologues l'appellent le <strong>Flow</strong> : cet état dans lequel on est absorbé par la tâche, où le temps disparaît, où l'on se sent vivant et concentré.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    C'est le zen de l'action : faire une chose difficile, mais juste assez pour se dépasser sans se briser.
+                  </p>
+                </blockquote>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    « La fierté n'est pas le résultat. C'est le souvenir de la route parcourue. »
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  III. Trois pratiques simples pour réapprendre à aimer l'effort
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  1) Le mini-effort quotidien
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ne cherchez pas la transformation instantanée. Cherchez la répétition.
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>10 pages d'un livre exigeant</li>
+                  <li>10 minutes d'écriture</li>
+                  <li>5 minutes de rangement</li>
+                  <li>1 tâche difficile que vous évitiez</li>
+                </ul>
+
+                <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
+                  L'effort est un muscle. On l'entraîne.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  2) Redéfinir la réussite
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Arrêtez de vous juger au résultat. Jugez-vous à la qualité de l'effort.
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>"J'ai travaillé 1h sans distraction."</li>
+                  <li>"J'ai osé commencer ce projet."</li>
+                  <li>"J'ai avancé malgré la résistance intérieure."</li>
+                </ul>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  La progression devient visible, mesurable, enthousiasmante.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  3) Retrouver le plaisir de la maîtrise
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Plus une chose est difficile, plus la maîtrise est satisfaisante :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li>un instrument</li>
+                  <li>un sport</li>
+                  <li>une compétence professionnelle</li>
+                  <li>une création personnelle</li>
+                  <li>une entreprise</li>
+                </ul>
+
+                <p className="mb-12 leading-relaxed text-lg font-semibold text-primary">
+                  Le plaisir de la difficulté maîtrisée est l'un des plus grands moteurs humains. Ceux qui vendent le "sans effort" ne peuvent pas vous le donner.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Conclusion — Un défi pour aujourd'hui
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Demandez-vous :
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Quel petit effort important vais-je accomplir aujourd'hui ?<br />
+                    Pas demain. Pas "quand j'aurai du temps". Aujourd'hui.
+                  </p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold">
+                  Le changement commence par une seule chose : un effort juste, choisi, conscient.
+                </p>
+              </>
+            ) : isChangementArticle ? (
               <>
                 {/* Article sur le changement */}
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-4">

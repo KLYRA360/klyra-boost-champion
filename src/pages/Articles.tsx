@@ -6,8 +6,16 @@ import articleAvion from "@/assets/article-avion.jpg";
 import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
+import articleEffort from "@/assets/article-effort.jpg";
 
 const articles = [
+  {
+    id: "pourquoi-la-haine-de-l-effort-nous-rend-malheureux",
+    title: "Pourquoi la haine de l'effort nous rend malheureux",
+    excerpt: "Notre époque valorise la rapidité et le résultat instantané. Pourtant, c'est dans l'effort calibré que se trouve le vrai plaisir de la maîtrise et la fierté durable.",
+    image: articleEffort,
+    date: "5 décembre 2025",
+  },
   {
     id: "le-changement-comprendre-et-integrer",
     title: "Le changement : comprendre, choisir et intégrer une transformation durable",
