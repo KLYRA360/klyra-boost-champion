@@ -7,8 +7,16 @@ import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
+import articleVerbe from "@/assets/article-verbe.jpg";
 
 const articles = [
+  {
+    id: "la-puissance-du-verbe",
+    title: "La puissance du verbe : comment les mots façonnent votre identité",
+    excerpt: "Les mots ne sont pas neutres. Ils ne décrivent pas seulement la réalité : ils la construisent. Découvrez comment le langage influence votre identité, vos choix et votre trajectoire de leader.",
+    image: articleVerbe,
+    date: "15 décembre 2025",
+  },
   {
     id: "pourquoi-la-haine-de-l-effort-nous-rend-malheureux",
     title: "Pourquoi la haine de l'effort nous rend malheureux",

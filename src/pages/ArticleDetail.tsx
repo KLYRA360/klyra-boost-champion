@@ -10,8 +10,16 @@ import articleCoaching from "@/assets/article-coaching.jpg";
 import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
+import articleVerbe from "@/assets/article-verbe.jpg";
 
 const relatedArticles = [
+  {
+    id: "la-puissance-du-verbe",
+    title: "La puissance du verbe : comment les mots façonnent votre identité",
+    excerpt: "Les mots ne décrivent pas seulement la réalité : ils la construisent. Découvrez comment le langage influence votre trajectoire de leader.",
+    image: articleVerbe,
+    date: "15 décembre 2025",
+  },
   {
     id: "pourquoi-la-haine-de-l-effort-nous-rend-malheureux",
     title: "Pourquoi la haine de l'effort nous rend malheureux",
@@ -40,7 +48,7 @@ const ArticleDetail = () => {
   const navigate = useNavigate();
 
   // Vérifier si l'article existe
-  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux"];
+  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux", "la-puissance-du-verbe"];
   if (!validSlugs.includes(slug || "")) {
     navigate("/articles");
     return null;
@@ -48,13 +56,16 @@ const ArticleDetail = () => {
 
   const isChangementArticle = slug === "le-changement-comprendre-et-integrer";
   const isEffortArticle = slug === "pourquoi-la-haine-de-l-effort-nous-rend-malheureux";
+  const isVerbeArticle = slug === "la-puissance-du-verbe";
 
   const articleUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const articleTitle = isEffortArticle
-    ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
-    : isChangementArticle 
-      ? "Le changement : comprendre, choisir et intégrer une transformation durable"
-      : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
+  const articleTitle = isVerbeArticle
+    ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
+    : isEffortArticle
+      ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
+      : isChangementArticle 
+        ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+        : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?";
   
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(`${articleTitle} ${articleUrl}`);
@@ -68,19 +79,23 @@ const ArticleDetail = () => {
 
   // SEO meta tags
   useEffect(() => {
-    const title = isEffortArticle
-      ? "Pourquoi la haine de l'effort nous rend malheureux | KLYRA360"
-      : isChangementArticle
-        ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
-        : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
+    const title = isVerbeArticle
+      ? "La puissance du verbe : comment les mots façonnent votre identité | KLYRA360"
+      : isEffortArticle
+        ? "Pourquoi la haine de l'effort nous rend malheureux | KLYRA360"
+        : isChangementArticle
+          ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
+          : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
     
-    const description = isEffortArticle
-      ? "Découvrez pourquoi la quête du 'sans effort' nous rend malheureux et comment retrouver le plaisir de l'effort calibré pour une vie plus épanouissante."
-      : isChangementArticle
-        ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
-        : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
+    const description = isVerbeArticle
+      ? "Les mots ne sont pas neutres. Découvrez comment le langage influence votre identité, votre confiance et votre trajectoire de dirigeant. Un article profond sur la puissance du verbe."
+      : isEffortArticle
+        ? "Découvrez pourquoi la quête du 'sans effort' nous rend malheureux et comment retrouver le plaisir de l'effort calibré pour une vie plus épanouissante."
+        : isChangementArticle
+          ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+          : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
     
-    const image = isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
+    const image = isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
     
     document.title = title;
     
@@ -113,7 +128,7 @@ const ArticleDetail = () => {
       document.head.appendChild(ogImage);
     }
     ogImage.setAttribute('content', image);
-  }, [isChangementArticle, isEffortArticle, articleTitle]);
+  }, [isChangementArticle, isEffortArticle, isVerbeArticle, articleTitle]);
 
   return (
     <div className="min-h-screen bg-[#fdf9f4]">
@@ -122,18 +137,20 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
-          alt={isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
+          src={isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
+          alt={isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              {isEffortArticle
-                ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
-                : isChangementArticle 
-                  ? "Le changement : comprendre, choisir et intégrer une transformation durable"
-                  : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?"
+              {isVerbeArticle
+                ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
+                : isEffortArticle
+                  ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
+                  : isChangementArticle 
+                    ? "Le changement : comprendre, choisir et intégrer une transformation durable"
+                    : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ?"
               }
             </h1>
           </div>
@@ -148,31 +165,272 @@ const ArticleDetail = () => {
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
           <span className="text-foreground">
-            {isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+            {isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
 
         {/* Article date */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-sm text-muted-foreground">
-            {isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+            {isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
-            {isEffortArticle
-              ? "Ouvrez n'importe quel réseau social : « Devenez riche pendant votre sommeil. » « Perdez 10 kilos sans bouger. » « Apprenez une compétence en 24h. » Ce discours n'est pas seulement un marché. C'est un mensonge psychologique. Il détruit notre rapport au réel… et surtout, notre rapport à l'effort, pourtant indispensable à la construction de soi."
-              : isChangementArticle 
-                ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
-                : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
+            {isVerbeArticle
+              ? "Les mots ne sont pas neutres. Ils ne décrivent pas seulement la réalité : ils la construisent. Chaque phrase que nous prononçons — à nous-mêmes comme aux autres — façonne notre identité, notre confiance, nos décisions et notre trajectoire de leader. La parole est un acte. Un acte de création ou de destruction. À nous de choisir."
+              : isEffortArticle
+                ? "Ouvrez n'importe quel réseau social : « Devenez riche pendant votre sommeil. » « Perdez 10 kilos sans bouger. » « Apprenez une compétence en 24h. » Ce discours n'est pas seulement un marché. C'est un mensonge psychologique. Il détruit notre rapport au réel… et surtout, notre rapport à l'effort, pourtant indispensable à la construction de soi."
+                : isChangementArticle 
+                  ? "Nous changeons. Parfois sans nous en rendre compte. Parfois malgré nous. Et parfois — beaucoup plus rarement — parce que nous le décidons réellement. Le changement n'est pas une résolution. Ce n'est pas une promesse. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
+                  : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Alors que mes amis me répétaient \"c'est le moyen de transport le plus sûr du monde\", je transpirais à chaque décollage, persuadé que la fin était proche. Mais si la peur n'était pas toujours fondée ? Si elle était parfois un faux signal, hérité de nos histoires, de notre éducation ou de notre imaginaire ?"
             }
           </p>
 
           {/* Body content */}
           <article className="prose prose-lg max-w-none text-foreground">
-            {isEffortArticle ? (
+            {isVerbeArticle ? (
+              <>
+                {/* Article sur la puissance du verbe */}
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    « Que votre parole soit impeccable. »
+                  </p>
+                  <p className="text-lg text-muted-foreground mt-4">— Don Miguel Ruiz, Les Quatre Accords Toltèques</p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce premier accord toltèque n'est pas une règle morale. Ce n'est pas un commandement religieux. C'est un levier de transformation intérieure et collective d'une puissance considérable. Car les mots que nous choisissons — consciemment ou non — déterminent bien plus que ce que nous communiquons. Ils déterminent ce que nous devenons.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les neurosciences, la psychologie et la philosophie convergent sur ce point : le langage n'est pas un simple outil de description du monde. Il est un outil de création du monde. Et pour un dirigeant, un entrepreneur ou un manager, comprendre ce pouvoir peut transformer radicalement sa manière de diriger, d'inspirer et de se construire.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  I. Quand la parole devient une arme silencieuse
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Les mots qui construisent… ou qui détruisent
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Nous avons tous reçu des paroles qui nous ont marqués. Certaines nous ont portés. D'autres nous ont brisés. Et souvent, ceux qui les ont prononcées n'en avaient même pas conscience.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  « Tu n'es pas fait pour les études. » « Tu es trop sensible pour ce métier. » « Tu n'as pas le profil d'un leader. » Ces phrases, entendues dans l'enfance, à l'école, au travail, ne sont pas de simples commentaires. Ce sont des graines qui s'enracinent dans notre inconscient. Et avec le temps, elles deviennent des croyances. Des certitudes. Des limitations invisibles.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'élève qualifié de « nul en maths » finit souvent par le croire — et par le devenir. Le collaborateur à qui l'on dit qu'il « n'est pas fait pour manager » abandonne souvent l'idée même d'essayer. Non pas parce qu'il manque de capacités, mais parce qu'une parole a créé une réalité dans son esprit.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    La parole peut devenir une arme de destruction massive invisible — souvent sans intention malveillante.
+                  </p>
+                </blockquote>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Le mécanisme de l'auto-sabotage
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le plus redoutable, c'est que ces paroles reçues deviennent des paroles que l'on se répète. L'enfant qui a entendu « tu es nul » finit par se dire « je suis nul ». Et cette phrase, répétée des centaines de fois dans le silence de l'esprit, forge une identité. Une prison mentale construite avec des mots.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce mécanisme d'auto-sabotage est l'un des plus puissants freins à la réussite personnelle et professionnelle. Ce n'est pas le talent qui manque. Ce n'est pas l'opportunité. C'est la croyance — et la croyance est faite de mots.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  II. Leadership, communication et responsabilité
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Chaque phrase est un acte de leadership
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Pour un dirigeant, chaque mot prononcé a un impact. Chaque phrase façonne la culture d'entreprise, l'engagement des équipes, la confiance collective. Ce n'est pas seulement ce que vous dites qui compte — c'est ce que vos équipes entendent, interprètent, retiennent.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Un manager qui dit « on n'y arrivera jamais » ne fait pas qu'exprimer un doute. Il programme un échec. Il autorise l'abandon. Il contamine son équipe d'une croyance limitante. À l'inverse, un leader qui dit « c'est difficile, mais nous allons trouver une solution » ouvre un espace de possibilité. Il crée une énergie.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Un leader ne communique pas. Il crée la réalité avec ses mots.
+                  </p>
+                </blockquote>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Les accords toltèques au service du leadership
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Don Miguel Ruiz propose quatre accords fondamentaux pour une vie libérée. Deux d'entre eux concernent directement la communication :
+                </p>
+
+                <p className="mb-4 leading-relaxed text-lg">
+                  <strong>« Ne pas prendre les choses personnellement »</strong> — Ce que l'autre dit parle de lui, pas de vous. Cette conscience libère de la réactivité émotionnelle et permet un leadership plus serein, moins défensif, plus ouvert.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  <strong>« Ne pas faire de suppositions »</strong> — Nous interprétons constamment les paroles et les silences des autres. Souvent à tort. Cette habitude génère conflits, malentendus et perte d'énergie. Demander plutôt que supposer est un acte de courage et de clarté.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ces principes, appliqués au quotidien d'un dirigeant, transforment la qualité des échanges, la fluidité des relations et l'efficacité des décisions collectives.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  III. Le jeu du miroir : la parole intérieure
+                </h2>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  Le dialogue interne : le langage le plus influent
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Si les mots des autres ont un pouvoir sur nous, que dire des mots que nous nous adressons à nous-mêmes ? Le dialogue intérieur — cette voix constante qui commente, juge, anticipe — est le langage le plus influent de notre existence.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les pensées répétées deviennent des vérités internes. « Je ne suis pas capable » répété cent fois devient une certitude. « Je suis un imposteur » murmure quotidiennement finit par s'ancrer comme une identité. Ce n'est pas la réalité qui crée ces pensées — ce sont ces pensées qui créent notre réalité perçue.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  La reprogrammation consciente
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La bonne nouvelle, c'est que ce qui a été programmé peut être reprogrammé. Pas par la pensée positive naïve (« tout va bien » quand rien ne va), mais par le remplacement conscient des phrases limitantes par des formulations orientées progression.
+                </p>
+
+                <p className="mb-4 leading-relaxed text-lg">
+                  Quelques exemples concrets :
+                </p>
+
+                <ul className="mb-6 leading-relaxed text-lg list-disc pl-6 space-y-2">
+                  <li><strong>« Je n'y arriverai jamais »</strong> → « Je progresse étape par étape »</li>
+                  <li><strong>« Je ne suis pas fait pour ça »</strong> → « J'apprends à le devenir »</li>
+                  <li><strong>« Je suis nul en négociation »</strong> → « Je développe mes compétences en négociation »</li>
+                  <li><strong>« Je ne suis pas un leader »</strong> → « Je construis mon style de leadership »</li>
+                </ul>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce changement de formulation n'est pas un mensonge. C'est un choix de perspective. Un choix de créer une réalité plutôt qu'une autre.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  IV. Ancrage personnel : une phrase qui a changé une vie
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je voudrais partager ici une anecdote personnelle. Elle illustre, mieux que tout concept, le pouvoir transformateur d'une simple phrase.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Enfant, je n'étais pas ce qu'on appelle un bon élève. Distrait, agité, pas vraiment intéressé par les matières scolaires. Le genre de gamin qu'on qualifiait volontiers de « cancre ». Ma mère, inquiète pour mon avenir, en parlait régulièrement à mon instituteur, Jean-Louis.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Un jour, il lui a dit quelque chose de simple. Une phrase que je n'ai jamais oubliée :
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    « Ne t'inquiète pas, il s'en sortira toujours. »
+                  </p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cette phrase est devenue un ancrage. Une boussole intérieure. Un socle de résilience dans les moments de doute. Elle a créé en moi une croyance profonde : quoi qu'il arrive, je trouverai un chemin.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'ironie de l'histoire ? L'ancien « cancre » est aujourd'hui capable d'écrire, de structurer des pensées complexes, de transmettre des idées à des dirigeants et entrepreneurs. Non pas parce que j'ai « réussi malgré tout », mais parce qu'une parole m'a donné la permission de croire en ma capacité à m'en sortir.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  Les mots peuvent transformer une trajectoire de vie.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  V. Comment utiliser consciemment la puissance du verbe
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Conscientiser le pouvoir des mots n'est pas une technique de développement personnel. C'est une discipline de vie. Une attention permanente à ce que l'on dit — aux autres comme à soi-même.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  1. Identifier les phrases que vous vous répétez
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Prenez un moment pour observer votre dialogue intérieur. Quelles phrases revenez-vous sans cesse ? Quels jugements portez-vous sur vous-même de manière automatique ? Ces phrases sont souvent héritées — de l'enfance, de l'éducation, d'expériences passées. Les identifier, c'est déjà commencer à s'en libérer.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  2. Choisir un mot ou une phrase d'ancrage
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Comme ma phrase de Jean-Louis, trouvez un mot ou une phrase qui vous porte. Qui vous recentre. Qui vous rappelle qui vous choisissez d'être. Ce peut être « je suis capable », « j'avance », « je construis » — peu importe, tant que cela résonne profondément en vous.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  3. Observer l'impact dans les décisions quotidiennes
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Remarquez comment vos mots influencent vos choix. Quand vous vous dites « c'est trop risqué », que décidez-vous ? Quand vous vous dites « ça vaut le coup d'essayer », que décidez-vous ? Le langage précède l'action. Changer le langage, c'est changer la direction.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-8 mb-4">
+                  4. Appliquer cela à vos équipes et votre entreprise
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  En tant que dirigeant, vous êtes aussi responsable du langage collectif. Les mots utilisés dans les réunions, les emails, les feedbacks façonnent la culture. Encouragez un langage orienté solutions plutôt que problèmes. Célébrez les tentatives, pas seulement les réussites. Créez un environnement où la parole construit plutôt qu'elle ne détruit.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Conclusion — Devenir l'architecte de son langage
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les mots façonnent la réalité. Ce n'est pas une métaphore — c'est un fait psychologique et neurologique. Chaque phrase est un acte de création. Chaque silence est un choix. Chaque mot prononcé en public comme dans l'intimité de l'esprit contribue à construire un monde.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le choix est conscient ou subi. Nous pouvons être les victimes du langage que nous avons reçu — ou devenir les architectes du langage que nous choisissons.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Trois questions pour conclure :
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Quel mot vous définit aujourd'hui ?<br /><br />
+                    Quelle phrase devez-vous arrêter de nourrir ?<br /><br />
+                    Quelle parole allez-vous choisir d'incarner désormais ?
+                  </p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  Car au final, nous ne sommes pas ce que nous pensons. Nous sommes ce que nous nous répétons.
+                </p>
+              </>
+            ) : isEffortArticle ? (
               <>
                 {/* Article sur l'effort */}
                 <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
