@@ -13,6 +13,7 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import MentoringDirigeant from "./pages/MentoringDirigeant";
 import DiagnosticStrategique360 from "./pages/DiagnosticStrategique360";
+import DiagnosticSysteme from "./pages/DiagnosticSysteme";
 import TransformationInterne from "./pages/TransformationInterne";
 import SoutienMentalDirigeant from "./pages/SoutienMentalDirigeant";
 import NotFound from "./pages/NotFound";
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/articles/:slug" element={<ArticleDetail />} />
           <Route path="/mentoring-dirigeant-montpellier" element={<MentoringDirigeant />} />
           <Route path="/diagnostic-strategique-360" element={<DiagnosticStrategique360 />} />
+          <Route path="/diagnostic-systeme" element={<DiagnosticSysteme />} />
           <Route path="/transformation-interne-organisation" element={<TransformationInterne />} />
           <Route path="/soutien-mental-dirigeant" element={<SoutienMentalDirigeant />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
