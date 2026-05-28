@@ -11,6 +11,7 @@ import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
 import articleVerbe from "@/assets/article-verbe.jpg";
+import articleIA from "@/assets/article-ia-pensee.jpg";
 
 const relatedArticles = [
   {
