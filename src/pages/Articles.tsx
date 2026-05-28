@@ -8,8 +8,16 @@ import articleMindfulness from "@/assets/article-mindfulness.jpg";
 import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
 import articleVerbe from "@/assets/article-verbe.jpg";
+import articleIA from "@/assets/article-ia-pensee.jpg";
 
 const articles = [
+  {
+    id: "pourquoi-l-ia-va-redonner-de-la-valeur",
+    title: "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore",
+    excerpt: "Dans un environnement saturé par la promesse de l'automatisation, la réflexion profonde devient une compétence rare — donc précieuse. Une réflexion sur le bruit, la pensée et le discernement.",
+    image: articleIA,
+    date: "10 juin 2026",
+  },
   {
     id: "la-puissance-du-verbe",
     title: "La puissance du verbe : comment les mots façonnent votre identité",
