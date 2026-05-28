@@ -175,21 +175,23 @@ const ArticleDetail = () => {
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
           <span className="text-foreground">
-            {isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+            {isIAArticle ? "L'IA et la pensée des dirigeants" : isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
 
         {/* Article date */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-sm text-muted-foreground">
-            {isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+            {isIAArticle ? "10 juin 2026 · Newsletter LinkedIn — Pensée en cours" : isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
-            {isVerbeArticle
+            {isIAArticle
+              ? "Il y a quelques semaines, j'ai eu une conversation qui m'a arrêté net. Un dirigeant que j'accompagne — multi-structures, expérimenté, lucide sur son marché — m'a dit : « J'ai l'impression de passer mes soirées à regarder des vidéos sur l'IA et de ne jamais avancer. » Ce n'était pas une plainte. C'était un constat, formulé avec la précision de quelqu'un qui commence à comprendre le mécanisme dont il est victime."
+              : isVerbeArticle
               ? "Les mots ne sont pas neutres. Ils ne décrivent pas seulement la réalité : ils la construisent. Chaque phrase que nous prononçons — à nous-mêmes comme aux autres — façonne notre identité, notre confiance, nos décisions et notre trajectoire de leader. La parole est un acte. Un acte de création ou de destruction. À nous de choisir."
               : isEffortArticle
                 ? "Ouvrez n'importe quel réseau social : « Devenez riche pendant votre sommeil. » « Perdez 10 kilos sans bouger. » « Apprenez une compétence en 24h. » Ce discours n'est pas seulement un marché. C'est un mensonge psychologique. Il détruit notre rapport au réel… et surtout, notre rapport à l'effort, pourtant indispensable à la construction de soi."
@@ -201,7 +203,164 @@ const ArticleDetail = () => {
 
           {/* Body content */}
           <article className="prose prose-lg max-w-none text-foreground">
-            {isVerbeArticle ? (
+            {isIAArticle ? (
+              <>
+                {/* Article sur l'IA et la pensée */}
+                <p className="mb-6 leading-relaxed text-lg">
+                  J'aurais pu lui répondre avec des conseils. J'ai préféré lui dire la vérité : <strong>je vis exactement la même chose.</strong>
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Le cycle que personne ne nomme vraiment
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je dirige plusieurs structures en parallèle — une startup healthtech, une activité de conseil, des projets en développement. Mon quotidien ressemble à celui de beaucoup de dirigeants que je croise : dense, fragmenté, avec des décisions à prendre dans des domaines très différents le même jour.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dans cet environnement, la promesse de l'automatisation totale tombe comme une réponse parfaite à une vraie douleur. <em>« Et si l'IA pouvait faire à ta place ce qui t'épuise ? »</em>
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Alors on teste. On s'inscrit. On regarde. On teste encore.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le lundi matin, on repart dans l'opérationnel avec le sentiment diffus d'être en retard sur quelque chose qu'on n'arrive pas à définir précisément. Deux semaines plus tard, le cycle recommence.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Ce n'est pas un problème de discipline. Ce n'est pas un problème de compétence. C'est un problème de design de l'attention — et nous sommes tous, à des degrés divers, les sujets d'une expérience que nous n'avons pas choisie.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  La mécanique que j'ai vue se produire une première fois
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Il y a une dizaine d'années, les mêmes promesses circulaient autour d'un autre eldorado : devenir créateur de contenu. YouTube, Instagram, les blogs. <em>« N'importe qui peut construire une audience et en vivre. »</em>
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce n'était pas faux. Quelques-uns l'ont fait. Mais sur la masse considérable de ceux qui ont tenté — des heures investies, des outils achetés, des formations suivies — combien ont réellement transformé cet investissement en quelque chose de durable ?
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La barrière à l'entrée était faible. La charge cognitive était forte. Les résultats se sont concentrés sur une minorité.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Le mécanisme de l'IA générative suit exactement le même schéma. Faible barrière à l'entrée, forte charge cognitive, résultats concentrés. La masse produit du bruit. Quelques-uns, ceux qui avancent avec méthode et discernement, émergent.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  La différence cette fois, c'est la vitesse. Et la pression sociale qui l'accompagne.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Ce que j'ai commencé à faire différemment
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je ne prétends pas avoir trouvé la bonne réponse. Je partage ce que j'expérimente sur moi-même, sur mes structures, avec les erreurs que ça implique.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-10 mb-4">
+                  1. J'ai instauré un filtre d'entrée pour toute nouvelle information sur l'IA.
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La question que je me pose systématiquement avant de regarder une vidéo, de lire un thread, de tester un outil : <strong>est-ce que ça change quelque chose à une décision que j'ai à prendre dans les 90 prochains jours ?</strong>
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Si la réponse est non, je passe. Ce filtre seul a considérablement réduit le bruit dans mes semaines.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-10 mb-4">
+                  2. J'ai réinvesti le temps libéré dans la structuration de ma pensée.
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Écrire. Confronter mes idées à des interlocuteurs exigeants. Lire des choses qui n'ont rien à voir avec l'IA — de la psychologie, de la philosophie, des biographies de dirigeants qui ont traversé des mutations profondes.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce que je remarque : c'est dans ces moments-là que mes meilleures décisions émergent. Pas dans la consommation de contenu sur l'automatisation.
+                </p>
+
+                <h3 className="text-2xl font-bold text-primary mt-10 mb-4">
+                  3. J'ai redéfini ce que « utiliser l'IA » signifie pour moi.
+                </h3>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je l'utilise. Intensément, même. Mais comme un <strong>outil d'amplification</strong> de ma pensée, pas comme un substitut.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Un outil amplifie ce que tu as déjà. Un substitut remplace ce que tu n'as pas encore développé. Confondre les deux, c'est construire sur du sable.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Ce qui va se passer, et pourquoi ça me rend paradoxalement optimiste
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La surcommunication sur l'automatisation va s'essouffler. Toutes les bulles de contenu suivent le même cycle — émergence, saturation, effondrement partiel, consolidation autour de ce qui a une vraie valeur.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce cycle prend du temps. Mais il est inévitable.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce qui restera visible quand la poussière sera retombée : les dirigeants qui auront continué à penser, à structurer, à décider avec discernement. Ceux qui auront résisté à la pression de tout déléguer à un outil, et qui auront au contraire développé leur capacité à poser les bonnes questions — y compris aux outils IA qu'ils utilisent.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  La réflexion profonde devient une compétence rare précisément parce que tout le monde l'abandonne. C'est un paradoxe que je trouve, étrangement, rassurant.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Limiter son exposition au bruit ambiant n'est pas un aveu de faiblesse. C'est une décision stratégique. Peut-être l'une des plus importantes qu'un dirigeant puisse prendre en ce moment.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  En guise de conclusion — et d'ouverture
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je suis convaincu que les prochaines années vont creuser un écart visible entre deux types de dirigeants : ceux qui ont laissé la pression de l'automatisation dicter leur agenda mental, et ceux qui ont maintenu — ou retrouvé — la capacité de penser par eux-mêmes, avec les outils disponibles mais sans en être dépendants.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce n'est pas une question de génération. Ce n'est pas une question de secteur. C'est une question de <strong>lucidité sur ce qui crée réellement de la valeur</strong> dans votre contexte spécifique.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-2xl md:text-3xl italic text-foreground leading-relaxed font-light">
+                    Et vous — est-ce que vous avez l'impression d'avancer, ou de courir ?
+                  </p>
+                </blockquote>
+
+                <p className="mb-6 leading-relaxed text-lg text-muted-foreground italic">
+                  Pensée en cours — une réflexion mensuelle sur ce qui structure vraiment la pensée et les décisions des dirigeants.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Si cet article a résonné, vous pouvez vous abonner à cette newsletter pour recevoir la prochaine édition directement.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Vous dirigez plusieurs structures ou traversez un moment de clarification stratégique ? J'ai ouvert quelques créneaux pour des échanges de 30 min — sans agenda commercial.
+                </p>
+              </>
+            ) : isVerbeArticle ? (
               <>
                 {/* Article sur la puissance du verbe */}
                 <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
