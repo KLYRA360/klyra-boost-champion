@@ -145,14 +145,16 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
-          alt={isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
+          src={isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
+          alt={isIAArticle ? "Dirigeant marchant dans un couloir épuré — métaphore de la pensée stratégique à l'ère de l'IA" : isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              {isVerbeArticle
+              {isIAArticle
+                ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore"
+                : isVerbeArticle
                 ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
                 : isEffortArticle
                   ? "Pourquoi la haine de l'effort nous rend malheureux (et comment réapprendre à l'aimer)"
