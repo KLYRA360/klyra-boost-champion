@@ -15,6 +15,13 @@ import articleIA from "@/assets/article-ia-pensee.jpg";
 
 const relatedArticles = [
   {
+    id: "pourquoi-l-ia-va-redonner-de-la-valeur",
+    title: "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore",
+    excerpt: "Dans un environnement saturé par la promesse de l'automatisation, la réflexion profonde devient une compétence rare — donc précieuse.",
+    image: articleIA,
+    date: "10 juin 2026",
+  },
+  {
     id: "la-puissance-du-verbe",
     title: "La puissance du verbe : comment les mots façonnent votre identité",
     excerpt: "Les mots ne décrivent pas seulement la réalité : ils la construisent. Découvrez comment le langage influence votre trajectoire de leader.",
@@ -33,13 +40,6 @@ const relatedArticles = [
     title: "Le mentoring exécutif en entreprise",
     excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
     image: articleCoaching,
-    date: "À venir",
-  },
-  {
-    id: "mindfulness-travail",
-    title: "La mindfulness au travail",
-    excerpt: "Intégrer la pleine conscience dans votre quotidien professionnel pour améliorer concentration, bien-être et performance.",
-    image: articleMindfulness,
     date: "À venir",
   },
 ];
