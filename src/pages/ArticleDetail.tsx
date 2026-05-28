@@ -83,7 +83,9 @@ const ArticleDetail = () => {
 
   // SEO meta tags
   useEffect(() => {
-    const title = isVerbeArticle
+    const title = isIAArticle
+      ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore | KLYRA360"
+      : isVerbeArticle
       ? "La puissance du verbe : comment les mots façonnent votre identité | KLYRA360"
       : isEffortArticle
         ? "Pourquoi la haine de l'effort nous rend malheureux | KLYRA360"
@@ -91,7 +93,9 @@ const ArticleDetail = () => {
           ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
           : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
     
-    const description = isVerbeArticle
+    const description = isIAArticle
+      ? "Dans un environnement saturé par la promesse de l'automatisation, la réflexion profonde devient une compétence rare. Pourquoi les dirigeants qui pensent encore vont émerger."
+      : isVerbeArticle
       ? "Les mots ne sont pas neutres. Découvrez comment le langage influence votre identité, votre confiance et votre trajectoire de dirigeant. Un article profond sur la puissance du verbe."
       : isEffortArticle
         ? "Découvrez pourquoi la quête du 'sans effort' nous rend malheureux et comment retrouver le plaisir de l'effort calibré pour une vie plus épanouissante."
@@ -99,7 +103,7 @@ const ArticleDetail = () => {
           ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
           : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
     
-    const image = isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
+    const image = isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
     
     document.title = title;
     
@@ -132,7 +136,7 @@ const ArticleDetail = () => {
       document.head.appendChild(ogImage);
     }
     ogImage.setAttribute('content', image);
-  }, [isChangementArticle, isEffortArticle, isVerbeArticle, articleTitle]);
+  }, [isChangementArticle, isEffortArticle, isVerbeArticle, isIAArticle, articleTitle]);
 
   return (
     <div className="min-h-screen bg-[#fdf9f4]">
