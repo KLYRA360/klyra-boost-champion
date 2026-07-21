@@ -160,7 +160,9 @@ const ArticleDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              {isIAArticle
+              {isFreinsArticle
+                ? "Lâcher les freins"
+                : isIAArticle
                 ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore"
                 : isVerbeArticle
                 ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
