@@ -217,146 +217,184 @@ const ArticleDetail = () => {
           <article className="prose prose-lg max-w-none text-foreground">
             {isFreinsArticle ? (
               <>
-                {/* Article Lâcher les freins */}
-                <p className="mb-6 leading-relaxed text-lg">
+                {/* Article Lâcher les freins — mise en forme éditoriale magazine */}
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif first-letter:float-left first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:text-6xl md:first-letter:text-7xl first-letter:leading-[0.85] first-letter:mr-3 first-letter:mt-1">
                   Je ne suis pas un rider. Je fais du VTT depuis longtemps, mais pas de la descente sérieuse. Cette journée-là, j'avais décidé de dépasser mes habitudes : monter en télécabine, prendre une piste noire, et voir ce que mon corps — et surtout ma tête — étaient prêts à faire.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Dans la cabine, en regardant le vélo appuyé contre la paroi et le casque intégral posé sur le cadre, j'ai eu cette pensée très nette : <em>« Ce que tu vas faire dans cinq minutes est disproportionné par rapport à ce que ton corps a l'habitude de faire. »</em> Ce n'était pas de l'excitation. C'était un début de peur — mesurée, adulte, mais bien présente.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  Dans la cabine, en regardant le vélo appuyé contre la paroi et le casque intégral posé sur le cadre, j'ai eu cette pensée très nette : <em className="text-primary/90">« Ce que tu vas faire dans cinq minutes est disproportionné par rapport à ce que ton corps a l'habitude de faire. »</em> Ce n'était pas de l'excitation. C'était un début de peur — mesurée, adulte, mais bien présente.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Ce que je n'avais pas anticipé, c'est à quel point cette peur allait ressembler à celle que je croise, autrement, dans ma vie de dirigeant.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">I</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Le risque fait partie du mouvement
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Sur un VTT de descente, freiner est une décision permanente. Trop, et tu bloques la roue, tu perds la trajectoire, tu tombes. Pas assez, et tu deviens un passager. Le geste juste n'est ni de tout retenir, ni de tout lâcher : c'est de doser en continu, en fonction du terrain qui arrive.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Entreprendre fonctionne de la même manière. Il y a des dirigeants qui freinent en permanence — pour ne pas se tromper, pour ne pas être jugés, pour ne pas déplaire. Et il y a ceux qui lâchent tout — au nom de l'audace, de la vision, du « il faut oser ». Les deux se plantent, simplement pas au même virage.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Ce que j'ai réappris ce jour-là, c'est que la prudence n'est pas une vertu en soi. Elle le devient quand elle sert le mouvement. Quand elle empêche le mouvement, elle porte un autre nom : <strong>l'inhibition</strong>.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  Ce que j'ai réappris ce jour-là, c'est que la prudence n'est pas une vertu en soi. Elle le devient quand elle sert le mouvement. Quand elle empêche le mouvement, elle porte un autre nom : <strong className="text-primary font-semibold">l'inhibition</strong>.
                 </p>
 
-                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
-                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                <blockquote className="my-14 relative">
+                  <span className="absolute -top-6 -left-2 text-7xl md:text-8xl font-serif text-gold/30 leading-none select-none">“</span>
+                  <p className="relative pl-8 md:pl-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug">
                     On ne mesure pas la qualité d'un dirigeant à sa capacité à éviter les risques, mais à sa capacité à choisir ceux qu'il prend.
                   </p>
                 </blockquote>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">II</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Entreprendre, c'est apprendre à vivre avec l'incertitude
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  La chute est arrivée dans un virage que j'avais mal lu. Rien de spectaculaire : une perte d'appui, le vélo qui part, moi qui glisse quelques mètres. Le corps va bien. La tête, elle, se pose immédiatement une question inconfortable : <em>« Est-ce que je continue, ou est-ce que je descends à pied ? »</em>
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  La chute est arrivée dans un virage que j'avais mal lu. Rien de spectaculaire : une perte d'appui, le vélo qui part, moi qui glisse quelques mètres. Le corps va bien. La tête, elle, se pose immédiatement une question inconfortable : <em className="text-primary/90">« Est-ce que je continue, ou est-ce que je descends à pied ? »</em>
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Cette question, je l'ai reconnue. C'est exactement celle que se posent les dirigeants après un échec commercial, un recrutement raté, un pivot mal négocié, un client stratégique qui part. Ce n'est pas la douleur qui décide de la suite. C'est le récit qu'on fait de la douleur.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  La psychologie contemporaine a un nom pour ce qui se joue à ce moment-là : la <strong>flexibilité psychologique</strong>. La capacité à rester en contact avec ce qui est difficile, sans se laisser figer par lui, tout en continuant à avancer dans la direction qui compte pour soi. Ce n'est pas de la résilience héroïque. C'est un travail — discret, quotidien, exigeant.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  La psychologie contemporaine a un nom pour ce qui se joue à ce moment-là : la <strong className="text-primary font-semibold">flexibilité psychologique</strong>. La capacité à rester en contact avec ce qui est difficile, sans se laisser figer par lui, tout en continuant à avancer dans la direction qui compte pour soi. Ce n'est pas de la résilience héroïque. C'est un travail — discret, quotidien, exigeant.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Les dirigeants qui durent ne sont pas ceux qui n'ont pas peur. Ce sont ceux qui ont appris à ne pas confondre <em>« j'ai peur »</em> et <em>« je m'arrête »</em>.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  Les dirigeants qui durent ne sont pas ceux qui n'ont pas peur. Ce sont ceux qui ont appris à ne pas confondre <em className="text-primary/90">« j'ai peur »</em> et <em className="text-primary/90">« je m'arrête »</em>.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">III</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Lâcher les freins ne veut pas dire perdre le contrôle
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   L'expression « lâcher les freins » est souvent mal comprise. Elle évoque l'inconscience, l'excès, la fuite en avant. C'est exactement l'inverse. Lâcher les freins, c'est arrêter de retenir un mouvement qui, par ailleurs, est parfaitement piloté.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Pour un dirigeant, cela veut dire des choses très concrètes : arrêter de reporter la décision qu'on sait juste depuis trois mois. Arrêter d'atténuer un discours qui, si on le tenait sans filtre, clarifierait la relation avec son équipe, son associé, son investisseur. Arrêter de recruter « à peu près » parce qu'on n'ose pas assumer un vrai critère d'exigence.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Ce qui frappe, quand on regarde les trajectoires de près, c'est que les décisions qu'on n'ose pas prendre finissent presque toujours par nous être imposées — plus tard, dans de moins bonnes conditions, avec moins de marge. Le contrôle qu'on croyait garder en attendant, on l'a en réalité déjà perdu.
                 </p>
 
-                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
-                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                <blockquote className="my-14 relative">
+                  <span className="absolute -top-6 -left-2 text-7xl md:text-8xl font-serif text-gold/30 leading-none select-none">“</span>
+                  <p className="relative pl-8 md:pl-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug">
                     Freiner par confort, c'est repousser la décision. Ce n'est pas la supprimer.
                   </p>
                 </blockquote>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">IV</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Être soi — vraiment
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  Ce que j'ai retenu, en remontant sur le vélo après la chute, c'est une phrase simple : <em>« Descends comme toi. »</em> Pas comme le rider en face qui va plus vite. Pas comme le dirigeant qu'on est censé être à 40 ans. Comme soi, avec son niveau réel, son terrain intérieur, ses appuis.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  Ce que j'ai retenu, en remontant sur le vélo après la chute, c'est une phrase simple : <em className="text-primary/90">« Descends comme toi. »</em> Pas comme le rider en face qui va plus vite. Pas comme le dirigeant qu'on est censé être à 40 ans. Comme soi, avec son niveau réel, son terrain intérieur, ses appuis.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   L'authenticité est un mot usé. Les théories contemporaines de la motivation — notamment les travaux de Deci et Ryan sur l'autodétermination — en donnent une définition beaucoup plus opératoire : agir en accord avec ses valeurs profondes, en ayant le sentiment que la décision vient de soi, pas d'une injonction extérieure. C'est cette cohérence-là qui produit de l'énergie durable. Tout le reste — la performance jouée, l'image tenue, la posture — épuise.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Les dirigeants qui m'impressionnent le plus ne sont pas les plus impressionnants. Ce sont ceux qui ont cessé de porter un personnage. Ceux dont les décisions, les mots et les silences racontent la même personne. Ceux avec qui, après une heure d'entretien, on sait exactement à qui on a parlé.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">V</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Grandir, à tout âge
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  À 40 ans, on entend souvent — et parfois on se le dit à soi-même — que les grandes réinventions sont derrière. Que le cadre est posé. Que ce serait « déraisonnable » de bouger. C'est là que Carol Dweck, avec son travail sur le <em>growth mindset</em>, remet un peu d'ordre : ce qui bloque, ce n'est presque jamais l'âge. C'est la croyance qu'on a atteint son plafond.
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  À 40 ans, on entend souvent — et parfois on se le dit à soi-même — que les grandes réinventions sont derrière. Que le cadre est posé. Que ce serait « déraisonnable » de bouger. C'est là que Carol Dweck, avec son travail sur le <em className="text-primary/90">growth mindset</em>, remet un peu d'ordre : ce qui bloque, ce n'est presque jamais l'âge. C'est la croyance qu'on a atteint son plafond.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Une piste noire à 40 ans, ce n'est pas un exploit. C'est un rappel. Le corps peut encore apprendre. La tête peut encore choisir. La trajectoire peut encore se rouvrir. Il suffit — c'est peu et c'est beaucoup — d'accepter d'être débutant quelque part.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Beaucoup de dirigeants que j'accompagne franchissent ce seuil-là dans un tout autre domaine : reprendre la parole en public après des années de silence, sortir d'un rôle d'opérationnel pour redevenir stratège, remettre en cause un modèle économique qui « marche encore mais plus vraiment ». À chaque fois, la même mécanique : accepter de ne plus être bon tout de suite, pour redevenir bon différemment.
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">VI</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Vivre pleinement, sans se raconter d'histoires
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   « Lâcher les freins » n'est pas un slogan. C'est une hygiène de décision. Elle demande de distinguer, en permanence, trois choses qu'on a tendance à confondre : la peur qui protège (utile), la peur qui immobilise (à interroger), et la peur qui déguise en prudence un refus de choisir (à nommer).
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Quand on fait ce tri honnêtement, on découvre presque toujours que ce qu'on appelait « attendre le bon moment » était, en réalité, une manière élégante de ne pas décider. Et que l'on paie ce report en énergie, en clarté, en respect de soi.
                 </p>
 
-                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
-                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                <blockquote className="my-14 relative">
+                  <span className="absolute -top-6 -left-2 text-7xl md:text-8xl font-serif text-gold/30 leading-none select-none">“</span>
+                  <p className="relative pl-8 md:pl-12 text-2xl md:text-3xl font-serif italic text-primary leading-snug">
                     Vivre pleinement, ce n'est pas tout tenter. C'est refuser de vivre en dessous de ce que l'on sait être juste pour soi.
                   </p>
                 </blockquote>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                <div className="my-16 flex items-center gap-6">
+                  <span className="text-xs tracking-[0.35em] text-gold font-sans font-semibold">VII</span>
+                  <span className="h-px flex-1 bg-gold/40"></span>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-sans font-semibold text-primary uppercase tracking-[0.08em] mt-4 mb-8 leading-snug">
                   Ce que j'ai ramené de la descente
                 </h2>
 
-                <p className="mb-6 leading-relaxed text-lg">
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Je suis redescendu jusqu'en bas. Pas vite. Pas proprement. Mais entier — et surtout, présent. La véritable victoire, ce n'était pas la piste. C'était la conversation intérieure que j'ai eue en la faisant : arrêter de me demander si j'avais « le niveau », et commencer à me demander ce que je voulais faire de ce niveau-là.
                 </p>
 
-                <p className="mb-6 leading-relaxed text-lg">
-                  C'est exactement la question que je pose, sous une autre forme, aux dirigeants que j'accompagne. Non pas <em>« êtes-vous assez ? »</em> — vous l'êtes, sinon vous n'en seriez pas là. Mais : <em>« qu'êtes-vous prêt à ne plus retenir ? »</em>
+                <p className="mb-8 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
+                  C'est exactement la question que je pose, sous une autre forme, aux dirigeants que j'accompagne. Non pas <em className="text-primary/90">« êtes-vous assez ? »</em> — vous l'êtes, sinon vous n'en seriez pas là. Mais : <em className="text-primary/90">« qu'êtes-vous prêt à ne plus retenir ? »</em>
                 </p>
 
-                <p className="mb-12 leading-relaxed text-lg">
+                <p className="mb-12 leading-[1.85] text-[1.075rem] md:text-lg text-foreground/90 font-serif">
                   Chez KLYRA, c'est ce travail-là que nous faisons : aider les dirigeants à identifier, très précisément, où ils freinent sans raison — et à retrouver la trajectoire qui leur ressemble.
                 </p>
               </>
