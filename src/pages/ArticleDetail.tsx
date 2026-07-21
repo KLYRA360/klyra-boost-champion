@@ -153,8 +153,8 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
-          alt={isIAArticle ? "Dirigeant marchant dans un couloir épuré — métaphore de la pensée stratégique à l'ère de l'IA" : isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
+          src={isFreinsArticle ? articleFreins : isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
+          alt={isFreinsArticle ? "Vue depuis une télécabine sur un VTT de descente et un casque intégral — métaphore du lâcher-prise" : isIAArticle ? "Dirigeant marchant dans un couloir épuré — métaphore de la pensée stratégique à l'ère de l'IA" : isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
