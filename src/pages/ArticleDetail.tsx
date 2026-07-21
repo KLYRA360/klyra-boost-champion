@@ -200,7 +200,7 @@ const ArticleDetail = () => {
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
             {isFreinsArticle
-              ? "Il y a quelques semaines, j'ai remis un pied sur un VTT de descente. Pas un vélo tranquille : une machine faite pour dévaler des sentiers rapides, techniques, parfois brutaux. J'avais 40 ans, un casque intégral, et une phrase qui tournait en boucle dans la tête : « Qu'est-ce que je fais là ? » Ce jour-là, sur une piste que je connaissais mal, j'ai chuté. Sans gravité. Mais assez pour que je comprenne, en me relevant, que ce n'était pas la chute qui m'avait fait peur. C'était ce qu'elle révélait de moi."
+              ? "Réussir à être vraiment, c'est être capable de créer sans se cacher. D'ambitionner sans s'excuser. D'écouter sans se dissoudre. De prendre des risques sans se raconter d'histoires. De tomber sans faire de la chute une identité. De repartir sans devenir dur et de tout le temps être en mode combat."
               : isIAArticle
               ? "Il y a quelques semaines, j'ai eu une conversation qui m'a arrêté net. Un dirigeant que j'accompagne — multi-structures, expérimenté, lucide sur son marché — m'a dit : « J'ai l'impression de passer mes soirées à regarder des vidéos sur l'IA et de ne jamais avancer. » Ce n'était pas une plainte. C'était un constat, formulé avec la précision de quelqu'un qui commence à comprendre le mécanisme dont il est victime."
               : isVerbeArticle
