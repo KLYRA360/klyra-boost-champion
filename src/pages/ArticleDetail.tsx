@@ -185,14 +185,14 @@ const ArticleDetail = () => {
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
           <span className="text-foreground">
-            {isIAArticle ? "L'IA et la pensée des dirigeants" : isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+            {isFreinsArticle ? "Lâcher les freins" : isIAArticle ? "L'IA et la pensée des dirigeants" : isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
 
         {/* Article date */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-sm text-muted-foreground">
-            {isIAArticle ? "10 juin 2026 · Newsletter LinkedIn — Pensée en cours" : isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+            {isFreinsArticle ? "15 juillet 2026" : isIAArticle ? "10 juin 2026 · Newsletter LinkedIn — Pensée en cours" : isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
           </p>
         </div>
 
