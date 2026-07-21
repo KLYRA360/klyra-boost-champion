@@ -199,7 +199,9 @@ const ArticleDetail = () => {
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
-            {isIAArticle
+            {isFreinsArticle
+              ? "Il y a quelques semaines, j'ai remis un pied sur un VTT de descente. Pas un vélo tranquille : une machine faite pour dévaler des sentiers rapides, techniques, parfois brutaux. J'avais 40 ans, un casque intégral, et une phrase qui tournait en boucle dans la tête : « Qu'est-ce que je fais là ? » Ce jour-là, sur une piste que je connaissais mal, j'ai chuté. Sans gravité. Mais assez pour que je comprenne, en me relevant, que ce n'était pas la chute qui m'avait fait peur. C'était ce qu'elle révélait de moi."
+              : isIAArticle
               ? "Il y a quelques semaines, j'ai eu une conversation qui m'a arrêté net. Un dirigeant que j'accompagne — multi-structures, expérimenté, lucide sur son marché — m'a dit : « J'ai l'impression de passer mes soirées à regarder des vidéos sur l'IA et de ne jamais avancer. » Ce n'était pas une plainte. C'était un constat, formulé avec la précision de quelqu'un qui commence à comprendre le mécanisme dont il est victime."
               : isVerbeArticle
               ? "Les mots ne sont pas neutres. Ils ne décrivent pas seulement la réalité : ils la construisent. Chaque phrase que nous prononçons — à nous-mêmes comme aux autres — façonne notre identité, notre confiance, nos décisions et notre trajectoire de leader. La parole est un acte. Un acte de création ou de destruction. À nous de choisir."
