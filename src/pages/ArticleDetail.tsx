@@ -12,8 +12,16 @@ import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
 import articleVerbe from "@/assets/article-verbe.jpg";
 import articleIA from "@/assets/article-ia-pensee.jpg";
+import articleFreins from "@/assets/article-freins.jpg";
 
 const relatedArticles = [
+  {
+    id: "lacher-les-freins",
+    title: "Lâcher les freins",
+    excerpt: "Ce qu'une descente en VTT m'a appris sur l'entrepreneuriat, la peur et la liberté de vivre pleinement.",
+    image: articleFreins,
+    date: "15 juillet 2026",
+  },
   {
     id: "pourquoi-l-ia-va-redonner-de-la-valeur",
     title: "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore",
@@ -35,13 +43,6 @@ const relatedArticles = [
     image: articleEffort,
     date: "5 décembre 2025",
   },
-  {
-    id: "mentoring-executif",
-    title: "Le mentoring exécutif en entreprise",
-    excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
-    image: articleCoaching,
-    date: "À venir",
-  },
 ];
 
 const ArticleDetail = () => {
@@ -49,7 +50,7 @@ const ArticleDetail = () => {
   const navigate = useNavigate();
 
   // Vérifier si l'article existe
-  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux", "la-puissance-du-verbe", "pourquoi-l-ia-va-redonner-de-la-valeur"];
+  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux", "la-puissance-du-verbe", "pourquoi-l-ia-va-redonner-de-la-valeur", "lacher-les-freins"];
   if (!validSlugs.includes(slug || "")) {
     navigate("/articles");
     return null;
@@ -59,9 +60,12 @@ const ArticleDetail = () => {
   const isEffortArticle = slug === "pourquoi-la-haine-de-l-effort-nous-rend-malheureux";
   const isVerbeArticle = slug === "la-puissance-du-verbe";
   const isIAArticle = slug === "pourquoi-l-ia-va-redonner-de-la-valeur";
+  const isFreinsArticle = slug === "lacher-les-freins";
 
   const articleUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const articleTitle = isIAArticle
+  const articleTitle = isFreinsArticle
+    ? "Lâcher les freins"
+    : isIAArticle
     ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore"
     : isVerbeArticle
     ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
@@ -83,7 +87,9 @@ const ArticleDetail = () => {
 
   // SEO meta tags
   useEffect(() => {
-    const title = isIAArticle
+    const title = isFreinsArticle
+      ? "Lâcher les freins | KLYRA360"
+      : isIAArticle
       ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore | KLYRA360"
       : isVerbeArticle
       ? "La puissance du verbe : comment les mots façonnent votre identité | KLYRA360"
@@ -93,7 +99,9 @@ const ArticleDetail = () => {
           ? "Le changement : comprendre, choisir et intégrer une transformation durable | KLYRA360"
           : "✈️ Maman, j'ai peur de l'avion… et si la peur était un faux signal ? | KLYRA360";
     
-    const description = isIAArticle
+    const description = isFreinsArticle
+      ? "Ce qu'une descente en VTT m'a appris sur l'entrepreneuriat, la peur, l'authenticité et la liberté de vivre pleinement — sans confondre prudence et inhibition."
+      : isIAArticle
       ? "Dans un environnement saturé par la promesse de l'automatisation, la réflexion profonde devient une compétence rare. Pourquoi les dirigeants qui pensent encore vont émerger."
       : isVerbeArticle
       ? "Les mots ne sont pas neutres. Découvrez comment le langage influence votre identité, votre confiance et votre trajectoire de dirigeant. Un article profond sur la puissance du verbe."
@@ -103,7 +111,7 @@ const ArticleDetail = () => {
           ? "Le changement n'est pas une résolution. C'est un processus psychologique et identitaire puissant, qu'il est possible d'apprendre, de structurer et d'ancrer durablement."
           : "Depuis tout jeune, l'avion représentait pour moi l'inconnu le plus effrayant. Mais si la peur n'était pas toujours fondée ? Découvrez comment transformer la peur en moteur.";
     
-    const image = isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
+    const image = isFreinsArticle ? articleFreins : isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion;
     
     document.title = title;
     
@@ -136,7 +144,7 @@ const ArticleDetail = () => {
       document.head.appendChild(ogImage);
     }
     ogImage.setAttribute('content', image);
-  }, [isChangementArticle, isEffortArticle, isVerbeArticle, isIAArticle, articleTitle]);
+  }, [isChangementArticle, isEffortArticle, isVerbeArticle, isIAArticle, isFreinsArticle, articleTitle]);
 
   return (
     <div className="min-h-screen bg-[#fdf9f4]">
@@ -145,14 +153,16 @@ const ArticleDetail = () => {
       {/* Hero image with overlay H1 */}
       <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
         <img
-          src={isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
-          alt={isIAArticle ? "Dirigeant marchant dans un couloir épuré — métaphore de la pensée stratégique à l'ère de l'IA" : isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
+          src={isFreinsArticle ? articleFreins : isIAArticle ? articleIA : isVerbeArticle ? articleVerbe : isEffortArticle ? articleEffort : isChangementArticle ? articleChangement : articleAvion}
+          alt={isFreinsArticle ? "Vue depuis une télécabine sur un VTT de descente et un casque intégral — métaphore du lâcher-prise" : isIAArticle ? "Dirigeant marchant dans un couloir épuré — métaphore de la pensée stratégique à l'ère de l'IA" : isVerbeArticle ? "La puissance du verbe et du langage" : isEffortArticle ? "Illustration de l'effort et de la persévérance" : isChangementArticle ? "Illustration du changement et de la transformation personnelle" : "Avion dans le ciel - métaphore de la peur et du courage"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a2e40]/80 via-[#0a2e40]/40 to-transparent flex items-end">
           <div className="container mx-auto px-6 pb-12">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight">
-              {isIAArticle
+              {isFreinsArticle
+                ? "Lâcher les freins"
+                : isIAArticle
                 ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore"
                 : isVerbeArticle
                 ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
@@ -175,21 +185,23 @@ const ArticleDetail = () => {
           <Link to="/articles" className="hover:text-primary transition-colors">Articles</Link>
           <span className="mx-2">›</span>
           <span className="text-foreground">
-            {isIAArticle ? "L'IA et la pensée des dirigeants" : isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
+            {isFreinsArticle ? "Lâcher les freins" : isIAArticle ? "L'IA et la pensée des dirigeants" : isVerbeArticle ? "La puissance du verbe" : isEffortArticle ? "Retrouver le goût de l'effort" : isChangementArticle ? "Le changement" : "Maman, j'ai peur de l'avion"}
           </span>
         </nav>
 
         {/* Article date */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-sm text-muted-foreground">
-            {isIAArticle ? "10 juin 2026 · Newsletter LinkedIn — Pensée en cours" : isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
+            {isFreinsArticle ? "15 juillet 2026" : isIAArticle ? "10 juin 2026 · Newsletter LinkedIn — Pensée en cours" : isVerbeArticle ? "15 décembre 2025" : isEffortArticle ? "5 décembre 2025" : isChangementArticle ? "16 novembre 2025" : "10 novembre 2025"}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Chapô (intro) */}
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-12 border-l-4 border-gold pl-6 italic font-light">
-            {isIAArticle
+            {isFreinsArticle
+              ? "Il y a quelques semaines, j'ai remis un pied sur un VTT de descente. Pas un vélo tranquille : une machine faite pour dévaler des sentiers rapides, techniques, parfois brutaux. J'avais 40 ans, un casque intégral, et une phrase qui tournait en boucle dans la tête : « Qu'est-ce que je fais là ? » Ce jour-là, sur une piste que je connaissais mal, j'ai chuté. Sans gravité. Mais assez pour que je comprenne, en me relevant, que ce n'était pas la chute qui m'avait fait peur. C'était ce qu'elle révélait de moi."
+              : isIAArticle
               ? "Il y a quelques semaines, j'ai eu une conversation qui m'a arrêté net. Un dirigeant que j'accompagne — multi-structures, expérimenté, lucide sur son marché — m'a dit : « J'ai l'impression de passer mes soirées à regarder des vidéos sur l'IA et de ne jamais avancer. » Ce n'était pas une plainte. C'était un constat, formulé avec la précision de quelqu'un qui commence à comprendre le mécanisme dont il est victime."
               : isVerbeArticle
               ? "Les mots ne sont pas neutres. Ils ne décrivent pas seulement la réalité : ils la construisent. Chaque phrase que nous prononçons — à nous-mêmes comme aux autres — façonne notre identité, notre confiance, nos décisions et notre trajectoire de leader. La parole est un acte. Un acte de création ou de destruction. À nous de choisir."
@@ -203,7 +215,152 @@ const ArticleDetail = () => {
 
           {/* Body content */}
           <article className="prose prose-lg max-w-none text-foreground">
-            {isIAArticle ? (
+            {isFreinsArticle ? (
+              <>
+                {/* Article Lâcher les freins */}
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je ne suis pas un rider. Je fais du VTT depuis longtemps, mais pas de la descente sérieuse. Cette journée-là, j'avais décidé de dépasser mes habitudes : monter en télécabine, prendre une piste noire, et voir ce que mon corps — et surtout ma tête — étaient prêts à faire.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dans la cabine, en regardant le vélo appuyé contre la paroi et le casque intégral posé sur le cadre, j'ai eu cette pensée très nette : <em>« Ce que tu vas faire dans cinq minutes est disproportionné par rapport à ce que ton corps a l'habitude de faire. »</em> Ce n'était pas de l'excitation. C'était un début de peur — mesurée, adulte, mais bien présente.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce que je n'avais pas anticipé, c'est à quel point cette peur allait ressembler à celle que je croise, autrement, dans ma vie de dirigeant.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Le risque fait partie du mouvement
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Sur un VTT de descente, freiner est une décision permanente. Trop, et tu bloques la roue, tu perds la trajectoire, tu tombes. Pas assez, et tu deviens un passager. Le geste juste n'est ni de tout retenir, ni de tout lâcher : c'est de doser en continu, en fonction du terrain qui arrive.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Entreprendre fonctionne de la même manière. Il y a des dirigeants qui freinent en permanence — pour ne pas se tromper, pour ne pas être jugés, pour ne pas déplaire. Et il y a ceux qui lâchent tout — au nom de l'audace, de la vision, du « il faut oser ». Les deux se plantent, simplement pas au même virage.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce que j'ai réappris ce jour-là, c'est que la prudence n'est pas une vertu en soi. Elle le devient quand elle sert le mouvement. Quand elle empêche le mouvement, elle porte un autre nom : <strong>l'inhibition</strong>.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    On ne mesure pas la qualité d'un dirigeant à sa capacité à éviter les risques, mais à sa capacité à choisir ceux qu'il prend.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Entreprendre, c'est apprendre à vivre avec l'incertitude
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La chute est arrivée dans un virage que j'avais mal lu. Rien de spectaculaire : une perte d'appui, le vélo qui part, moi qui glisse quelques mètres. Le corps va bien. La tête, elle, se pose immédiatement une question inconfortable : <em>« Est-ce que je continue, ou est-ce que je descends à pied ? »</em>
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cette question, je l'ai reconnue. C'est exactement celle que se posent les dirigeants après un échec commercial, un recrutement raté, un pivot mal négocié, un client stratégique qui part. Ce n'est pas la douleur qui décide de la suite. C'est le récit qu'on fait de la douleur.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La psychologie contemporaine a un nom pour ce qui se joue à ce moment-là : la <strong>flexibilité psychologique</strong>. La capacité à rester en contact avec ce qui est difficile, sans se laisser figer par lui, tout en continuant à avancer dans la direction qui compte pour soi. Ce n'est pas de la résilience héroïque. C'est un travail — discret, quotidien, exigeant.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les dirigeants qui durent ne sont pas ceux qui n'ont pas peur. Ce sont ceux qui ont appris à ne pas confondre <em>« j'ai peur »</em> et <em>« je m'arrête »</em>.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Lâcher les freins ne veut pas dire perdre le contrôle
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'expression « lâcher les freins » est souvent mal comprise. Elle évoque l'inconscience, l'excès, la fuite en avant. C'est exactement l'inverse. Lâcher les freins, c'est arrêter de retenir un mouvement qui, par ailleurs, est parfaitement piloté.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Pour un dirigeant, cela veut dire des choses très concrètes : arrêter de reporter la décision qu'on sait juste depuis trois mois. Arrêter d'atténuer un discours qui, si on le tenait sans filtre, clarifierait la relation avec son équipe, son associé, son investisseur. Arrêter de recruter « à peu près » parce qu'on n'ose pas assumer un vrai critère d'exigence.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce qui frappe, quand on regarde les trajectoires de près, c'est que les décisions qu'on n'ose pas prendre finissent presque toujours par nous être imposées — plus tard, dans de moins bonnes conditions, avec moins de marge. Le contrôle qu'on croyait garder en attendant, on l'a en réalité déjà perdu.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Freiner par confort, c'est repousser la décision. Ce n'est pas la supprimer.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Être soi — vraiment
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ce que j'ai retenu, en remontant sur le vélo après la chute, c'est une phrase simple : <em>« Descends comme toi. »</em> Pas comme le rider en face qui va plus vite. Pas comme le dirigeant qu'on est censé être à 40 ans. Comme soi, avec son niveau réel, son terrain intérieur, ses appuis.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'authenticité est un mot usé. Les théories contemporaines de la motivation — notamment les travaux de Deci et Ryan sur l'autodétermination — en donnent une définition beaucoup plus opératoire : agir en accord avec ses valeurs profondes, en ayant le sentiment que la décision vient de soi, pas d'une injonction extérieure. C'est cette cohérence-là qui produit de l'énergie durable. Tout le reste — la performance jouée, l'image tenue, la posture — épuise.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Les dirigeants qui m'impressionnent le plus ne sont pas les plus impressionnants. Ce sont ceux qui ont cessé de porter un personnage. Ceux dont les décisions, les mots et les silences racontent la même personne. Ceux avec qui, après une heure d'entretien, on sait exactement à qui on a parlé.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Grandir, à tout âge
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  À 40 ans, on entend souvent — et parfois on se le dit à soi-même — que les grandes réinventions sont derrière. Que le cadre est posé. Que ce serait « déraisonnable » de bouger. C'est là que Carol Dweck, avec son travail sur le <em>growth mindset</em>, remet un peu d'ordre : ce qui bloque, ce n'est presque jamais l'âge. C'est la croyance qu'on a atteint son plafond.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Une piste noire à 40 ans, ce n'est pas un exploit. C'est un rappel. Le corps peut encore apprendre. La tête peut encore choisir. La trajectoire peut encore se rouvrir. Il suffit — c'est peu et c'est beaucoup — d'accepter d'être débutant quelque part.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Beaucoup de dirigeants que j'accompagne franchissent ce seuil-là dans un tout autre domaine : reprendre la parole en public après des années de silence, sortir d'un rôle d'opérationnel pour redevenir stratège, remettre en cause un modèle économique qui « marche encore mais plus vraiment ». À chaque fois, la même mécanique : accepter de ne plus être bon tout de suite, pour redevenir bon différemment.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Vivre pleinement, sans se raconter d'histoires
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  « Lâcher les freins » n'est pas un slogan. C'est une hygiène de décision. Elle demande de distinguer, en permanence, trois choses qu'on a tendance à confondre : la peur qui protège (utile), la peur qui immobilise (à interroger), et la peur qui déguise en prudence un refus de choisir (à nommer).
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Quand on fait ce tri honnêtement, on découvre presque toujours que ce qu'on appelait « attendre le bon moment » était, en réalité, une manière élégante de ne pas décider. Et que l'on paie ce report en énergie, en clarté, en respect de soi.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Vivre pleinement, ce n'est pas tout tenter. C'est refuser de vivre en dessous de ce que l'on sait être juste pour soi.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Ce que j'ai ramené de la descente
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je suis redescendu jusqu'en bas. Pas vite. Pas proprement. Mais entier — et surtout, présent. La véritable victoire, ce n'était pas la piste. C'était la conversation intérieure que j'ai eue en la faisant : arrêter de me demander si j'avais « le niveau », et commencer à me demander ce que je voulais faire de ce niveau-là.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  C'est exactement la question que je pose, sous une autre forme, aux dirigeants que j'accompagne. Non pas <em>« êtes-vous assez ? »</em> — vous l'êtes, sinon vous n'en seriez pas là. Mais : <em>« qu'êtes-vous prêt à ne plus retenir ? »</em>
+                </p>
+
+                <p className="mb-12 leading-relaxed text-lg">
+                  Chez KLYRA, c'est ce travail-là que nous faisons : aider les dirigeants à identifier, très précisément, où ils freinent sans raison — et à retrouver la trajectoire qui leur ressemble.
+                </p>
+              </>
+            ) : isIAArticle ? (
               <>
                 {/* Article sur l'IA et la pensée */}
                 <p className="mb-6 leading-relaxed text-lg">

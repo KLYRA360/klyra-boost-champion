@@ -9,8 +9,16 @@ import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
 import articleVerbe from "@/assets/article-verbe.jpg";
 import articleIA from "@/assets/article-ia-pensee.jpg";
+import articleFreins from "@/assets/article-freins.jpg";
 
 const articles = [
+  {
+    id: "lacher-les-freins",
+    title: "Lâcher les freins",
+    excerpt: "Ce qu'une descente en VTT m'a appris sur l'entrepreneuriat, la peur, l'authenticité et la liberté de vivre pleinement — sans confondre prudence et inhibition.",
+    image: articleFreins,
+    date: "15 juillet 2026",
+  },
   {
     id: "pourquoi-l-ia-va-redonner-de-la-valeur",
     title: "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore",
