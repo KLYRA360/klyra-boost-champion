@@ -16,6 +16,13 @@ import articleFreins from "@/assets/article-freins.jpg";
 
 const relatedArticles = [
   {
+    id: "lacher-les-freins",
+    title: "Lâcher les freins",
+    excerpt: "Ce qu'une descente en VTT m'a appris sur l'entrepreneuriat, la peur et la liberté de vivre pleinement.",
+    image: articleFreins,
+    date: "15 juillet 2026",
+  },
+  {
     id: "pourquoi-l-ia-va-redonner-de-la-valeur",
     title: "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore",
     excerpt: "Dans un environnement saturé par la promesse de l'automatisation, la réflexion profonde devient une compétence rare — donc précieuse.",
@@ -35,13 +42,6 @@ const relatedArticles = [
     excerpt: "Notre époque valorise la rapidité et le résultat instantané. Pourtant, c'est dans l'effort calibré que se trouve le vrai plaisir.",
     image: articleEffort,
     date: "5 décembre 2025",
-  },
-  {
-    id: "mentoring-executif",
-    title: "Le mentoring exécutif en entreprise",
-    excerpt: "Explorez les bénéfices d'un accompagnement personnalisé pour les leaders et dirigeants dans leur développement professionnel.",
-    image: articleCoaching,
-    date: "À venir",
   },
 ];
 
