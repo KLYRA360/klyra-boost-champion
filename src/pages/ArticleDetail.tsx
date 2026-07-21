@@ -219,15 +219,31 @@ const ArticleDetail = () => {
               <>
                 {/* Article Lâcher les freins */}
                 <p className="mb-6 leading-relaxed text-lg">
-                  Je ne suis pas un rider. Je fais du VTT depuis longtemps, mais pas de la descente sérieuse. Cette journée-là, j'avais décidé de dépasser mes habitudes : monter en télécabine, prendre une piste noire, et voir ce que mon corps — et surtout ma tête — étaient prêts à faire.
+                  Il y a des phrases qui arrivent au bon moment.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Dans la cabine, en regardant le vélo appuyé contre la paroi et le casque intégral posé sur le cadre, j'ai eu cette pensée très nette : <em>« Ce que tu vas faire dans cinq minutes est disproportionné par rapport à ce que ton corps a l'habitude de faire. »</em> Ce n'était pas de l'excitation. C'était un début de peur — mesurée, adulte, mais bien présente.
+                  Pas dans un livre. Pas dans une réunion. Pas dans un coaching.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Ce que je n'avais pas anticipé, c'est à quel point cette peur allait ressembler à celle que je croise, autrement, dans ma vie de dirigeant.
+                  Parfois, elles arrivent en pleine descente, sur un VTT, quand le corps est tendu, les mains crispées sur les freins et que la tête calcule tout ce qui pourrait mal se passer.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Cette phrase, pour moi, a été simple :
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg font-semibold text-primary">
+                  Lâche les freins.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Pas pour devenir inconscient. Pas pour confondre courage et imprudence. Pas pour nier le risque.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais parce qu'à un moment, rester crispé sur les freins ne protège plus. Cela ralentit, déséquilibre, fatigue, rigidifie. Et parfois, c'est justement ce qui finit par provoquer la chute.
                 </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
@@ -235,41 +251,79 @@ const ArticleDetail = () => {
                 </h2>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Sur un VTT de descente, freiner est une décision permanente. Trop, et tu bloques la roue, tu perds la trajectoire, tu tombes. Pas assez, et tu deviens un passager. Le geste juste n'est ni de tout retenir, ni de tout lâcher : c'est de doser en continu, en fonction du terrain qui arrive.
+                  J'ai commencé le VTT de descente tard, autour de 40 ans.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Entreprendre fonctionne de la même manière. Il y a des dirigeants qui freinent en permanence — pour ne pas se tromper, pour ne pas être jugés, pour ne pas déplaire. Et il y a ceux qui lâchent tout — au nom de l'audace, de la vision, du « il faut oser ». Les deux se plantent, simplement pas au même virage.
+                  À cet âge-là, on n'a plus l'inconscience de ses 15 ans. On pense davantage. On anticipe davantage. On mesure les conséquences. On sait que le corps récupère moins vite, que la chute peut faire plus mal, que l'on a une famille, des responsabilités, une entreprise, des sujets en cours.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Ce que j'ai réappris ce jour-là, c'est que la prudence n'est pas une vertu en soi. Elle le devient quand elle sert le mouvement. Quand elle empêche le mouvement, elle porte un autre nom : <strong>l'inhibition</strong>.
+                  Alors on freine. Et c'est normal et nécessaire.
                 </p>
 
-                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
-                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
-                    On ne mesure pas la qualité d'un dirigeant à sa capacité à éviter les risques, mais à sa capacité à choisir ceux qu'il prend.
-                  </p>
-                </blockquote>
+                <p className="mb-6 leading-relaxed text-lg">
+                  La prudence est une intelligence. Mais la peur, elle, peut devenir une stratégie de vie.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Il y a trois ans, j'avais commencé à prendre confiance. Je me suis déverrouillée. Je lâchais davantage. Puis je suis tombé. Lourdement. Perte de connaissance. Pouce fracturé. Plaies. Hématomes. Contusions. Rien d'irréversible, mais suffisamment pour comprendre qu'une chute laisse toujours une trace.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Je suis remonté sur le vélo rapidement. Plus prudent. Moins rapide. Moins libre aussi, peut-être que honnêtement j'étais déjà en force. Je vis comme ça depuis des années, à la dure, dans la lutte, le combat permanent.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Et cette année, en pleine descente, quelque chose s'est reconnecté (je pense que les quelques séances de psy y ont participé aussi).
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  J'ai compris que je n'avais pas seulement peur de tomber à vélo.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  J'avais peur de retomber dans la vie. Dans l'entreprise. Dans les décisions. Dans l'exposition. Dans la prise de risque. Dans l'ambition assumée. Tout est calculé, analysé, demande réflexion, l'impression de ne pas vivre pleinement. L'impression de ne pas m'exprimer pleinement et librement !
+                </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
                   Entreprendre, c'est apprendre à vivre avec l'incertitude
                 </h2>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  La chute est arrivée dans un virage que j'avais mal lu. Rien de spectaculaire : une perte d'appui, le vélo qui part, moi qui glisse quelques mètres. Le corps va bien. La tête, elle, se pose immédiatement une question inconfortable : <em>« Est-ce que je continue, ou est-ce que je descends à pied ? »</em>
+                  On présente souvent l'entrepreneuriat comme une aventure de vision, de courage, de liberté. C'est vrai. Mais c'est aussi une confrontation permanente à l'incertitude et ça c'est dur.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Cette question, je l'ai reconnue. C'est exactement celle que se posent les dirigeants après un échec commercial, un recrutement raté, un pivot mal négocié, un client stratégique qui part. Ce n'est pas la douleur qui décide de la suite. C'est le récit qu'on fait de la douleur.
+                  Décider sans tout savoir. Investir sans garantie. Recruter sans certitude. Être challengé, critiqué, refusé, parfois incompris. Tomber, se relever, corriger, repartir. Recommencer.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  La psychologie contemporaine a un nom pour ce qui se joue à ce moment-là : la <strong>flexibilité psychologique</strong>. La capacité à rester en contact avec ce qui est difficile, sans se laisser figer par lui, tout en continuant à avancer dans la direction qui compte pour soi. Ce n'est pas de la résilience héroïque. C'est un travail — discret, quotidien, exigeant.
+                  La recherche sur l'entrepreneuriat le confirme : l'entrepreneur évolue dans des environnements plus incertains que la moyenne, et ses revenus, son statut, sa satisfaction et parfois son patrimoine dépendent directement de décisions prises dans cette incertitude.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Les dirigeants qui durent ne sont pas ceux qui n'ont pas peur. Ce sont ceux qui ont appris à ne pas confondre <em>« j'ai peur »</em> et <em>« je m'arrête »</em>.
+                  Ce n'est pas une anomalie. C'est la matière même de l'entrepreneuriat.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais il y a une différence fondamentale entre gérer le risque et vivre sous l'emprise de la peur et dans l'angoisse permanente.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Gérer le risque, c'est regarder la piste. Vivre dans la peur, c'est regarder uniquement la chute possible.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Gérer le risque, c'est se préparer. Vivre dans la peur, c'est se retenir.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Gérer le risque, c'est choisir une trajectoire. Vivre dans la peur, c'est ne plus vraiment choisir.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  C'est fou ce qu'une simple descente, ou une simple prise de conscience peut révéler en nous.
                 </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
@@ -277,87 +331,187 @@ const ArticleDetail = () => {
                 </h2>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  L'expression « lâcher les freins » est souvent mal comprise. Elle évoque l'inconscience, l'excès, la fuite en avant. C'est exactement l'inverse. Lâcher les freins, c'est arrêter de retenir un mouvement qui, par ailleurs, est parfaitement piloté.
+                  C'est probablement le point le plus important.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Pour un dirigeant, cela veut dire des choses très concrètes : arrêter de reporter la décision qu'on sait juste depuis trois mois. Arrêter d'atténuer un discours qui, si on le tenait sans filtre, clarifierait la relation avec son équipe, son associé, son investisseur. Arrêter de recruter « à peu près » parce qu'on n'ose pas assumer un vrai critère d'exigence.
+                  En descente, celui qui lâche tout sans technique finit rarement bien. Dans l'entreprise, c'est pareil.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Ce qui frappe, quand on regarde les trajectoires de près, c'est que les décisions qu'on n'ose pas prendre finissent presque toujours par nous être imposées — plus tard, dans de moins bonnes conditions, avec moins de marge. Le contrôle qu'on croyait garder en attendant, on l'a en réalité déjà perdu.
+                  Lâcher les freins, ce n'est pas ignorer les chiffres, les signaux faibles, les conseils, les risques juridiques, financiers ou humains. C'est aussi savoir couper, restructurer, prendre des décisions difficiles.
                 </p>
 
-                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
-                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
-                    Freiner par confort, c'est repousser la décision. Ce n'est pas la supprimer.
-                  </p>
-                </blockquote>
+                <p className="mb-6 leading-relaxed text-lg">
+                  C'est aussi arrêter de confondre prudence et inhibition. C'est accepter d'avancer même quand tout n'est pas sécurisé. C'est cesser de piloter uniquement pour éviter la douleur. C'est retrouver une forme de fluidité, de liberté d'entreprendre et d'agir. Plus fort encore une liberté de vivre.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  En psychologie, on parle de flexibilité psychologique : la capacité à rester en contact avec le présent, à accepter certaines émotions difficiles, et à agir en cohérence avec ses valeurs plutôt que sous la seule pression de l'évitement.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dit autrement : il ne s'agit pas de ne plus avoir peur. Il s'agit de ne plus laisser la peur tenir le guidon seule.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Que se passe-t'il quand un pilote de VTT ou de Moto (je suis motard aussi) fixe un obstacle ? Vous pouvez faire le test en vélo. Vous allez aller là où votre regard se pose. Quand on a peur, on fixe le regard sur les dangers… cela laisse songeur non?
+                </p>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
                   Être soi — vraiment
                 </h2>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Ce que j'ai retenu, en remontant sur le vélo après la chute, c'est une phrase simple : <em>« Descends comme toi. »</em> Pas comme le rider en face qui va plus vite. Pas comme le dirigeant qu'on est censé être à 40 ans. Comme soi, avec son niveau réel, son terrain intérieur, ses appuis.
+                  On entend souvent : "sois toi-même". La formule est super belle non?
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  L'authenticité est un mot usé. Les théories contemporaines de la motivation — notamment les travaux de Deci et Ryan sur l'autodétermination — en donnent une définition beaucoup plus opératoire : agir en accord avec ses valeurs profondes, en ayant le sentiment que la décision vient de soi, pas d'une injonction extérieure. C'est cette cohérence-là qui produit de l'énergie durable. Tout le reste — la performance jouée, l'image tenue, la posture — épuise.
+                  Mais elle est trop facile.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Les dirigeants qui m'impressionnent le plus ne sont pas les plus impressionnants. Ce sont ceux qui ont cessé de porter un personnage. Ceux dont les décisions, les mots et les silences racontent la même personne. Ceux avec qui, après une heure d'entretien, on sait exactement à qui on a parlé.
-                </p>
-
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  Grandir, à tout âge
-                </h2>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  À 40 ans, on entend souvent — et parfois on se le dit à soi-même — que les grandes réinventions sont derrière. Que le cadre est posé. Que ce serait « déraisonnable » de bouger. C'est là que Carol Dweck, avec son travail sur le <em>growth mindset</em>, remet un peu d'ordre : ce qui bloque, ce n'est presque jamais l'âge. C'est la croyance qu'on a atteint son plafond.
+                  Être soi-même, ce n'est pas dire tout ce que l'on pense ou rejeter les contraintes.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Une piste noire à 40 ans, ce n'est pas un exploit. C'est un rappel. Le corps peut encore apprendre. La tête peut encore choisir. La trajectoire peut encore se rouvrir. Il suffit — c'est peu et c'est beaucoup — d'accepter d'être débutant quelque part.
+                  C'est reconnaître ce qui nous anime vraiment. C'est accepter ses forces, ses angles morts, ses contradictions. C'est arrêter de jouer un rôle uniquement pour rassurer les autres. C'est construire une trajectoire qui nous ressemble, même si elle n'est pas toujours parfaitement comprise par la société.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Beaucoup de dirigeants que j'accompagne franchissent ce seuil-là dans un tout autre domaine : reprendre la parole en public après des années de silence, sortir d'un rôle d'opérationnel pour redevenir stratège, remettre en cause un modèle économique qui « marche encore mais plus vraiment ». À chaque fois, la même mécanique : accepter de ne plus être bon tout de suite, pour redevenir bon différemment.
-                </p>
-
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  Vivre pleinement, sans se raconter d'histoires
-                </h2>
-
-                <p className="mb-6 leading-relaxed text-lg">
-                  « Lâcher les freins » n'est pas un slogan. C'est une hygiène de décision. Elle demande de distinguer, en permanence, trois choses qu'on a tendance à confondre : la peur qui protège (utile), la peur qui immobilise (à interroger), et la peur qui déguise en prudence un refus de choisir (à nommer).
+                  Les travaux sur l'authenticité montrent d'ailleurs un lien positif entre authenticité et bien-être : une méta-analyse portant sur plus de 75 études et 36 000 personnes (Sutton, 2020) rapporte une association positive entre authenticité, bien-être et engagement (recherche avec IA)
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Quand on fait ce tri honnêtement, on découvre presque toujours que ce qu'on appelait « attendre le bon moment » était, en réalité, une manière élégante de ne pas décider. Et que l'on paie ce report en énergie, en clarté, en respect de soi.
+                  Cela ne garantit pas la réussite. Mais cela suggère quelque chose d'important : quand on vit trop longtemps à côté de soi-même, on finit par payer un prix. Fatigue. Perte de sens. Cynisme. Décisions molles. Joie diminuée. Et croyez moi, je parle en connaissance de cause.
                 </p>
 
                 <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
                   <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
-                    Vivre pleinement, ce n'est pas tout tenter. C'est refuser de vivre en dessous de ce que l'on sait être juste pour soi.
+                    Dans tout cela, le vrai risque ce n'est pas d'échouer, en tout cas pas totalement. Le vrai risque est de réussir une vie qui ne nous ressemble pas.
                   </p>
                 </blockquote>
 
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
-                  Ce que j'ai ramené de la descente
+                  Réussir, oui. Mais réussir quoi? Pourquoi et comment?
                 </h2>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  Je suis redescendu jusqu'en bas. Pas vite. Pas proprement. Mais entier — et surtout, présent. La véritable victoire, ce n'était pas la piste. C'était la conversation intérieure que j'ai eue en la faisant : arrêter de me demander si j'avais « le niveau », et commencer à me demander ce que je voulais faire de ce niveau-là.
+                  J'ai longtemps associé l'entrepreneuriat à la réussite : créer, développer, financer, vendre, structurer, accélérer, tenir bon lutter.
                 </p>
 
                 <p className="mb-6 leading-relaxed text-lg">
-                  C'est exactement la question que je pose, sous une autre forme, aux dirigeants que j'accompagne. Non pas <em>« êtes-vous assez ? »</em> — vous l'êtes, sinon vous n'en seriez pas là. Mais : <em>« qu'êtes-vous prêt à ne plus retenir ? »</em>
+                  Tout cela compte. Et évidemment et ça reste un objectif. Je pourrais même dire que j'aime ça sous une certaine forme.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais avec le temps, je crois que la réussite entrepreneuriale n'a de sens que si elle ne nous éloigne pas trop de nous-mêmes.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Réussir à être vraiment, c'est être capable de créer sans se cacher. D'ambitionner sans s'excuser. D'écouter sans se dissoudre. De prendre des risques sans se raconter d'histoires. De tomber sans faire de la chute une identité. De repartir sans devenir dur et de tout le temps être en mode combat.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  C'est peut-être ca, la maturité en fait : ne plus chercher l'inconscience de ses 15 ans, mais trouver la liberté avec la lucidité de ses 40 ans.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  La chute n'est pas l'inverse du chemin
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dans le sport comme dans l'entreprise, on aimerait progresser proprement. Une belle trajectoire. Des victoires cumulées. Des apprentissages sans douleur.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais ce n'est presque jamais comme ça.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La progression passe par des essais, des erreurs, des ajustements, des retours en arrière. Les travaux de Carol Dweck sur le growth mindset rappellent que l'échec peut être relu non comme une preuve définitive d'incapacité, mais comme une occasion d'apprentissage. Tout dépend donc de l'angle de vue avec lequel on regarde les choses, sous quel prisme on les observe.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Attention cependant : ce n'est pas le discours simpliste du "tout est possible avec de l'effort". Parfois, on échoue malgré l'effort. Parfois le timing est mauvais. Parfois on s'est trompé.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais l'échec devient destructeur quand il nous ferme, nous bloque et nous immobilise. Il devient utile quand il nous rend plus précis et qu'il nous guide vers autre chose.
+                </p>
+
+                <blockquote className="my-10 pl-8 border-l-4 border-gold bg-secondary/30 py-8 pr-8 rounded-r-lg">
+                  <p className="text-xl md:text-2xl italic text-foreground leading-relaxed font-light">
+                    Une chute doit apprendre quelque chose. Pas interdire le mouvement.
+                  </p>
+                </blockquote>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Se faire accompagner, ce n'est pas renoncer à soi
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dans l'entreprise, il y a un autre apprentissage : accepter l'accompagnement.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Dans la vie, il y a un autre apprentissage : accepter l'accompagnement.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  En fait, vivre et entreprendre, c'est la même chose.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Quand on a créé, porté, tenu, parfois seul ou presque, on peut confondre accompagnement et perte de contrôle.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Un bon accompagnement ne retire pas la vision. Il la clarifie. Il ne remplace pas l'instinct. Il le challenge. Il ne normalise pas l'entrepreneur. Il l'aide à devenir plus lisible, plus solide, plus structuré, pour les autres mais surtout pour lui-même.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La théorie de l'autodétermination (Deci & Ryan) identifie trois besoins psychologiques fondamentaux : l'autonomie, la compétence et le lien aux autres. Lorsque ces besoins sont soutenus, ils favorisent la motivation et le bien-être.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Un entrepreneur a besoin d'autonomie, sinon il s'éteint. De compétence, sinon il se raconte des histoires. De lien, sinon il s'isole.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  L'enjeu n'est pas de choisir entre liberté et accompagnement. C'est de trouver les bons appuis pour rester libre plus longtemps et aller plus loin.
+                </p>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mt-16 mb-6">
+                  Lâcher les freins
+                </h2>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Alors oui, je reviens de vacances avec cette phrase en tête.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Lâcher les freins.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Pas pour aller plus vite à tout prix. Ni pour impressionner. Pas non plus pour nier le danger.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Mais pour arrêter de vivre crispé, dans le dur. Pour entreprendre avec plus de vérité et de légèreté. Pour décider avec plus d'alignement, pour me faire confiance. Pour assumer mes ambitions, pour assumer qu'elles sont différentes de celles des autres parce que ce sont les miennes et que peu importe.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  La vie, le sport, l'entreprise, la famille aussi, tout ce qui compte vraiment demande une part d'engagement et bien sûr de travail. On peut rester en haut de la piste à analyser les risques.
+                </p>
+
+                <p className="mb-6 leading-relaxed text-lg">
+                  Ou on peut choisir une trajectoire, respirer, regarder loin devant, garder assez de lucidité pour corriger… et enfin lâcher les freins, oser se laisser porter (au moins de temps à autre ; ce qui ne veut pas dire être inactif).
                 </p>
 
                 <p className="mb-12 leading-relaxed text-lg">
-                  Chez KLYRA, c'est ce travail-là que nous faisons : aider les dirigeants à identifier, très précisément, où ils freinent sans raison — et à retrouver la trajectoire qui leur ressemble.
+                  Pas seulement pour réussir. Mais pour réussir à s'exprimer, à exister vraiment et pleinement.
                 </p>
               </>
             ) : isIAArticle ? (
