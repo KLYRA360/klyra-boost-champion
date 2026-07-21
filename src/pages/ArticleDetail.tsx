@@ -50,7 +50,7 @@ const ArticleDetail = () => {
   const navigate = useNavigate();
 
   // Vérifier si l'article existe
-  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux", "la-puissance-du-verbe", "pourquoi-l-ia-va-redonner-de-la-valeur"];
+  const validSlugs = ["maman-jai-peur-de-lavion", "le-changement-comprendre-et-integrer", "pourquoi-la-haine-de-l-effort-nous-rend-malheureux", "la-puissance-du-verbe", "pourquoi-l-ia-va-redonner-de-la-valeur", "lacher-les-freins"];
   if (!validSlugs.includes(slug || "")) {
     navigate("/articles");
     return null;
@@ -60,9 +60,12 @@ const ArticleDetail = () => {
   const isEffortArticle = slug === "pourquoi-la-haine-de-l-effort-nous-rend-malheureux";
   const isVerbeArticle = slug === "la-puissance-du-verbe";
   const isIAArticle = slug === "pourquoi-l-ia-va-redonner-de-la-valeur";
+  const isFreinsArticle = slug === "lacher-les-freins";
 
   const articleUrl = typeof window !== 'undefined' ? window.location.href : '';
-  const articleTitle = isIAArticle
+  const articleTitle = isFreinsArticle
+    ? "Lâcher les freins"
+    : isIAArticle
     ? "Pourquoi l'IA va redonner de la valeur à ceux qui pensent encore"
     : isVerbeArticle
     ? "La puissance du verbe : comment les mots façonnent votre identité, vos choix et votre trajectoire"
