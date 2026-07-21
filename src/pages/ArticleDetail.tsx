@@ -12,6 +12,7 @@ import articleChangement from "@/assets/article-changement.jpg";
 import articleEffort from "@/assets/article-effort.jpg";
 import articleVerbe from "@/assets/article-verbe.jpg";
 import articleIA from "@/assets/article-ia-pensee.jpg";
+import articleFreins from "@/assets/article-freins.jpg";
 
 const relatedArticles = [
   {
