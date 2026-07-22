@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
 import { 
   Mail, 
   Phone, 
@@ -33,9 +34,17 @@ const Contact = () => {
   };
 
   const handleSubmit = () => {
+    if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Informations manquantes",
+        description: "Merci de renseigner votre prénom, nom, email et la description de votre besoin.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     const subject = encodeURIComponent(`Demande de diagnostic gratuit - ${formData.firstName} ${formData.lastName}`);
-    const body = encodeURIComponent(`
-Bonjour,
+    const body = encodeURIComponent(`Bonjour,
 
 Je souhaite bénéficier d'un diagnostic gratuit.
 
@@ -51,10 +60,23 @@ Description du besoin :
 ${formData.message}
 
 Cordialement,
-${formData.firstName} ${formData.lastName}
-    `);
-    
-    window.location.href = `mailto:contact@klyra360.fr?subject=${subject}&body=${body}`;
+${formData.firstName} ${formData.lastName}`);
+
+    const mailtoUrl = `mailto:contact@klyra360.fr?subject=${subject}&body=${body}`;
+
+    // Utiliser un lien temporaire pour contourner les restrictions d'iframe/navigateur
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    link.target = '_self';
+    link.rel = 'noopener';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    toast({
+      title: "Ouverture de votre messagerie",
+      description: "Si rien ne s'ouvre, écrivez-nous directement à contact@klyra360.fr",
+    });
   };
 
   return (
