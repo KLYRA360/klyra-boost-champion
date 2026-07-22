@@ -204,14 +204,24 @@ ${formData.firstName} ${formData.lastName}`);
                   <Phone className="w-5 h-5 text-accent" />
                   <div>
                     <p className="font-medium">Téléphone</p>
-                    <p className="text-muted-foreground">+33 (0)7 82 35 02 54</p>
+                    <a 
+                      href="tel:+33782350254" 
+                      className="text-muted-foreground hover:text-primary transition-colors underline-offset-2 hover:underline"
+                    >
+                      +33 (0)7 82 35 02 54
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-accent" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">contact@klyra360.fr</p>
+                    <a 
+                      href="mailto:contact@klyra360.fr" 
+                      className="text-muted-foreground hover:text-primary transition-colors underline-offset-2 hover:underline"
+                    >
+                      contact@klyra360.fr
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
